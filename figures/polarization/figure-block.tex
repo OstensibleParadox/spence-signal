@@ -1,0 +1,35 @@
+% Shared figure includes for polarization section
+% Keep filenames centralized here for easy updates.
+
+\newcommand{\figPolarizationVarianceLow}{polarization/model-variance-01-v1p21.png}
+\newcommand{\figPolarizationVarianceMid}{polarization/model-variance-02-v4p84.png}
+\newcommand{\figPolarizationVarianceHigh}{polarization/model-variance-03-v10p24.png}
+
+\newcommand{\figCaptionPolarizationVarianceLow}{\(\operatorname{Var}(\theta\mid s_A)=1.21\)}
+\newcommand{\figCaptionPolarizationVarianceMid}{\(\operatorname{Var}(\theta\mid s_A)=4.84\)}
+\newcommand{\figCaptionPolarizationVarianceHigh}{\(\operatorname{Var}(\theta\mid s_A)=10.24\)}
+
+\newcommand{\InsertPolarizationVarianceFigure}{%
+\begin{figure}[htbp]
+\centering
+\begin{minipage}{0.32\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figPolarizationVarianceLow}
+\par\small\figCaptionPolarizationVarianceLow
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figPolarizationVarianceMid}
+\par\small\figCaptionPolarizationVarianceMid
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\figPolarizationVarianceHigh}
+\par\small\figCaptionPolarizationVarianceHigh
+\end{minipage}
+\caption{Model simulations: increasing conditional dispersion for the ambitious signal.}
+\label{fig:polarization-variance}
+\end{figure}%
+}
