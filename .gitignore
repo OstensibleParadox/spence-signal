@@ -46,3 +46,7 @@ Thumbs.db
 *.vrb
 *.nav
 *.snm
+*.spl
+
+# Build directory
+paper/build/
