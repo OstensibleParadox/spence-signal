@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex build/main"] 1782423571.81551 "build/main.aux" "build/main.bbl" "build/main" 1782423665.69981 0
+["bibtex build/main"] 1782424423.18795 "build/main.aux" "build/main.bbl" "build/main" 1782424424.13682 0
   "./references.bib" 1782420557.49273 2070 0b244319c4d6a437e27169a735e8b90e ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/natbib/abbrvnat.bst" 1233624470 26532 66bed5cc59495faaa3f9ae9af9fa5e42 ""
-  "build/main.aux" 1782423665.509 8544 957229c1d262773fbd0fbc0e03bbe47f "pdflatex"
+  "build/main.aux" 1782424423.96196 8245 2c46cda94b36078642922628b75de20c "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1782423664.76954 "main.tex" "main.pdf" "main" 1782423665.69997 0
+["pdflatex"] 1782424423.25827 "main.tex" "main.pdf" "main" 1782424424.13692 0
   "../figures/airy_density_corrected.pdf" 1782423658.19103 67515 ba46cb8cc077566ec9b87770e0e17660 ""
   "../figures/polarization/figure-block.tex" 1782422569.04405 1420 53fd517d95f22e72ee998bdf8ee6a0c7 ""
   "../figures/polarization/model-variance-01-v1p21.png" 1782409705.15374 98839 c2c67d1b858a779f0ca86e1a977bed93 ""
@@ -152,18 +152,18 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1775926411 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1775926335 3636773 cb7ca911f1162835915f325d23d4f0c0 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "build/main.aux" 1782423665.509 8544 957229c1d262773fbd0fbc0e03bbe47f "pdflatex"
-  "build/main.bbl" 1782423571.88401 747 8a333f61b0829994ec772d6e5bc03d19 "bibtex build/main"
-  "build/main.out" 1782423665.50976 6950 c209ae9ea83ae7dc71d3bf20d62aa6da "pdflatex"
+  "build/main.aux" 1782424423.96196 8245 2c46cda94b36078642922628b75de20c "pdflatex"
+  "build/main.bbl" 1782424423.25301 747 8a333f61b0829994ec772d6e5bc03d19 "bibtex build/main"
+  "build/main.out" 1782424423.96271 6950 c209ae9ea83ae7dc71d3bf20d62aa6da "pdflatex"
   "main.tex" 1782422453.01957 1102 4278007f202e7d50114ea5b41ec8bf7a ""
-  "sections/abstract.tex" 1782422482.02619 1835 b53a69306add87b8de70f783723d9984 ""
+  "sections/abstract.tex" 1782424367.17712 2011 4ba1e3a6ec1139074bef556dc1c5fb5c ""
   "sections/introduction.tex" 1782422648.67919 3117 697568625addd901811a50104bbb78a5 ""
-  "sections/section1_model.tex" 1782417825.56608 3601 038ec1636999eb9bb41cd28f5ec04043 ""
-  "sections/section2_bayesian_surprise.tex" 1782420726.64677 13584 653d876ffdda4a24187a3768258b5105 ""
-  "sections/section3_d1_top_down_pooling.tex" 1782422554.26142 22081 abd2f5766f30fb16dd940ab95bf38325 ""
-  "sections/section5_dynamic_model.tex" 1782421576.98012 6023 ff60f8f63a536f85b7cb4cf97b00b50d ""
-  "sections/section6_polarization.tex" 1782422497.46909 7896 dc405ccffc74d4c229cf6a58e4fe4aae ""
-  "sections/section7_continuous_phase_transition.tex" 1782423538.25738 6793 7553ff11458de222f69ee322fcb6aab0 ""
+  "sections/section1_model.tex" 1782424367.00208 3335 7e482b6b0e29be51c9c123a544839e65 ""
+  "sections/section2_bayesian_surprise.tex" 1782424399.91635 13000 eb06dd79911173b93897abcabef89942 ""
+  "sections/section3_d1_top_down_pooling.tex" 1782424366.91271 22025 4923d170294c0052b746f02f74de75de ""
+  "sections/section5_dynamic_model.tex" 1782424366.72878 6062 0feb65c46f2c9bea561efe204ccdeef7 ""
+  "sections/section6_polarization.tex" 1782424367.08977 7434 540026fd1feb01a57baf51a257c5ebd0 ""
+  "sections/section7_continuous_phase_transition.tex" 1782424366.82037 6779 66ffa971808e6952c854ffdfa460db4f ""
   (generated)
   "build/main.aux"
   "build/main.log"

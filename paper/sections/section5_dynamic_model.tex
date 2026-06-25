@@ -25,9 +25,9 @@ Define a temporary semantic penalty term
 \]
 Then, in low-scrutiny state $L$, the low-state advantage of sending ambitious is
 \[
-\Delta_\theta^{\text{dyn}}(q_t,\lambda_t)=B_\theta(\lambda_t)-\beta q_t\mu_H\Phi_\theta-\Sigma_t,
+\Delta_\theta^{\text{dyn}}(q_t,\rho_t)=B_\theta(\rho_t)-\beta q_t\mu_H\Phi_\theta-\Sigma_t,
 \]
-where the current posterior $\lambda_t$ appears in $B_\theta$ as in Section~\ref{sec:belief-loop}. Sending $s_P$ avoids the future repricing term and does not create today's semantic penalty.
+where $\rho_t$ is the period-$t$ version of the Section~\ref{sec:belief-loop} posterior $\rho_A$ and appears in $B_\theta$. Sending $s_P$ avoids the future repricing term and does not create today's semantic penalty.
 
 \subsection{Unpriced trust-restoring messages}
 
@@ -47,9 +47,9 @@ Embedding the dynamic penalty $\Sigma_t$ into the belief-loop operator $T_q(z)$ 
 
 \subsection{Dynamic Spence ratio and wedges}
 
-For any endogenous state $(C_t,E_t)$ define the state-adjusted top-down ratio
+For any endogenous state $(C_t,E_t)$ and posterior $\rho_t$, define the state-adjusted top-down ratio
 \[
-\widetilde q^{\mathrm{IC}}_\theta(t)=\frac{B_\theta(\lambda)+\Sigma_t}{\beta\mu_H\Phi_\theta}.
+\widetilde q^{\mathrm{IC}}_\theta(t)=\frac{B_\theta(\rho_t)+\Sigma_t}{\beta\mu_H\Phi_\theta}.
 \]
 Endogenous trust-capital terms appear symmetrically in numerators and therefore do not change the fundamental type-ordering created by $(\Phi_H,\Phi_L)$ and static primitives. They shift the threshold pair, but not the sign of the top-down reversal.
 
@@ -75,7 +75,7 @@ Under these assumptions and strict D1 preferences at $q\in\mathcal Q$, if period
 \end{theorem}
 
 \begin{proof}
-In the pooling assessment, $\lambda_t=0$ for any off-path ambitious deviation. The high-type deviation margin is
+In the pooling assessment, $\rho_t=0$ for any off-path ambitious deviation. The high-type deviation margin is
 \[
 \Delta_H^{\text{dyn}}(q_t,0)=B_H(0)-\beta q_t\mu_H\Phi_H-\Sigma_t.
 \]

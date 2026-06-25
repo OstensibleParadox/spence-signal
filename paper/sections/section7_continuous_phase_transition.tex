@@ -15,7 +15,7 @@ The continuous model is not a chronological avalanche story. It is an economic p
 
 \subsection{Reaction-Diffusion Occupancy}
 
-Let \(x\in[0,\infty)\) denote a continuous economic state. Higher \(x\) means higher visible status, stronger reputation-at-risk, or more self-accurate exposure to future adverse repricing. Let \(\rho(x,t)\ge0\) be the mass density of agents currently occupying the ambitious signal \(s_A\) at state \(x\). The relevant object is the D1-closed aggregate ambitious pool, not separate type-by-type participation.
+Let \(x\in[0,\infty)\) denote a continuous economic state. Higher \(x\) means higher visible status, stronger reputation-at-risk, or more self-accurate exposure to future adverse repricing. Let \(n(x,t)\ge0\) be the mass density of agents currently occupying the ambitious signal \(s_A\) at state \(x\). The relevant object is the D1-closed aggregate ambitious pool, not separate type-by-type participation.
 
 Local mobility in status space is summarized by a diffusion term. Local entry, retention, and exit from the ambitious pool are summarized by the D1-closed growth rate
 \[
@@ -32,10 +32,10 @@ on the exposed upper region. In that region the demographic exit rate from the a
 
 The resulting continuous-time occupancy equation is
 \begin{equation}
-\frac{\partial \rho}{\partial t}
+\frac{\partial n}{\partial t}
 =
-\frac{\sigma^2}{2}\frac{\partial^2\rho}{\partial x^2}
-+V_q(x)\rho.
+\frac{\sigma^2}{2}\frac{\partial^2 n}{\partial x^2}
++V_q(x)n.
 \label{eq:reaction-diffusion-occupancy}
 \end{equation}
 The first term lets ambitious density diffuse across nearby economic states. The second term is birth-death accounting inside the ambitious pool: \(V_q(x)>0\) permits local replenishment, while \(V_q(x)<0\) kills ambitious occupancy at rate \(\kappa_q(x)\). The D1 closure matters because it changes the top-end payoff from a reputational rent into a negative participation margin.
@@ -44,7 +44,7 @@ The first term lets ambitious density diffuse across nearby economic states. The
 
 A stable long-run cross-sectional density has the form
 \[
-\rho(x,t)=e^{\lambda t}\psi(x),
+n(x,t)=e^{\lambda t}\psi(x),
 \qquad
 \psi(x)\ge0,
 \]
