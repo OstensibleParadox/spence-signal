@@ -1,7 +1,7 @@
-% section1_model.tex
+% 02_primal_model.tex
 
-\section{Primal Structure and Benchmark}
-\label{sec:model}
+\section{Model and Benchmark}
+\label{sec:primal-model}
 
 This paper studies a signaling environment with two sender types and two signals, where the same signal that can separate today also creates a near-term reputation risk that may be repriced tomorrow. The baseline is the dynamic extension of Spence logic needed for the fixed-point reversal.
 
@@ -49,7 +49,7 @@ Let $B_\theta$ denote the current net separation surplus from $s_A$ versus $s_P$
 \[
 D_\theta^L(q)=B_\theta-\beta q\mu_H\Phi_\theta,
 \]
-where $\Phi_\theta>0$ is the true-type exposure cost derived from primitive self-model accuracy (Section~\ref{sec:surprise}), and $\beta\in(0,1)$ is the discount factor.
+where $\Phi_\theta>0$ is the true-type exposure cost derived from primitive self-model accuracy (Section~\ref{sec:psychological-exposure}), and $\beta\in(0,1)$ is the discount factor.
 
 The type-$\theta$ IC threshold is
 \[
@@ -65,14 +65,14 @@ q<q_\theta^*.
 When $q=0$, current risk from future repricing is absent. The model then collapses to a one-shot separating benchmark.
 
 \begin{assumption}[Static separation]
-\label{ass:static-separation}
+\label{ass:static-benchmark}
 \[
 B_H>0,\qquad B_L<0.
 \]
 \end{assumption}
 
-Under Assumption~\ref{ass:static-separation}, with no anticipated repricing $s_A$ is uniquely attractive only to the high type.
+Under Assumption~\ref{ass:static-benchmark}, with no anticipated repricing $s_A$ is uniquely attractive only to the high type.
 
 \subsection{Anticipatory reversal object}
 
-The model's distinctive case is high-type exposure vulnerability: the same primitive that makes ambitious separation valuable can make the high type more exposed to adverse repricing. Assumption~\ref{ass:static-separation} therefore identifies the low-scrutiny rent before future exposure is priced; it does not guarantee that the high type keeps using \(s_A\) when the transition probability into high scrutiny is large. Section~\ref{sec:belief-loop} defines the IC and D1 thresholds and shows how their maximum selects safe pooling.
+The model's distinctive case is high-type exposure vulnerability: the same primitive that makes ambitious separation valuable can make the high type more exposed to adverse repricing. Assumption~\ref{ass:static-benchmark} therefore identifies the low-scrutiny rent before future exposure is priced; it does not guarantee that the high type keeps using \(s_A\) when the transition probability into high scrutiny is large. Section~\ref{sec:belief-loop} defines the IC and D1 thresholds and shows how their maximum selects safe pooling.

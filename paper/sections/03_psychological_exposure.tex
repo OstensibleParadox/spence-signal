@@ -1,9 +1,9 @@
-% section2_bayesian_surprise.tex
+% 03_psychological_exposure.tex
 
-\section{Psychological Exposure and Bayesian Surprise}
-\label{sec:surprise}
+\section{Psychological Exposure}
+\label{sec:psychological-exposure}
 
-The benchmark environment in Section~\ref{sec:model} treats the ambitious signal $s_A$ as a costly signal of ability. This section adds the psychological object that distinguishes the model from standard costly signaling. The ambitious signal does not only reveal information about the sender's type. It also exposes the sender's self-model. A sender who chooses $s_A$ represents herself as someone whose private assessment of her own capacity is accurate enough to justify taking the ambitious action. The social cost of later reinterpretation is therefore not only a material or reputational loss. It is also an epistemic loss: observers revise their beliefs about whether the sender correctly understood her own type.
+The benchmark environment in Section~\ref{sec:primal-model} treats the ambitious signal $s_A$ as a costly signal of ability. This section adds the psychological object that distinguishes the model from standard costly signaling. The ambitious signal does not only reveal information about the sender's type. It also exposes the sender's self-model. A sender who chooses $s_A$ represents herself as someone whose private assessment of her own capacity is accurate enough to justify taking the ambitious action. The social cost of later reinterpretation is therefore not only a material or reputational loss. It is also an epistemic loss: observers revise their beliefs about whether the sender correctly understood her own type.
 
 This is a Bayesian mechanism with a second-order signal: observers infer type from the action, and infer whether the sender accurately understood the implications of being observed from the act of strategic deployment.
 
@@ -37,7 +37,7 @@ where $v_\theta(s)$ is the ordinary reputational or material payoff from the sig
 The next assumption is purely regularity. It rules out discontinuities inside a fixed judgment state. The discontinuities studied below will come from changes in the transition probability into high scrutiny, not from discontinuous psychological utility within a regime.
 
 \begin{assumption}[Regime-conditional continuity]
-\label{ass:conditional-continuity}
+\label{ass:belief-continuity}
 For each fixed $j\in\{L,H\}$ and $x\in\{0,1\}$, the function
 \[
 L(\mu^2,\ldots,\mu^k;j,x)
@@ -46,12 +46,12 @@ is continuous in the relevant finite hierarchy of higher-order beliefs. The acti
 \end{assumption}
 
 \begin{lemma}[Regime-conditional continuity]
-\label{lem:regime-continuity}
-Under Assumption~\ref{ass:conditional-continuity}, for each fixed judgment-intensity state $j$, the induced psychological payoff is continuous in the relevant higher-order belief hierarchy. Hence the regime-conditional psychological game satisfies the standard continuity requirement for belief-dependent payoffs. On any open region where the relevant incentive constraints are strict, the associated pure-strategy equilibrium selection is locally constant.
+\label{lem:belief-utility-continuity}
+Under Assumption~\ref{ass:belief-continuity}, for each fixed judgment-intensity state $j$, the induced psychological payoff is continuous in the relevant higher-order belief hierarchy. Hence the regime-conditional psychological game satisfies the standard continuity requirement for belief-dependent payoffs. On any open region where the relevant incentive constraints are strict, the associated pure-strategy equilibrium selection is locally constant.
 \end{lemma}
 
 \begin{proof}
-Fix $j$ and $x$. The ordinary payoff terms $v_\theta(s)$ and $c_\theta(s)$ are defined on a finite action and type space. The multiplier $\mu_j$ is constant within the state $j$. By Assumption~\ref{ass:conditional-continuity}, the epistemic penalty $L(\mu^2,\ldots,\mu^k;j,x)$ is continuous in the relevant belief hierarchy. Multiplication by the fixed scalar $\mu_j$ and addition of finite ordinary payoff terms preserve continuity. Thus, the regime-conditional psychological payoff is continuous.
+Fix $j$ and $x$. The ordinary payoff terms $v_\theta(s)$ and $c_\theta(s)$ are defined on a finite action and type space. The multiplier $\mu_j$ is constant within the state $j$. By Assumption~\ref{ass:belief-continuity}, the epistemic penalty $L(\mu^2,\ldots,\mu^k;j,x)$ is continuous in the relevant belief hierarchy. Multiplication by the fixed scalar $\mu_j$ and addition of finite ordinary payoff terms preserve continuity. Thus, the regime-conditional psychological payoff is continuous.
 
 Since the type and action spaces are finite, strict incentive inequalities are preserved under sufficiently small perturbations of beliefs and payoff parameters within a fixed state. Therefore, wherever the relevant incentive constraints are strict, the same pure-strategy profile remains selected in a neighborhood of the primitive. Any discontinuous change in equilibrium behavior must therefore come from a change in the relevant state, transition probability, or binding incentive constraint, rather than from a discontinuity of belief-dependent utility within the fixed state.
 \end{proof}
@@ -96,7 +96,7 @@ Because the self-model prior enters this loss mechanically, higher prior confide
 \subsection{Bayesian-surprise complementarity}
 
 \begin{lemma}[Bayesian-surprise foundation for scrutiny-type complementarity]
-\label{lem:bayesian-surprise-complementarity}
+\label{lem:bayesian-surprise-ordering}
 Suppose
 \[
 1-\delta>p_H>p_L>\bar p>\delta>0.
@@ -174,10 +174,10 @@ The key primitive behind $C_{\text{epistemic}}$ is not a new normative score; it
 A signal whose authenticity condition is neutrality to observation is strategically fragile: strategic deployment itself is an observation-seeking act and therefore updates beliefs toward "the signaler is managing being watched." That inference is stronger for higher-priority self-assessment priors.
 \end{remark}
 
-Lemma~\ref{lem:bayesian-surprise-complementarity} is the first reversal relative to standard signaling theory. In a Spence environment, high types are more willing to bear the ambitious signal because they face a lower ordinary cost of sending it. Here, high types also carry more self-model reputation-at-risk. When high scrutiny adversely reprices exposed self-presentation, the same type characteristic that supports ambitious action under low scrutiny becomes the source of larger exposure.
+Lemma~\ref{lem:bayesian-surprise-ordering} is the first reversal relative to standard signaling theory. In a Spence environment, high types are more willing to bear the ambitious signal because they face a lower ordinary cost of sending it. Here, high types also carry more self-model reputation-at-risk. When high scrutiny adversely reprices exposed self-presentation, the same type characteristic that supports ambitious action under low scrutiny becomes the source of larger exposure.
 
 \begin{remark}[Repricing, not precision]
-The sign of Lemma~\ref{lem:bayesian-surprise-complementarity} depends on the level channel. Replacing $p_\theta$ with signal precision would change the model. A higher-precision audit is a fidelity technology and tends to confirm an accurate high type. It therefore does not generate top-down withdrawal. The primitive needed here is a type-indexed self-accuracy level combined with an adverse repricing state, not a variance or precision parameter.
+The sign of Lemma~\ref{lem:bayesian-surprise-ordering} depends on the level channel. Replacing $p_\theta$ with signal precision would change the model. A higher-precision audit is a fidelity technology and tends to confirm an accurate high type. It therefore does not generate top-down withdrawal. The primitive needed here is a type-indexed self-accuracy level combined with an adverse repricing state, not a variance or precision parameter.
 \end{remark}
 
 \subsection{From self-accuracy to crash risk}
