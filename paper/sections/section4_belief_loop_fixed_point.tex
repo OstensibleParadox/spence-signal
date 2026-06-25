@@ -1,15 +1,13 @@
-% section6_belief_loop_fixed_point.tex
-
 \section{Belief Loops and Fixed-Point Selection}
 \label{sec:belief-loop}
 
-Section~\ref{sec:polarization} gives the observable shadow of withdrawal. Once scrutiny risk is high enough, the ambitious signal need not disappear; it can survive as a polarized object, carried by extreme high types and by agents with weak anticipatory discipline after ordinary high types have exited. That result is cross-sectional. It says what the ambitious signal looks like after withdrawal has started, but it does not yet show why withdrawal is a self-confirming equilibrium object.
+Section~\ref{sec:dynamic} produced two local comparisons. Above \(q_{\mathrm{D1}}\), the D1 off-path map attributes an ambitious deviation to the low type. Above \(q_{\mathrm{IC}}\), the high type's anticipatory incentive constraint fails even under full high-type attribution. Each comparison holds the rest of the assessment fixed. This section solves the whole assessment as a closed configuration.
 
-The missing step is logically small but not vacuous. If high types are expected to remain on \(s_A\), the signal carries a high-type premium. If high types are expected to withdraw, \(s_A\) becomes off path, and D1 can remove that premium. Thus the sender's participation decision and the receiver's interpretation of the signal must be solved together.
+The issue is not a sequence in which one type exits first and another type reacts later. The object is a fixed-point feasibility test: can any psychological assessment make \(s_A\) sustainably occupied at the top while satisfying sender optimality, Bayes' rule on path, and D1 off path?
 
-The local forces are already in place. Adverse repricing is pinned to true type, \(\Phi_H>\Phi_L\) (Section~\ref{sec:surprise}). When the transition probability into high scrutiny is sufficiently large, D1 no longer assigns an off-path ambitious signal to the high type (Section~\ref{sec:dynamic}). This section turns those local comparisons into a fixed-point selection result.
+The three ingredients are already in place. First, adverse repricing creates reverse selection because \(\Phi_H>\Phi_L\) (Section~\ref{sec:surprise}). Second, withdrawal is individually rational for the high type once the continuation exposure price is large enough. Third, when these two facts are evaluated inside a closed belief hierarchy, the ambitious top has no self-consistent occupancy fixed point. The last step is the state-level annihilation result: for \(q>q^*\), there is no fixed point in which the top type sustainably inhabits \(s_A\).
 
-The point is not merely that separation fails and pooling survives. That would be a linear argument. The equilibrium object is circular. Whether \(s_A\) carries a high-type premium depends on whether high types are expected to occupy \(s_A\). Whether high types occupy \(s_A\) depends on the premium they expect \(s_A\) to carry. The theorem below closes this loop.
+Thus the theorem below is a simultaneous consistency statement. It asks whether a candidate assessment can close the receiver's interpretation, the sender's second-order belief, and both types' participation inequalities at the same time.
 
 \subsection{Belief hierarchy and psychological assessments}
 \label{subsec:belief-hierarchy}
@@ -39,7 +37,7 @@ where \(\widehat \rho_A=(\widehat\rho_{H,A},\widehat\rho_{L,A})\). Belief consis
 \]
 Thus the sender's second-order belief about the receiver's first-order posterior must agree with the posterior induced by the assessment itself.
 
-Crucially, the fixed point is evaluated exactly at this second-order hierarchy layer. To formally embed this within the framework of psychological games \citep{battigalli2009dynamic}, the sender's expected utility must be continuous with respect to the relevant belief hierarchy. Here, the net benefit $B_\theta(\widehat{\rho}_{\theta,A})$ depends continuously on the expected first-order posterior. While the D1 refinement injects a discontinuous jump into the \emph{receiver's} belief map $\rho_A(\sigma)$ when the signal becomes off-path, the fixed point is resolved on the composition of these expectations, ensuring that the belief loop strictly and continuously closes at $\widehat\rho_{\theta,A} = \rho_A$.
+Crucially, the fixed point is evaluated exactly at this second-order hierarchy layer. To formally embed this within the framework of psychological games \citep{battigalli2009dynamic}, the sender's expected utility must be continuous with respect to the relevant belief hierarchy. Here, the net benefit $B_\theta(\widehat{\rho}_{\theta,A})$ depends continuously on the expected first-order posterior. While the D1 refinement injects a discontinuous jump into the \emph{receiver's} belief map $\rho_A(\sigma)$ when the signal becomes off path, the fixed point is resolved on the composition of these expectations, ensuring that the belief loop strictly and continuously closes at $\widehat\rho_{\theta,A} = \rho_A$.
 
 This is the level at which the fixed point is closed. The exposure term \(\Phi_\theta\) remains true-type indexed. It is not changed by the receiver's posterior. The receiver's posterior changes the current reputational benefit of the signal; it does not relabel the deviator's adverse-repricing exposure.
 
@@ -188,6 +186,8 @@ under the strict-response richness condition used in Lemma~\ref{lem:d1-flip}. D1
 \rho_A=0.
 \]
 
+This D1 conclusion is an off-path counterfactual rule. It is obtained by comparing the response sets \(\mathcal D_H(q)\) and \(\mathcal D_L(q)\); it does not presuppose that either type actually deviates. In particular, low-type withdrawal is not a premise of the D1 classification. The classification follows from the cost ordering induced by \(\Phi_H>\Phi_L\) and \(q>q_{\mathrm{D1}}\).
+
 The on-path and off-path belief map can therefore be summarized as follows. Let
 \[
 z\in\{0,1\}
@@ -208,7 +208,7 @@ For \(q>q_{\mathrm{D1}}\), the receiver's belief about \(s_A\) is
 0, & \text{if }z=0\text{ and }s_A\text{ is off path, selected by D1}.
 \end{cases}
 \]
-The first line is Bayes' rule on the separating path. The second line is D1 off path.
+The first line is Bayes' rule on the separating path. The second line is the D1 off-path counterfactual map.
 
 \subsection{The belief-loop operator}
 \label{subsec:belief-loop-operator}
@@ -232,6 +232,35 @@ Define
 q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}.
 \]
 
+The closed-loop candidate that will survive is the safe-pooling configuration
+\[
+\mathcal C_0
+=
+\left(
+\sigma_H=s_P,\,
+\sigma_L=s_P;\,
+s_A\text{ off path};\,
+\rho_A^{D1}=0
+\right).
+\]
+Its fixed-point structure is explicit:
+\begin{enumerate}
+\item Both types choose the protected signal \(s_P\), so \(s_A\) is off path.
+\item Because \(s_A\) is off path, D1 evaluates the counterfactual deviation. Since \(\Phi_H>\Phi_L\) and \(q>q_{\mathrm{D1}}\),
+\[
+\mathcal D_H(q)\subsetneq \mathcal D_L(q),
+\]
+so D1 selects the low-type attribution \(\rho_A^{D1}=0\).
+\item Under \(\rho_A^{D1}=0\), the deviation margins are
+\[
+\Delta_H^{D1}(q)=B_H(0)-\Gamma(q,\eta)\Phi_H<0,
+\qquad
+\Delta_L^{D1}(q)=B_L(0)-\Gamma(q,\eta)\Phi_L<0.
+\]
+The first inequality follows from \(B_H(0)\le 0\) and \(\Gamma(q,\eta)\Phi_H>0\). The second follows from \(B_L(0)<0\) and \(\Gamma(q,\eta)\Phi_L>0\).
+\item Therefore no type wants to move from \(s_P\) to \(s_A\). The configuration \(\mathcal C_0\) closes on itself; no chronological claim about who deviates first is used.
+\end{enumerate}
+
 \begin{theorem}[Belief-loop fixed-point selection]
 \label{thm:belief-loop-fixed-point}
 Suppose:
@@ -244,20 +273,22 @@ Suppose:
 \item off-path beliefs satisfy D1;
 \item the analysis is restricted to the binary-signal pure-strategy class.
 \end{enumerate}
-Then the unique D1-consistent psychological assessment in this class has
+Then no D1-consistent psychological assessment in this class has stable top-end occupancy of \(s_A\). The unique D1-consistent pure closed-loop assessment is \(\mathcal C_0\):
 \[
 \theta_H\mapsto s_P,
 \qquad
 \theta_L\mapsto s_P.
 \]
-Equivalently, the unique high-type belief-loop fixed point is
+Equivalently, the unique high-type occupancy fixed point is
 \[
 z^*=0.
 \]
 \end{theorem}
 
 \begin{proof}
-First consider the candidate in which the high type occupies the ambitious signal, \(z=1\). In the separating interpretation, \(s_A\) is on path for the high type, so Bayes' rule gives
+We evaluate pure closed-loop configurations.
+
+First, no configuration with top-end occupancy of \(s_A\) is feasible. If only the high type occupies \(s_A\), then \(s_A\) is the separating high-type signal, so Bayes' rule gives
 \[
 \rho_A(1)=1.
 \]
@@ -271,30 +302,6 @@ T_q(1)=0.
 \]
 Therefore \(z=1\) is not a fixed point.
 
-Now consider the candidate in which the high type withdraws, \(z=0\). Then \(s_A\) is off path for the high type. Since \(q>q_{\mathrm{D1}}\), the D1 flip assigns an off-path \(s_A\) to the low type. Hence
-\[
-\rho_A(0)=0.
-\]
-The high type's payoff gain from deviating to \(s_A\) is
-\[
-\Delta_H(0,q)=B_H(0)-\Gamma(q,\eta)\Phi_H.
-\]
-Since \(B_H(0)\le 0\) and \(\Gamma(q,\eta)\Phi_H>0\),
-\[
-\Delta_H(0,q)<0.
-\]
-Thus
-\[
-T_q(0)=0.
-\]
-Therefore \(z=0\) is a fixed point.
-
-It remains to rule out pure-strategy profiles in which the low type occupies \(s_A\). If only the low type chooses \(s_A\), then \(s_A\) is on path as low-type evidence, so \(\rho_A=0\). The low type's gain is
-\[
-B_L(0)-\Gamma(q,\eta)\Phi_L<0,
-\]
-because \(B_L(0)<0\) and \(\Gamma(q,\eta)\Phi_L>0\). Hence the low type does not wish to occupy \(s_A\) under low-type attribution.
-
 If both types choose \(s_A\), then \(s_A\) is pooling rather than separating. Let \(\pi_0\in(0,1)\) be the prior probability of \(\theta_H\). Bayes' rule gives \(\rho_A=\pi_0\). Since \(B_H(\rho)\) is weakly increasing and \(\pi_0<1\),
 \[
 B_H(\pi_0)\le B_H(1).
@@ -307,45 +314,65 @@ Therefore
 \[
 B_H(\pi_0)-\Gamma(q,\eta)\Phi_H<0.
 \]
-The high type would deviate from pooling on \(s_A\) to the safe signal. Hence pooling on \(s_A\) is not a pure-strategy equilibrium.
+The high type would prefer \(s_P\), so pooling on \(s_A\) is not a fixed point either. Thus every configuration with top-end occupancy of \(s_A\) is infeasible.
 
-The only remaining pure-strategy profile is pooling on \(s_P\). Under that profile, \(s_A\) is off path. D1 gives \(\rho_A=0\), and the two deviation inequalities above show that neither type gains from deviating to \(s_A\). Thus pooling on \(s_P\) is the unique D1-consistent psychological assessment in the binary pure-strategy class.
+Second, no low-only occupancy configuration is feasible. If only the low type chooses \(s_A\), then \(s_A\) is on path as low-type evidence, so \(\rho_A=0\). The low type's gain is
+\[
+B_L(0)-\Gamma(q,\eta)\Phi_L<0,
+\]
+because \(B_L(0)<0\) and \(\Gamma(q,\eta)\Phi_L>0\). Hence the low type does not wish to occupy \(s_A\) under low-type attribution.
+
+Third, evaluate \(\mathcal C_0\). Under \(\mathcal C_0\), \(s_A\) is off path. Since \(q>q_{\mathrm{D1}}\), the D1 response-set comparison gives
+\[
+\mathcal D_H(q)\subsetneq \mathcal D_L(q),
+\]
+so the off-path ambitious signal is assigned to the low type and
+\[
+\rho_A^{D1}=0.
+\]
+The high-type deviation margin is
+\[
+\Delta_H^{D1}(q)=B_H(0)-\Gamma(q,\eta)\Phi_H<0,
+\]
+and the low-type deviation margin is
+\[
+\Delta_L^{D1}(q)=B_L(0)-\Gamma(q,\eta)\Phi_L<0.
+\]
+Thus neither type has a profitable deviation to \(s_A\). The safe-pooling configuration is internally consistent. Since all other pure configurations have been ruled out, \(\mathcal C_0\) is the unique D1-consistent psychological assessment in the binary pure-strategy class.
 \end{proof}
 
-\subsection{The closed loop}
+\subsection{The closed loop as a state condition}
 \label{subsec:closed-loop}
 
-The theorem closes the loop in both directions. If high types are expected to stay, then \(s_A\) is read as high type:
+The theorem should be read as a state claim:
 \[
-z=1\Rightarrow \rho_A=1.
+\mathcal C_0
+\Longleftrightarrow
+\left[
+s_A\text{ off path}
+\right]
+\wedge
+\left[
+\rho_A^{D1}=0
+\right]
+\wedge
+\left[
+\Delta_H^{D1}(q)<0
+\right]
+\wedge
+\left[
+\Delta_L^{D1}(q)<0
+\right].
 \]
-But when \(q>q_{\mathrm{IC}}\), even full high-type attribution is not enough to offset continuation exposure:
-\[
-\rho_A=1\Rightarrow T_q(1)=0.
-\]
-Thus the separating belief system destroys itself:
-\[
-z=1\Rightarrow \rho_A=1\Rightarrow T_q(1)=0\ne z.
-\]
+The D1 component is not caused by an observed low-type deviation. It is the refinement's counterfactual response to an off-path signal, determined by \(\mathcal D_H(q)\subsetneq\mathcal D_L(q)\). The participation inequalities then show that the counterfactual off-path interpretation is consistent with nobody actually sending \(s_A\).
 
-If high types are expected to withdraw, then \(s_A\) is off path. When \(q>q_{\mathrm{D1}}\), D1 assigns the off-path ambitious deviation to the low type:
-\[
-z=0\Rightarrow s_A\text{ off path}\Rightarrow \rho_A=0.
-\]
-Once \(\rho_A=0\), the ambitious signal carries no high-type premium, while it still creates true-type exposure for a high-type deviator:
-\[
-\rho_A=0\Rightarrow T_q(0)=0.
-\]
-Thus the withdrawal belief reproduces itself:
-\[
-z=0\Rightarrow \rho_A=0\Rightarrow T_q(0)=0=z.
-\]
+This separation removes the circular timing story. Reverse selection is the cost-ranking fact \(\Phi_H>\Phi_L\). Individually rational withdrawal is the high-type inequality \(\Delta_H(1,q)<0\) once \(q>q_{\mathrm{IC}}\). Annihilation is the fixed-point conclusion that no D1-consistent pure assessment contains stable top-end occupancy of \(s_A\) once \(q>q^*\).
 
-This is the belief loop. High types withdraw because exposed ambition is too costly. Their withdrawal makes \(s_A\) off path. D1 then removes the high-type attribution from \(s_A\). Once that attribution is removed, the current rent from returning to \(s_A\) disappears. Withdrawal is therefore self-confirming.
+In the coordination and self-fulfilling-belief literature, forward-induction refinement characteristically selects \emph{toward} efficiency: it eliminates the off-path beliefs that sustain coordination failure, uniquely selecting the Pareto-dominant equilibrium \citep[e.g., the refinement resolutions of][]{diamond1983bank}. This standard selection presumes that the party able to orchestrate a deviation is the one seeking the efficient outcome, so forward induction attributes the deviation's intent accordingly. We exhibit the opposite operation. When malicious scrutiny reverses the cost ranking so that the wider profitable-deviation set belongs to the \emph{low} type, the same D1 logic confirms rather than dissolves the absence of stable top-end occupancy: the refinement selects safe pooling. This resulting top-down pooling is an \emph{informational} disaster, destroying the market's ability to screen types. Yet it is also privately rational risk avoidance for high types facing excessive epistemic exposure. The refinement does not rescue the informational efficiency of the separating equilibrium; instead, it enforces the nonexistence of an occupied ambitious-top fixed point.
 
 \subsection{No interior mixing in this section}
 \label{subsec:no-mixing-sec6}
 
 The fixed-point theorem is a pure-strategy selection result. It does not use an interior mixing probability for the high type. This restriction is deliberate. In a binary model with no low-type background arrival at \(s_A\), any strictly positive high-type mass on \(s_A\) would keep the posterior after \(s_A\) degenerate in the high type. Continuous signal dilution therefore cannot be generated by high-type mixing alone.
 
-Interior mixing requires an additional object, such as low-type mimetic entry, noisy audience inference, trembles, or a continuous type distribution. We explicitly choose to scope out mixing in this section to demonstrate the exact conditions under which the purely top-down collapse occurs in the binary pure-strategy class. The interior mixed regime reemerges naturally as the \emph{Polarization} phenomenon handled in Section~\ref{sec:polarization} (and the continuous-type phase transition), where the signal informativeness continuously degenerates without dying entirely. The present section proves only the sharper fixed-point claim: above \(q^*\), the only D1-consistent pure belief loop is full withdrawal from the ambitious signal and pooling on \(s_P\).
+Interior mixing requires an additional object, such as low-type mimetic entry, noisy audience inference, trembles, or a continuous type distribution. We explicitly choose to scope out mixing in this section to isolate the exact conditions under which state-level collapse of top-end occupancy occurs in the binary pure-strategy class. The interior mixed regime reemerges naturally as the \emph{Polarization} phenomenon handled in Section~\ref{sec:polarization} (and the continuous-type phase transition), where the signal informativeness continuously degenerates without dying entirely. The present section proves only the sharper fixed-point claim: above \(q^*\), the only D1-consistent pure belief loop is \(\mathcal C_0\), so the ambitious signal has no stable top-end occupancy fixed point.

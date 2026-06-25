@@ -1,5 +1,3 @@
-% section5_dynamic_model.tex
-
 \section{Dynamic Forward Invariance}
 \label{sec:dynamic-model}
 
@@ -43,6 +41,10 @@ G_L(a;t)=R(a)-\bar k_L-\beta q_t\mu_H\Phi_L-\Sigma_t.
 \]
 The term $\Sigma_t$ cancels in the comparison, so adding or relaxing trust-capital does not alter the type comparison. If $q_t>q_{\mathrm{D1}}$, then $G_H(a;t)<G_L(a;t)$ for every receiver response, so $s_A$ is still D1-attributed to the low type.
 
+\begin{remark}[Invariance of the Belief Loop Fixed Point]
+Embedding the dynamic penalty $\Sigma_t$ into the belief-loop operator $T_q(z)$ from Section~\ref{sec:belief-loop} does not alter the number of fixed points in the collapse region. Let the modified operator be $T_{q,\Sigma_t}(z) = \mathbf{1}\{B_H(\rho_A(z)) - \beta q_t \mu_H \Phi_H - \Sigma_t \ge 0\}$. Because $\Sigma_t \ge 0$, $T_{q,\Sigma_t}(0) = 0$ remains robustly true, as $B_H(0) \le 0$ and the penalty only pushes the deviation payoff further negative. For the separating candidate ($z=1$), we have $T_{q,\Sigma_t}(1) = 1 \iff \Sigma_t \le B_H(1) - \beta q_t \mu_H \Phi_H$. In the collapse region ($q_t > q_{\mathrm{IC}}$), the right-hand side is already strictly negative; thus, any $\Sigma_t \ge 0$ only deepens the impossibility of separation, ensuring $z^*=0$ remains the unique fixed point. If the system is subcritical ($q_t < q_{\mathrm{IC}}$), an extreme dynamic shock $\Sigma_t$ could trigger a premature collapse by destroying the $z=1$ fixed point, but dynamic penalties can never create a new fixed point nor resurrect separation.
+\end{remark}
+
 \subsection{Dynamic Spence ratio and wedges}
 
 For any endogenous state $(C_t,E_t)$ define the state-adjusted top-down ratio
@@ -82,18 +84,3 @@ Hence high type never has a profitable ambiguous-ambitious deviation from $s_P$ 
 \end{proof}
 
 The conclusion is defensive. Dynamic trust-capital and habituation can be modeled explicitly and can affect local margins, but they do not create a new stopping phenomenon. They do not by themselves repair top-down collapse.
-\subsection{Population-density shape in the critical linearized system}
-
-For intuition (and to avoid stale wording from prior drafts), consider the linearized density
-\[
-\mathcal L_\kappa \varphi=\lambda \varphi
-\]
-for the trust-state law under pooling. The relevant object is its principal eigenpair \((\lambda_1,\varphi_1)\); by definition \(\varphi_1\ge 0\) on the domain, not sign-changing. In the parameter regime of interest, the population profile is therefore single-peaked: it starts from the boundary with a left foot at \(x=0\), peaks in the safe region, and after the turning point decays into the dangerous region with exponential tail. A collapse-zone oscillation is not part of \(\varphi_1\); that oscillatory sine pattern belongs to non-principal local approximations and is not a valid population density.
-
-Airy appears only as a local normal form near the turning point, where the reduced equation takes the form
-\[
-\phi''(x)-x\,\phi(x)=0,
-\]
-so \(\phi(x)\propto \mathrm{Ai}(x)\) for matching. Elsewhere, \(\varphi_1\) governs the full profile.
-
-At \(\lambda=0\), the critical transition, imposing the Dirichlet condition at the left boundary yields the principal-root condition: the boundary is pinned at the first zero of the matching profile. This is not fine tuning; it is the algebraic consequence of the critical principal-eigenvalue condition together with the boundary constraint. The earlier “coincidence” wording should therefore be replaced by this inference.

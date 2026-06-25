@@ -1,0 +1,159 @@
+% section7_continuous_phase_transition.tex
+
+\section{Continuous-Time Population Dynamics and Top-End Occupancy Nonexistence}
+\label{sec:continuous-phase-transition}
+
+Section~\ref{sec:belief-loop} gives the strategy-level statement: for \(q>q^*\), no D1-consistent pure assessment has stable top-end occupancy of the ambitious signal. This section gives the distribution-level counterpart. The continuous model is not a chronological avalanche story. It asks whether a positive stationary density of ambitious top-end occupants can exist once the closed-loop belief map from Section~\ref{sec:belief-loop} is imposed.
+
+The correspondence is:
+\[
+\text{no occupied ambitious fixed point}
+\quad\Longleftrightarrow\quad
+\text{spectral nonexistence of a positive stationary profile}.
+\]
+Top-down pooling, top-end retreat, and population depletion are therefore the same state proposition viewed at different levels of aggregation: when \(q>q^*\), there is no self-consistent steady fixed point in which the upper end remains occupied by \(s_A\).
+
+\subsection{Continuous State Space and Occupancy Density}
+
+Let \(x\in[0,\infty)\) denote a continuous state variable capturing proximity to power or observable status level. The scrutiny mapping \(q(x)\) describes the probability of entering the adverse repricing state at status \(x\). Visibility attracts risk:
+\[
+\frac{dq(x)}{dx}>0.
+\]
+The higher an agent's status, the higher the probability of adverse repricing.
+
+Let \(\rho_\theta(x,t)\) denote the density of type \(\theta\in\{L,H\}\) agents who occupy the ambitious signal at status \(x\). Conditional on a belief regime \(r\), their local occupancy drift is
+\[
+V_\theta^r(q(x))
+=
+B_\theta^r-\Gamma(q(x),\eta)\Phi_\theta,
+\]
+where \(B_\theta^r\) is the current rent from \(s_A\) under regime \(r\), while \(\Gamma(q(x),\eta)\Phi_\theta\) is the continuation exposure price inherited from Section~\ref{sec:belief-loop}. The corresponding density equation is
+\begin{equation}
+\frac{\partial \rho_\theta}{\partial t}
+=
+\frac{\sigma^2}{2}\frac{\partial^2\rho_\theta}{\partial x^2}
++V_\theta^r(q(x))\rho_\theta.
+\label{eq:continuous-density-general}
+\end{equation}
+Positive drift permits local retention or entry into the ambitious pool. Negative drift is a killing term for ambitious occupancy.
+
+\subsection{Layer 1: The Open-Loop Top-Fill Counterfactual}
+
+First ignore the D1 belief-loop closure and hold fixed the optimistic interpretation that the ambitious signal still carries high-type meaning. The open-loop stay values are
+\[
+V_H^{\mathrm{open}}(q)
+=
+B_H(1)-\Gamma(q,\eta)\Phi_H,
+\qquad
+V_L^{\mathrm{open}}(q)
+=
+B_L(1)-\Gamma(q,\eta)\Phi_L.
+\]
+The high-type open-loop threshold is the same IC threshold as before:
+\[
+q_{\mathrm{IC}}
+=
+\inf\{q:\,V_H^{\mathrm{open}}(q)<0\}.
+\]
+Define the low-type open-loop threshold by
+\[
+q_L^{\mathrm{open}}
+=
+\inf\{q:\,V_L^{\mathrm{open}}(q)<0\},
+\]
+and let \(x_L^*\) satisfy \(q(x_L^*)=q_L^{\mathrm{open}}\), when such a point exists.
+
+Let \(x_c\) denote the closed-loop critical location satisfying
+\[
+q(x_c)=q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}.
+\]
+Since \(q^*\ge q_{\mathrm{IC}}\), high-type open-loop occupancy is already nonpositive for \(x>x_c\). But the low type may still have positive open-loop value. If
+\[
+q^*<q_L^{\mathrm{open}},
+\]
+then for the band
+\[
+x_c<x<x_L^*
+\]
+one has
+\[
+V_H^{\mathrm{open}}(q(x))<0<V_L^{\mathrm{open}}(q(x)).
+\]
+This is the open-loop lemons-like configuration: the high type does not want the exposed top position, while low types may still find it privately attractive if the signal continues to be priced as high-type evidence. This is only a counterfactual benchmark because it has not yet imposed the off-path D1 map.
+
+\subsection{Layer 2: D1-Closed Occupancy Values}
+
+The belief-loop fixed point changes the current rent term. In the safe-pooling configuration \(\mathcal C_0\) of Section~\ref{sec:belief-loop}, \(s_A\) is off path and D1 selects
+\[
+\rho_A^{D1}=0
+\]
+from the strict inclusion
+\[
+\mathcal D_H(q)\subsetneq\mathcal D_L(q).
+\]
+This is a counterfactual off-path mapping, not a conclusion inferred from observed low-type or high-type deviations.
+
+After D1 closure, the ambitious signal no longer carries the high-type rent. The relevant local drifts become
+\[
+V_\theta^{D1}(q)
+=
+B_\theta(0)-\Gamma(q,\eta)\Phi_\theta,
+\qquad \theta\in\{L,H\}.
+\]
+For \(q>q^*\), Section~\ref{sec:belief-loop} gives
+\[
+V_H^{D1}(q)
+=B_H(0)-\Gamma(q,\eta)\Phi_H<0,
+\qquad
+V_L^{D1}(q)
+=B_L(0)-\Gamma(q,\eta)\Phi_L<0.
+\]
+The first inequality uses \(B_H(0)\le0\); the second uses \(B_L(0)<0\). Thus, once the D1-closed belief map is imposed, the open-loop low-type fill disappears. For every status level with \(q(x)>q^*\), neither type has a maintainable ambitious occupancy value.
+
+Hence top-down pooling plus top-end retreat and population depletion are not separate stages. They are the same closed-loop state claim: above \(x_c\), there is no self-consistent fixed point with positive ambitious occupancy at the top.
+
+\subsection{Stationary Density and the Spectral Cut}
+
+Set \(\partial\rho_\theta/\partial t=0\) in equation~\eqref{eq:continuous-density-general}. For each belief regime \(r\), a stationary ambitious-density profile satisfies
+\begin{equation}
+-\frac{\sigma^2}{2}\rho_\theta''(x)
+-V_\theta^r(q(x))\rho_\theta(x)=0.
+\label{eq:stationary-density}
+\end{equation}
+Let \(\lambda(q)\) denote the principal eigenvalue governing the closed-loop top-end density equation under the admissible boundary conditions, with the sign convention that \(\lambda>0\) admits a positive stationary profile, \(\lambda=0\) is the critical cut, and \(\lambda<0\) rules out any nonzero positive stationary profile.
+
+The maintained spectral crossing condition is
+\[
+\lambda(q^*)=0,
+\qquad
+\lambda(q)\text{ is strictly decreasing at the crossing},
+\qquad
+q>q^*\Rightarrow \lambda(q)<0.
+\]
+Equivalently, the strategic fixed-point threshold \(q^*\) is the same threshold at which the distribution-level operator loses its positive stationary solution. If only monotone sign crossing is available from primitives, this line should be read as the spectral monotonicity assumption linking the continuous operator to the binary fixed-point threshold.
+
+The critical location is therefore
+\[
+q(x_c)=q^*.
+\]
+At \(x_c\), the system is at the knife-edge \(\lambda=0\). For \(x>x_c\), closed-loop D1 values are negative for both types, and for baseline scrutiny above \(q^*\) the principal eigenvalue is strictly negative.
+
+\subsection{The Critical Snapshot and Phase Transition}
+
+To physically ground the density function, require the ambitious density to be nonnegative and bounded under the admissible boundary conditions. Locally around the critical cut, the stationary equation has the familiar Airy form when the effective potential is linearized. This Airy representation is a critical snapshot, not the supercritical nonexistence claim.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\textwidth]{airy_density_inflection.pdf}
+    \caption{The critical snapshot at $q=q^*$, equivalently $\lambda=0$. The stationary cross-sectional density forms a single hump anchored in the protected region. At the critical cut $x_c$, the profile passes through the knife-edge between positive stationary occupancy and spectral nonexistence. The supercritical top-end vacuum is asserted only for $\lambda<0$.}
+    \label{fig:airy_density}
+\end{figure}
+
+The stationary state of ambitious occupancy is governed by the principal eigenvalue \(\lambda\):
+\begin{enumerate}
+    \item \textbf{Subcritical occupancy (\(\lambda>0\))}: Baseline scrutiny is below the fixed-point threshold. A nonzero positive stationary profile may exist, and the ambitious signal can retain stable top-end occupancy.
+    \item \textbf{Critical knife-edge (\(\lambda=0\))}: The system is exactly at \(q=q^*\). Figure~\ref{fig:airy_density} illustrates this boundary case. The figure should be read as the transition surface, not as proof that the top is already empty.
+    \item \textbf{Supercritical nonexistence (\(\lambda<0\))}: For \(q>q^*\), the principal eigenvalue is negative. No nonzero positive stationary ambitious-density profile exists. The only closed-loop top-end occupancy profile is the empty one.
+\end{enumerate}
+
+The continuous model is therefore the macroscopic shadow of the belief-loop fixed point. Strategy level: no D1-consistent fixed point has stable top-end occupancy of \(s_A\). Distribution level: the closed-loop operator has no positive stationary profile once \(\lambda(q)<0\). The result is state-level collapse of occupancy, not a process description of gradual clearing.
