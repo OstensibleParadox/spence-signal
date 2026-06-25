@@ -1,0 +1,75 @@
+% section5_continuous_phase_transition.tex
+
+\section{Continuous-Time Population Dynamics and the Top-Down Collapse}
+\label{sec:continuous-phase-transition}
+
+While Section~\ref{sec:polarization} established the static conditions for the unraveling of the separating equilibrium, the observable hollowing-out of the signal is a macroscopic demographic phenomenon. In reality, the breakdown of the single-crossing property does not instantly evaporate the high-type population. Instead, it triggers a continuous-time demographic evacuation. To formally characterize the resulting cross-sectional density of types, we embed the discrete stage-game into a spatial population model.
+
+The goal of this section is to prove that the exact threshold $q_{IC}$ where the discrete single-crossing property fails reappears precisely as the macroscopic turning point in the continuous density equation, governing a phase transition from a persistent population to an exponential vacuum.
+
+\subsection{Continuous State Space and Demographic Exit}
+
+Let $x \in [0, \infty)$ denote a continuous state variable capturing ``proximity to power'' or observable status level. The scrutiny mapping $q(x)$ describes the probability of encountering the adverse repricing state at status $x$. The fundamental feature of this malicious scrutiny regime is that visibility attracts risk:
+\[
+\frac{dq(x)}{dx} > 0.
+\]
+The higher an agent's status, the higher the probability of adverse repricing.
+
+In the discrete game, the type-$H$ sender evaluates the one-period stay advantage of maintaining the ambitious signal $s_A$:
+\[
+V_H(q) = B_H(1) - \beta q \mu_H \Phi_H,
+\]
+where $B_H(1)$ is the reputational premium of being read as a high type, and the second term is the expected penalty of epistemic exposure. The condition $V_H(q_{IC}) = 0$ marks the exact breakdown of the single-crossing property. 
+
+In the continuous-time population model, high-type agents diffuse across the status space with variance $\sigma^2$. Crucially, an agent's decision to withdraw from $s_A$ to $s_P$ is not a spatial movement along $x$, but a \emph{demographic exit} from the ambitious pool. The local net exit rate is directly proportional to the stage-game disadvantage: $k(x) \propto -V_H(q(x))$. 
+
+Therefore, the cross-sectional density of high types $\rho(x, t)$ in the ambitious pool satisfies a reaction-diffusion equation (a spatial birth-death process):
+\[
+\frac{\partial \rho}{\partial t} = \frac{\sigma^2}{2} \frac{\partial^2 \rho}{\partial x^2} + V_H(q(x)) \rho.
+\]
+In regions where $V_H > 0$, the signal yields a net surplus, attracting entry or retention (acting as a ``birth'' rate). Where $V_H < 0$, the exposure penalty overwhelms the premium, driving demographic exit (a ``killing'' rate).
+
+\subsection{Stationary Density and the Turning Point Weld}
+
+We look for a long-run stable cross-sectional density $\rho(x)$ by setting $\partial \rho / \partial t = 0$. The stationary density equation becomes:
+\begin{equation}
+-\frac{\sigma^2}{2} \rho''(x) - V_H(q(x)) \rho(x) = 0.
+\label{eq:stationary-density}
+\end{equation}
+Let the effective resistance potential be $V(x) \propto -V_H(q(x))$. The equation reduces to a standard second-order boundary value problem: $-\sigma \rho''(x) + V(x)\rho(x) = 0$. 
+
+Because the scrutiny probability $q(x)$ is strictly increasing in $x$, the one-period stay advantage $V_H(q(x))$ is strictly decreasing. Therefore, the effective potential $V(x)$ is strictly increasing. It crosses zero from negative to positive at a critical spatial threshold $x_c$.
+
+\begin{theorem}[The Turning Point Weld]
+The physical turning point $x_c$ of the stationary density equation perfectly coincides with the discrete IC breakdown threshold:
+\[
+V(x_c) = 0 \iff q(x_c) = q_{IC}.
+\]
+Furthermore, $V'(x_c) > 0$.
+\end{theorem}
+This theorem confirms that the turning point is not an assumed parameter in a differential equation, but the direct macroscopic manifestation of the discrete single-crossing failure. The boundary $x_c$ separates the state space into two distinct regimes:
+\begin{itemize}
+    \item \textbf{The Safe Zone ($x < x_c$)}: Here $V(x) < 0$. The density $\rho(x)$ is locally concave ($\rho'' < 0$), allowing population mass to accumulate.
+    \item \textbf{The Collapse Zone ($x > x_c$)}: Here $V(x) > 0$. The density $\rho(x)$ is locally convex ($\rho'' > 0$), forcing the population to decay.
+\end{itemize}
+
+\subsection{The Critical Snapshot and Phase Transition}
+
+To physically ground the density function, we require that the population density must be non-negative everywhere ($\rho(x) \ge 0$) and bounded at the protected limit (zero proximity to power). In continuous-time macroeconomics, this translates to anchoring the left boundary $\rho(0) = 0$ (Dirichlet condition) and discarding any explosive roots at infinity (the transversality condition).
+
+Because $V(x)$ is locally linear around $x_c$, equation~\eqref{eq:stationary-density} is locally governed by the Airy equation. The unique non-explosive solution transitioning from the safe zone into the collapse zone takes the form of the first-kind Airy function, $\operatorname{Ai}(\cdot)$. 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\textwidth]{airy_density_inflection.pdf}
+    \caption{The critical snapshot at $q=q^*$ (or $\lambda=0$). The stationary cross-sectional density $\rho(x)$ forms a single hump anchored at the protected boundary ($x=0$), representing the accumulation of high types in the safe zone. As proximity to power surpasses the critical threshold $x_c$, the curve undergoes an inflection and rapidly hollows out into an exponential vacuum. This spatial phase transition is the continuous macroscopic manifestation of top-down pooling.}
+    \label{fig:airy_density}
+\end{figure}
+The stationary state of the population is governed by the principal eigenvalue $\lambda$ of the operator $-\sigma \partial_{xx} + V(x)$. As the baseline scrutiny parameter shifts, the system undergoes a macroscopic phase transition:
+\begin{enumerate}
+    \item \textbf{Subcritical ($\lambda > 0$)}: When baseline scrutiny is low ($q \ll q^*$), the turning point $x_c$ is pushed far to the right. The safe zone is vast, and the high-type population is persistent and robust. The Spence signaling mechanism functions identically to the standard textbook model.
+    \item \textbf{Critical Snapshot ($\lambda = 0$)}: As scrutiny rises, the turning point $x_c$ intrudes into the core population zone. Figure~\ref{fig:airy_density} illustrates this exact critical moment. The density forms a single hump anchored in the safe zone. Crucially, as $x$ crosses $x_c$, the curve passes through an inflection point and plunges into an \emph{exponential vacuum}. The highest-status positions ($x > x_c$) are physically hollowed out. The zero-boundary condition at $x=0$ mathematically coincides exactly with the first root of the Airy function, satisfying the criticality condition without internal oscillations.
+    \item \textbf{Supercritical Collapse ($\lambda < 0$)}: When scrutiny surpasses the threshold ($q > q^*$), the principal eigenvalue turns negative. The demographic exit rate strictly dominates any diffusion influx across the entire domain. \emph{No stationary density exists.} The population is entirely evacuated, and top-down pooling is complete.
+\end{enumerate}
+
+The macroscopic hollowing-out is therefore the continuous shadow of the discrete D1 flip. The top types do not merely vibrate in a noisy equilibrium; they disappear into an exponential vacuum created by their own epistemic exposure.
