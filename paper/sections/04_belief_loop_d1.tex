@@ -5,9 +5,10 @@
 
 The previous section established two ingredients. First, conditional on a fixed judgment-intensity state, the belief-dependent payoff is continuous in the relevant higher-order belief hierarchy. Hence the psychological-game object is well-defined within each regime slice. Second, the epistemic exposure term is pinned to the sender's true type through primitive self-accuracy levels and adverse repricing. It is not a signal-precision parameter and not an equilibrium posterior.
 
-This section closes the main argument. The local force is top-down: sufficiently likely future scrutiny makes high types less willing than low types to carry the ambitious signal, because the high type has more self-model reputation-at-risk under adverse repricing. The closed-loop force is inferential: once high types rationally withdraw, a D1-style off-path refinement no longer interprets an ambitious deviation as evidence of the high type. The result is a simultaneous consistency statement. For \(q>q^*\), the only D1-closed pure assessment is safe pooling.
+This section separates the main argument into two independent reversals. The first is an IC reversal: once \(q>q_{\mathrm{IC}}\), \(\theta_H\) exits \(s_A\) even if the receiver would still read \(s_A\) as high-type evidence. The second is a D1 reversal: once \(q>q_{\mathrm{D1}}\), the high type has a strictly smaller profitable-deviation response set than the low type, so an off-path \(s_A\) is no longer high-type evidence but low-type evidence. The final theorem only combines these two reversals. For \(q>\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}\), safe pooling is the unique D1-closed pure assessment.
 
-\subsection{Anticipatory Incentive Failure}
+\subsection{IC Reversal}
+\label{subsec:ic-reversal}
 \label{subsec:anticipatory-incentive-failure}
 
 Let the current judgment-intensity state be low, denoted \(L\), and let
@@ -32,20 +33,32 @@ q_{\mathrm{IC}}=\frac{B_H}{\beta\mu_H\Phi_H},
 \]
 assuming \(B_H>0\). For \(q>q_{\mathrm{IC}}\), the high type strictly prefers the pooling-safe signal \(s_P\) to remaining on the ambitious signal \(s_A\), even if \(s_A\) is still interpreted as high type.
 
-\begin{lemma}[Anticipatory failure of separation]
+\begin{proposition}[IC reversal]
+\label{prop:ic-reversal}
 \label{lem:anticipatory-incentive-failure}
-Suppose the current state is \(L\). If
+Suppose the current state is \(L\) and \(B_H>0\). If
 \[
 q>q_{\mathrm{IC}},
 \]
-then the separating profile
+then
+\[
+D_H(q)=B_H-\beta q\mu_H\Phi_H<0.
+\]
+Hence
+\[
+q>q_{\mathrm{IC}}
+\quad\Rightarrow\quad
+\theta_H \text{ exits } s_A
+\text{ even under the high-type interpretation } \rho_A=1.
+\]
+In particular, the separating profile
 \[
 \theta_H\mapsto s_A,
 \qquad
 \theta_L\mapsto s_P
 \]
 is not a psychological equilibrium.
-\end{lemma}
+\end{proposition}
 
 \begin{proof}
 Under the separating profile, \(s_A\) is interpreted as the high-type signal. Hence the high type receives the current separation surplus \(B_H\) from \(s_A\), but also internalizes the future exposure cost \(\beta q\mu_H\Phi_H\). Its payoff gain from choosing \(s_A\) rather than \(s_P\) is therefore
@@ -55,9 +68,10 @@ D_H(q)=B_H-\beta q\mu_H\Phi_H.
 If \(q>q_{\mathrm{IC}}\), then \(D_H(q)<0\). Thus the high type strictly prefers \(s_P\) to \(s_A\). The proposed separating profile violates the high type's incentive constraint and therefore cannot be an equilibrium.
 \end{proof}
 
-The point is not that the low type successfully mimics the high type. The separating profile collapses before that question arises. The high type exits because the expected future cost of adverse repricing exceeds the current benefit of being recognized.
+The point is not that the low type successfully mimics the high type. The separating profile collapses before that question arises. The IC reversal says that high-type meaning is no longer enough to keep the high type on the ambitious signal: the expected future cost of adverse repricing exceeds the current benefit of being recognized.
 
-\subsection{The D1 Flip}
+\subsection{D1 Reversal}
+\label{subsec:d1-reversal}
 \label{subsec:d1-off-path-reversal}
 
 It remains to check whether pooling on \(s_P\) can be sustained. The possible obstruction is off-path resurrection: if all types pool on \(s_P\), an off-path deviation to \(s_A\) might again be interpreted as evidence of high type, restoring the value of the ambitious signal.
@@ -106,7 +120,8 @@ whenever \(\bar k_L>\bar k_H\). Then for \(q>q_{\mathrm{D1}}\),
 K_H(q)>K_L(q).
 \]
 
-\begin{lemma}[D1 flip]
+\begin{proposition}[D1 reversal]
+\label{prop:d1-reversal}
 \label{lem:d1-off-path-reversal}
 Suppose \(\Phi_H>\Phi_L\), \(q>q_{\mathrm{D1}}\), and the receiver-response space is rich enough that there exists a response \(a\) with
 \[
@@ -114,10 +129,15 @@ K_L(q)<R(a)<K_H(q).
 \]
 Then
 \[
+q>q_{\mathrm{D1}}
+\quad\Rightarrow\quad
 \mathcal D_H(q)\subsetneq \mathcal D_L(q).
 \]
-Therefore, under the D1 criterion, an off-path ambitious signal \(s_A\) cannot be assigned to the high type. It is assigned to the low type.
-\end{lemma}
+Therefore, under the D1 criterion, an off-path ambitious signal \(s_A\) cannot be assigned to the high type. It is assigned to the low type:
+\[
+\rho_A^{D1}=0.
+\]
+\end{proposition}
 
 \begin{proof}
 For any receiver response \(a\), type \(\theta\)'s gain from deviating to \(s_A\) is
@@ -142,10 +162,10 @@ The strict-response richness condition gives some \(a\) satisfying \(K_L(q)<R(a)
 \[
 \mathcal D_H(q)\subsetneq\mathcal D_L(q).
 \]
-Under D1, if one type can profitably deviate under a strictly wider set of receiver responses, the deviation is attributed to that type rather than to the type whose profitable-deviation set is smaller. Hence the off-path signal \(s_A\) is attributed to \(\theta_L\), not to \(\theta_H\).
+Under D1, if one type can profitably deviate under a strictly wider set of receiver responses, the deviation is attributed to that type rather than to the type whose profitable-deviation set is smaller. Hence the off-path signal \(s_A\) is attributed to \(\theta_L\), not to \(\theta_H\), and the off-path posterior is \(\rho_A^{D1}=0\).
 \end{proof}
 
-The ambitious signal therefore changes its meaning. In the standard model, an off-path ambitious signal says: this must be a strong type, because only strong types can afford it. Here, when future scrutiny is sufficiently likely, the same signal says: this is unlikely to be the high type, because high types have the most to lose from carrying exposed ambition into future scrutiny.
+The ambitious signal therefore changes its meaning. In the standard model, an off-path ambitious signal says: this must be a strong type, because only strong types can afford it. Here, when future scrutiny is sufficiently likely, the same signal says: this is unlikely to be the high type, because high types have the most to lose from carrying exposed ambition into future scrutiny. This is the second reversal, independent of the IC reversal above.
 
 \subsection{Belief Hierarchies and Closed Assessments}
 \label{subsec:belief-loop-hierarchy}
@@ -290,7 +310,7 @@ For \(q>q_{\mathrm{D1}}\), the D1-selected off-path posterior after \(s_A\) is
 \[
 \rho_A^{D1}=0
 \]
-under the strict-response richness condition of Lemma~\ref{lem:d1-off-path-reversal}. The proof is the same as in Lemma~\ref{lem:d1-off-path-reversal}, replacing \(\beta q\mu_H\) by \(\Gamma(q,\eta)\): once \(K_H(q)>K_L(q)\), \(G_H(a;q)<G_L(a;q)\) for every receiver response, and richness makes the inclusion strict. This D1 conclusion is an off-path counterfactual rule. It is obtained by comparing the response sets \(\mathcal D_H(q)\) and \(\mathcal D_L(q)\); it does not presuppose that either type actually deviates.
+under the strict-response richness condition of Proposition~\ref{prop:d1-reversal}. The argument is the same as in Proposition~\ref{prop:d1-reversal}, replacing \(\beta q\mu_H\) by \(\Gamma(q,\eta)\): once \(K_H(q)>K_L(q)\), \(G_H(a;q)<G_L(a;q)\) for every receiver response, and richness makes the inclusion strict. This D1 conclusion is an off-path counterfactual rule. It is obtained by comparing the response sets \(\mathcal D_H(q)\) and \(\mathcal D_L(q)\); it does not presuppose that either type actually deviates.
 
 Let
 \[
@@ -344,10 +364,10 @@ s_A\text{ off path};\,
 \]
 It closes the loop because both types choose \(s_P\), D1 evaluates the off-path \(s_A\), D1 selects \(\rho_A^{D1}=0\), and sender second-order beliefs agree with that posterior.
 
-\subsection{Top-Down Pooling as the Unique D1-Closed Fixed Point}
+\subsection{Safe Pooling as the Unique D1-Closed Pure Assessment}
 \label{subsec:top-down-pooling-closed-fixed-point}
 
-\begin{theorem}[Top-down pooling as the unique D1-closed fixed point]
+\begin{theorem}[Safe pooling as the unique D1-closed pure assessment]
 \label{thm:top-down-pooling}
 Suppose:
 \begin{enumerate}
@@ -356,10 +376,16 @@ Suppose:
 \item \(\Phi_H>\Phi_L\), as derived from primitive self-accuracy levels and Bayesian-surprise repricing in Section~\ref{sec:psychological-exposure};
 \item \(\Gamma(q,\eta)\) is continuous and strictly increasing in \(q\), with \(\eta\in(0,1]\);
 \item \(q>q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}\);
-\item off-path beliefs satisfy D1, with the strict-response richness condition of Lemma~\ref{lem:d1-off-path-reversal};
+\item off-path beliefs satisfy D1, with the strict-response richness condition of Proposition~\ref{prop:d1-reversal};
 \item the analysis is restricted to the binary-signal pure-strategy class \(\{s_A,s_P\}\).
 \end{enumerate}
-Then no D1-consistent psychological assessment in this class has stable top-end occupancy of \(s_A\). The unique D1-consistent pure closed-loop assessment is \(\mathcal C_0\):
+Then
+\[
+q>\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}
+\quad\Rightarrow\quad
+\mathcal C_0 \text{ is the unique D1-closed pure assessment.}
+\]
+Equivalently, no D1-consistent psychological assessment in this class has stable top-end occupancy of \(s_A\), and the unique D1-consistent pure closed-loop assessment is \(\mathcal C_0\):
 \[
 \theta_H\mapsto s_P,
 \qquad
@@ -372,9 +398,9 @@ z^*=0.
 \end{theorem}
 
 \begin{proof}
-We evaluate all pure closed-loop configurations.
+We evaluate all pure closed-loop configurations, using the two reversals separately.
 
-First, no configuration with top-end occupancy of \(s_A\) is feasible. If only the high type occupies \(s_A\), then \(s_A\) is the separating high-type signal, so Bayes' rule gives
+First, the IC reversal rules out top-end occupancy of \(s_A\). If only the high type occupies \(s_A\), then \(s_A\) is the separating high-type signal, so Bayes' rule gives
 \[
 \rho_A(1)=1.
 \]
@@ -382,7 +408,7 @@ The high type's payoff gain from choosing \(s_A\) rather than \(s_P\) is
 \[
 \Delta_H(1,q)=B_H(1)-\Gamma(q,\eta)\Phi_H.
 \]
-Since \(q>q_{\mathrm{IC}}\), this expression is strictly negative. Hence \(T_q(1)=0\), so \(z=1\) is not a fixed point.
+Since \(q>q_{\mathrm{IC}}\), Proposition~\ref{prop:ic-reversal} makes this expression strictly negative. Hence \(T_q(1)=0\), so \(z=1\) is not a fixed point.
 
 If both types choose \(s_A\), then \(s_A\) is pooling rather than separating. Let \(\pi_0\in(0,1)\) be the prior probability of \(\theta_H\). Bayes' rule gives \(\rho_A=\pi_0\). Since \(B_H(\rho)\) is weakly increasing and \(\pi_0<1\),
 \[
@@ -404,7 +430,7 @@ B_L(0)-\Gamma(q,\eta)\Phi_L<0,
 \]
 because \(B_L(0)<0\) and \(\Gamma(q,\eta)\Phi_L>0\). Hence the low type does not wish to occupy \(s_A\) under low-type attribution.
 
-Third, evaluate \(\mathcal C_0\). Under \(\mathcal C_0\), \(s_A\) is off path. Since \(q>q_{\mathrm{D1}}\), Lemma~\ref{lem:d1-off-path-reversal} and its general-price restatement imply
+Third, evaluate \(\mathcal C_0\). Under \(\mathcal C_0\), \(s_A\) is off path. Since \(q>q_{\mathrm{D1}}\), Proposition~\ref{prop:d1-reversal} and its general-price restatement imply
 \[
 \mathcal D_H(q)\subsetneq \mathcal D_L(q),
 \]
@@ -451,9 +477,9 @@ s_A\text{ off path}
 \Delta_L^{D1}(q)<0
 \right].
 \]
-The D1 component is not caused by an observed low-type deviation. It is the refinement's counterfactual response to an off-path signal, determined by \(\mathcal D_H(q)\subsetneq\mathcal D_L(q)\). The participation inequalities then show that the counterfactual off-path interpretation is consistent with nobody actually sending \(s_A\).
+The D1 component is not caused by an observed low-type deviation. It is the refinement's counterfactual response to an off-path signal, determined by the D1 reversal \(\mathcal D_H(q)\subsetneq\mathcal D_L(q)\). The participation inequalities then show that the counterfactual off-path interpretation is consistent with nobody actually sending \(s_A\).
 
-This separation removes the circular timing story. Reverse selection is the cost-ranking fact \(\Phi_H>\Phi_L\). Individually rational withdrawal is the high-type inequality \(\Delta_H(1,q)<0\) once \(q>q_{\mathrm{IC}}\). Annihilation is the fixed-point conclusion that no D1-consistent pure assessment contains stable top-end occupancy of \(s_A\) once \(q>q^*\).
+This separation removes the circular timing story. The IC reversal is the high-type inequality \(\Delta_H(1,q)<0\) once \(q>q_{\mathrm{IC}}\): \(\theta_H\) exits \(s_A\) even under high-type interpretation. The D1 reversal is the response-set inclusion \(\mathcal D_H(q)\subsetneq\mathcal D_L(q)\) once \(q>q_{\mathrm{D1}}\): off-path \(s_A\) becomes low-type evidence rather than high-type evidence. The theorem combines them only at \(q>\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}\), where safe pooling is the unique D1-closed pure assessment.
 
 In the coordination and self-fulfilling-belief literature, forward-induction refinement characteristically selects \emph{toward} efficiency: it eliminates the off-path beliefs that sustain coordination failure, uniquely selecting the Pareto-dominant equilibrium \citep[e.g., the refinement resolutions of][]{diamond1983bank}. This standard selection presumes that the party able to orchestrate a deviation is the one seeking the efficient outcome, so forward induction attributes the deviation's intent accordingly. We exhibit the opposite operation. When malicious scrutiny reverses the cost ranking so that the wider profitable-deviation set belongs to the \emph{low} type, the same D1 logic confirms rather than dissolves the absence of stable top-end occupancy: the refinement selects safe pooling. This resulting top-down pooling is an \emph{informational} disaster, destroying the market's ability to screen types. Yet it is also privately rational risk avoidance for high types facing excessive epistemic exposure. The refinement does not rescue the informational efficiency of the separating equilibrium; instead, it enforces the nonexistence of an occupied ambitious-top fixed point.
 
