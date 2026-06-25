@@ -1,283 +1,99 @@
 % section5_dynamic_model.tex
 
-\section{Dynamic Model: Anticipatory Top-Down Pooling}
+\section{Dynamic Forward Invariance}
 \label{sec:dynamic-model}
 
-Sections~\ref{sec:model}--\ref{sec:dynamic} use a one-period anticipatory
-exposure term. At a low-scrutiny history, choosing \(s_A\) today exposes the
-sender to possible adverse repricing tomorrow. If the sender climbs down to
-\(s_P\), tomorrow's penalty from today's ambitious signal is shed. Thus
-withdrawal has dynamic value even though exposure is not a permanent stock.
+Section~\ref{sec:belief-loop} establishes that in the binary class, the one-period object selects pooling for $q>q^*$. This section adds the missing microfounded dynamic state and asks whether endogenous accumulation can reverse that outcome.
 
-The reduced-form high-type incentive constraint is
+\subsection{Trust-capital law of motion}
+
+Let $(C_t,E_t)$ be a two-dimensional endogenous state observed before $j_t$ is realized.
+\begin{itemize}
+\item $C_t$ is semantic trust capital created by repeated pooling-safe behavior.
+\item $E_t$ is engagement reinforcement (habituation) accumulated from sustained non-ambitious actions.
+\end{itemize}
+The state evolution is
 \[
-D_H^L(q)=B_H-\beta q\mu_H\Phi_H.
+\begin{aligned}
+C_{t+1}&=(1-\rho_C)C_t + \eta_C\mathbf 1\{s_t=s_P\} - \psi_C\mathbf 1\{s_t=s_A\} -\xi_t^C,\\
+E_{t+1}&=(1-\rho_E)E_t + \eta_E\mathbf 1\{s_t=s_P\}+\eta_A\mathbf 1\{m_t=1\} -\xi_t^E,
+\end{aligned}
 \]
-The dynamic extension in this section keeps that economics fixed and adds only
-the missing law of motion. The transition probability \(q_t\) is a Markov state
-observed by the sender. The paper's continuous-limit object is then not a new
-formalism. Its potential is the stage-game stay advantage itself, and its
-turning point is exactly the discrete IC threshold.
+where $m_t\in\{0,1\}$ is a cheap trust-restoring message available to both types and $\xi_t^C,\xi_t^E$ are bounded asynchronous shocks. This keeps the mechanism endogenous while preserving one-period exposure at the signaling margin.
 
-\subsection{The one-period Markov environment}
-\label{subsec:one-period-markov-environment}
-
-Time is discrete. The scrutiny regime is
+Define a temporary semantic penalty term
 \[
-j_t\in\{L,H\},
+\Sigma_t=\omega_C C_t+\omega_E E_t\ge 0.
 \]
-with \(L\) denoting ordinary evaluation and \(H\) denoting high scrutiny. In a
-low-scrutiny period, the public Markov state
+Then, in low-scrutiny state $L$, the low-state advantage of sending ambitious is
 \[
-q_t\in[0,1]
+\Delta_\theta^{\text{dyn}}(q_t,\lambda_t)=B_\theta(\lambda_t)-\beta q_t\mu_H\Phi_\theta-\Sigma_t,
 \]
-is the conditional probability that tomorrow's regime is high scrutiny:
+where the current posterior $\lambda_t$ appears in $B_\theta$ as in Section~\ref{sec:belief-loop}. Sending $s_P$ avoids the future repricing term and does not create today's semantic penalty.
+
+\subsection{Unpriced trust-restoring messages}
+
+Cheap anthropomorphic messages are unpriced: the sender can choose $m_t=1$ with no direct signal-dependent cost and no type restriction. Because both types can choose $m_t$ identically, the induced change in $(C_t,E_t)$ is type-neutral. Therefore these messages are shadowable.
+
+To see dynamic single crossing, let receiver response $a$ induce continuation return $R(a)$ from choosing $s_A$. The high- and low-type off-path gains are
 \[
-q_t=\Pr(j_{t+1}=H\mid j_t=L,q_t).
-\]
-The process \(q_t\) evolves according to a common-knowledge Markov kernel
-\[
-Q(dq_{t+1}\mid q_t).
-\]
-The sender observes \((j_t,q_t)\) before choosing \(s_t\in\{s_A,s_P\}\).
-
-\begin{assumption}[Common-knowledge Markov law]
-\label{ass:common-knowledge-markov-law}
-The kernel \(Q(dq_{t+1}\mid q_t)\), the regime-transition law, and the
-sender's observation of \((j_t,q_t)\) are common knowledge. Conditional on the
-public state, the law of future \((j,q)\)-paths does not depend on private
-higher-order beliefs.
-\end{assumption}
-
-This assumption is the dynamic counterpart of the regime-conditional
-continuity discipline in Section~\ref{sec:surprise}. If the law of future
-\(q_t\)'s were private or itself belief-dependent, the sender would need
-beliefs about the receiver's beliefs about future transition risk.
-Assumption~\ref{ass:common-knowledge-markov-law} prevents that extra hierarchy
-from entering the payoff technology.
-
-\begin{lemma}[Intertemporal continuity]
-\label{lem:intertemporal-continuity}
-Under Assumptions~\ref{ass:conditional-continuity} and
-\ref{ass:common-knowledge-markov-law}, the repeated one-period psychological
-game is well posed. The dynamic payoff is continuous in the relevant
-intertemporal belief hierarchy.
-\end{lemma}
-
-\begin{proof}
-Fix a public history and a strategy profile. By
-Lemma~\ref{lem:regime-continuity}, the one-period psychological payoff is
-continuous in the relevant belief hierarchy within each fixed regime. The
-action and type spaces are finite, and the public state \(q_t\) lies in a
-compact interval. The one-period payoff is therefore bounded on each regime
-slice. By Assumption~\ref{ass:common-knowledge-markov-law}, the conditional law
-of future states is fixed and common knowledge. The repeated payoff is a
-discounted expectation of bounded continuous one-period payoff functions under
-a fixed measure. Discounting gives a uniformly convergent series, and uniform
-limits of continuous functions are continuous. Hence the repeated
-psychological game is well posed in the sense of dynamic psychological games
-\citep{battigalli2009dynamic}.
-\end{proof}
-
-The model remains genuinely anticipatory. The sender chooses while
-\(j_t=L\), but the payoff of \(s_A\) depends on the probability that the next
-period will be \(H\). Climbing down is valuable because silence today removes
-the adverse-repricing exposure that would otherwise be carried into tomorrow.
-
-\subsection{The micro-derived resistance potential}
-\label{subsec:micro-derived-potential}
-
-The continuous-limit potential is not imposed. It is the high type's
-one-period stay advantage:
-\[
-V_H(q):=D_H^L(q)=B_H-\beta q\mu_H\Phi_H.
-\]
-The high-type IC threshold is therefore
-\[
-q_H^*
-=
-\frac{B_H}{\beta\mu_H\Phi_H}.
-\]
-Equivalently,
-\[
-V_H(q_H^*)=0,
+G_H(a;t)=R(a)-\bar k_H-\beta q_t\mu_H\Phi_H-\Sigma_t,
 \qquad
-V_H'(q)=-\beta\mu_H\Phi_H<0.
+G_L(a;t)=R(a)-\bar k_L-\beta q_t\mu_H\Phi_L-\Sigma_t.
 \]
-Thus the zero of the continuum potential is exactly the discrete high-type IC
-break:
-\[
-x_c=q_H^*.
-\]
+The term $\Sigma_t$ cancels in the comparison, so adding or relaxing trust-capital does not alter the type comparison. If $q_t>q_{\mathrm{D1}}$, then $G_H(a;t)<G_L(a;t)$ for every receiver response, so $s_A$ is still D1-attributed to the low type.
 
-\begin{proposition}[The turning point is the IC threshold]
-\label{prop:turning-point-is-ic}
-In the one-period Markov environment, the continuum potential generated by the
-high-type stage-game payoff has a unique simple zero at
-\[
-x_c=q_H^*.
-\]
-At this point the separating high-type incentive constraint switches sign.
-\end{proposition}
+\subsection{Dynamic Spence ratio and wedges}
 
-\begin{proof}
-The high type's stay advantage is
+For any endogenous state $(C_t,E_t)$ define the state-adjusted top-down ratio
 \[
-V_H(q)=B_H-\beta q\mu_H\Phi_H.
+\widetilde q^{\mathrm{IC}}_\theta(t)=\frac{B_\theta(\lambda)+\Sigma_t}{\beta\mu_H\Phi_\theta}.
 \]
-Since \(\beta>0\), \(\mu_H>0\), and \(\Phi_H>0\), the derivative is strictly
-negative. Hence \(V_H\) has at most one zero. Solving \(V_H(q)=0\) gives
-\[
-q=\frac{B_H}{\beta\mu_H\Phi_H}=q_H^*.
-\]
-For \(q<q_H^*\), \(V_H(q)>0\), so the high type's ambitious signal is protected
-by a positive stay advantage. For \(q>q_H^*\), \(V_H(q)<0\), so the high type's
-IC for \(s_A\) fails. The potential's turning point is therefore the discrete
-IC threshold.
-\end{proof}
+Endogenous trust-capital terms appear symmetrically in numerators and therefore do not change the fundamental type-ordering created by $(\Phi_H,\Phi_L)$ and static primitives. They shift the threshold pair, but not the sign of the top-down reversal.
 
-This proposition is the weld between the finite game and the continuous
-Markov limit. If the continuum potential had an unrelated zero, the
-Sturm--Liouville problem would describe a different model. Here the zero is
-derived from the same payoff inequality that drives top-down pooling in
-Sections~\ref{sec:model}--\ref{sec:dynamic}.
+A true restoration requires an externally priced type-specific wedge, for example a direct penalty or premium that depends on sender type/claim context and is not a pure continuation by-product of $C_t$ and $E_t$.
 
-\subsection{Discrete withdrawal fields and the Airy limit}
-\label{subsec:discrete-withdrawal-airy}
+\subsection{Forward invariance}
 
-Let the interval of possible transition states be \(I=[a,b]\subseteq[0,1]\),
-and let \(q_i=a+ih\) be a grid. A near-threshold high-type withdrawal field
+Let
 \[
-\psi_h=(\psi_{h,0},\ldots,\psi_{h,n+1})
+\mathcal Q:=\{q\in[0,1]: q\ge q^*\},
+\qquad q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}.
 \]
-records the refined discrete resistance of high-type occupation of \(s_A\)
-across nearby \(q\)-states. The field is not an additional preference
-primitive. It is a smoothed continuum representation of the discrete stay
-advantage \(V_H(q_i)\).
+Assume that under pooling on $s_P$, the process satisfies:
+\begin{enumerate}
+\item $\Sigma_{t+1}-\Sigma_t\ge \underline d-\xi_t$ for some $\underline d>0$ and bounded $\xi_t\in[0,\bar\xi]$;
+\item $\Sigma_0\ge 0$ and $\bar\xi<\underline d$;
+\item $\beta q\mu_H\Phi_H-B_H(0)-\Sigma_0>0$ for all $q\in\mathcal Q$.
+\end{enumerate}
 
-Define the discrete operator
-\[
-(H_h\psi_h)_i
-=
--\sigma(\Delta_h\psi_h)_i+V_H(q_i)\psi_{h,i},
-\qquad
-\sigma>0,
-\]
-where \(\Delta_h\) is the second-difference operator. The quasi-static
-refinement condition is that the field is near-null in the discrete dual norm:
-\[
-\|\psi_h\|_{L_h^2}=1,
-\qquad
-\|H_h\psi_h\|_{H_h^{-1}}\to 0.
-\]
-This is the finite-mesh analogue of a stationary Fokker--Planck balance for
-the withdrawal density. The diffusion term \(\sigma\Delta_h\) captures local
-dispersion in the \(q\)-state, while the potential term is the micro-derived
-stay advantage.
-
-\begin{proposition}[Continuous withdrawal equation]
-\label{prop:continuous-withdrawal-equation}
-Suppose the near-null condition above holds along a mesh refinement. Then,
-after passing to a subsequence, the interpolated fields converge weakly to a
-nonzero limit \(\Psi\) satisfying
-\[
--\sigma\Psi''(q)+V_H(q)\Psi(q)=0
-\]
-in the weak Sturm--Liouville sense. Since \(V_H\) has a simple zero at
-\(q_H^*\), the local normal form near \(q_H^*\) is Airy.
-\end{proposition}
+\begin{theorem}[Pooling interval forward invariance]
+\label{thm:forward-invariance}
+Under these assumptions and strict D1 preferences at $q\in\mathcal Q$, if period $t$ is in the pooling assessment of Section~\ref{sec:belief-loop}, then period $t+1$ is also in that assessment with probability one. Equivalently, $\mathcal Q$ is almost surely forward-invariant.
+\end{theorem}
 
 \begin{proof}
-The argument is the standard discrete Sobolev compactness step for
-sign-changing Sturm--Liouville forms. The near-null condition gives a uniform
-discrete \(H^1\) bound after a Garding shift. Interpolating the fields and
-using compactness yields a weak \(H^1\) and strong \(L^2\) limit \(\Psi\). The
-dual residual vanishes against every smooth test function, so the limit
-satisfies
+In the pooling assessment, $\lambda_t=0$ for any off-path ambitious deviation. The high-type deviation margin is
 \[
-\sigma\int_I \Psi'(q)\eta'(q)\,dq
-+
-\int_I V_H(q)\Psi(q)\eta(q)\,dq
-=0
+\Delta_H^{\text{dyn}}(q_t,0)=B_H(0)-\beta q_t\mu_H\Phi_H-\Sigma_t.
 \]
-for every test function \(\eta\in H_0^1(I)\). This is the weak form of
-\(-\sigma\Psi''+V_H\Psi=0\). By
-Proposition~\ref{prop:turning-point-is-ic}, \(V_H(q_H^*)=0\) and
-\[
-V_H'(q_H^*)=-\beta\mu_H\Phi_H<0.
-\]
-Thus \(q_H^*\) is a simple turning point. With
-\[
-z=
-\left(\frac{\beta\mu_H\Phi_H}{\sigma}\right)^{1/3}
-(q-q_H^*),
-\]
-the local equation becomes, to first order,
-\[
-Y''(z)+zY(z)=0,
-\]
-whose local basis is
-\[
-Y(z)
-=
-C_{\operatorname{Ai}}\operatorname{Ai}(-z)
-+
-C_{\operatorname{Bi}}\operatorname{Bi}(-z).
-\]
+By assumption 3 and $\Sigma_t\ge \Sigma_0$, $\Delta_H^{\text{dyn}}(q_t,0)$ is negative for all $q_t\in\mathcal Q$. Assumption 1 says endogenous drift in $\Sigma_t$ dominates bounded asynchronous noise, so this negativity cannot be overturned by one-period shocks.
+Hence high type never has a profitable ambiguous-ambitious deviation from $s_P$ once in the pooling band, and D1 therefore continues to map $s_A$ to low attribution. The same argument applies period-by-period by induction.
 \end{proof}
 
-The Airy profile is therefore not assumed. It appears only after the
-stage-game potential has been derived and the discrete withdrawal field has
-been passed to its continuum limit.
+The conclusion is defensive. Dynamic trust-capital and habituation can be modeled explicitly and can affect local margins, but they do not create a new stopping phenomenon. They do not by themselves repair top-down collapse.
+\subsection{Population-density shape in the critical linearized system}
 
-\subsection{Protected-side boundedness}
-\label{subsec:protected-side-boundedness}
-
-The local Airy basis alone does not select a branch. A final economic boundary
-condition is needed.
-
-\begin{assumption}[Protected-side boundedness]
-\label{ass:protected-side-boundedness}
-In the protected region \(q<q_H^*\), where the high type's stay advantage is
-strictly positive, the refined resistance field remains uniformly bounded as
-the mesh is refined. Economically, there is no exploding mass of near-withdrawal
-pressure in states where the high type's ambitious IC is slack.
-\end{assumption}
-
-\begin{proposition}[Airy branch selection]
-\label{prop:airy-branch-selection}
-Under Assumption~\ref{ass:protected-side-boundedness}, the growing
-\(\operatorname{Bi}\) component is ruled out on the protected side:
+For intuition (and to avoid stale wording from prior drafts), consider the linearized density
 \[
-C_{\operatorname{Bi}}=0.
+\mathcal L_\kappa \varphi=\lambda \varphi
 \]
-The local withdrawal-density profile near the threshold is therefore the
-bounded Airy branch.
-\end{proposition}
+for the trust-state law under pooling. The relevant object is its principal eigenpair \((\lambda_1,\varphi_1)\); by definition \(\varphi_1\ge 0\) on the domain, not sign-changing. In the parameter regime of interest, the population profile is therefore single-peaked: it starts from the boundary with a left foot at \(x=0\), peaks in the safe region, and after the turning point decays into the dangerous region with exponential tail. A collapse-zone oscillation is not part of \(\varphi_1\); that oscillatory sine pattern belongs to non-principal local approximations and is not a valid population density.
 
-\begin{proof}
-For \(q<q_H^*\), the Airy coordinate satisfies \(z<0\), so \(-z>0\). Along the
-protected side, \(\operatorname{Bi}(-z)\) is the growing branch, while
-\(\operatorname{Ai}(-z)\) is the bounded/decaying branch. If
-\(C_{\operatorname{Bi}}\ne 0\), the resistance field would diverge as the
-protected-side limit is approached. That violates
-Assumption~\ref{ass:protected-side-boundedness}. Hence
-\(C_{\operatorname{Bi}}=0\).
-\end{proof}
+Airy appears only as a local normal form near the turning point, where the reduced equation takes the form
+\[
+\phi''(x)-x\,\phi(x)=0,
+\]
+so \(\phi(x)\propto \mathrm{Ai}(x)\) for matching. Elsewhere, \(\varphi_1\) governs the full profile.
 
-Section~\ref{sec:dynamic-model} therefore performs the required extension
-rather than adding a parallel formalism. One-period exposure gives the repeated
-static IC
-\[
-B_H-\beta q\mu_H\Phi_H,
-\]
-the micro-derived potential is that same IC expression, the continuum turning
-point is
-\[
-x_c=q_H^*,
-\]
-and the Airy limit follows from the weak Sturm--Liouville limit plus the
-protected-side boundedness condition. The remaining step is not the existence
-of the withdrawal threshold. It is the off-path interpretation of \(s_A\) once
-the high type has crossed that threshold. Section~\ref{sec:belief-loop} closes
-that belief loop.
+At \(\lambda=0\), the critical transition, imposing the Dirichlet condition at the left boundary yields the principal-root condition: the boundary is pinned at the first zero of the matching profile. This is not fine tuning; it is the algebraic consequence of the critical principal-eigenvalue condition together with the boundary constraint. The earlier “coincidence” wording should therefore be replaced by this inference.

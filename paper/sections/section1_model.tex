@@ -1,147 +1,96 @@
 % section1_model.tex
 
-\section{Primitives and Benchmark}
+\section{Primal Structure and Benchmark}
 \label{sec:model}
 
-This section defines the signaling environment and isolates the dynamic object that distinguishes the model from standard costly signaling. The baseline is deliberately minimal. There are two types, two signals, and two judgment states. The only dynamic ingredient is that ambitious signals create durable exposure, and future scrutiny can reprice that exposure.
+This paper studies a signaling environment with two sender types and two signals, where the same signal that can separate today also creates a near-term reputation risk that may be repriced tomorrow. The baseline is the dynamic extension of Spence logic needed for the fixed-point reversal.
 
 \subsection{Types, signals, and judgment states}
 
-There is a single sender and a representative receiver. The sender's type is
+There is a sender with type
 \[
-\theta\in\Theta:=\{\theta_L,\theta_H\},
-\qquad
-\theta_H>\theta_L.
+\theta\in\{\theta_L,\theta_H\},\qquad \theta_H>\theta_L.
 \]
-The sender observes her type. The receiver does not.
+The receiver does not observe the type.
 
-The sender chooses a signal
+The sender chooses one of two signals
 \[
-s\in S:=\{s_A,s_P\}.
+s\in\{s_A,s_P\}.
 \]
-The signal \(s_A\) is the ambitious signal. It is costly, visible, and potentially separating. The signal \(s_P\) is the pooling-safe signal. It is normalized to be unexposed and carries no ambitious self-model claim.
+Signal $s_A$ is the ambitious action, and $s_P$ is the pooling-safe action.
 
-The social judgment environment is represented by an exogenous Markov state
+Judgment intensity follows a public Markov state
 \[
-j_t\in J:=\{L,H\}.
+j_t\in\{L,H\}.
 \]
-The state \(L\) denotes low scrutiny and the state \(H\) denotes high scrutiny. Let
+State $L$ is ordinary evaluation, and state $H$ is high-scrutiny evaluation. Let
 \[
-\mu_L<\mu_H
+\mu_H>\mu_L>0
 \]
-denote the intensity with which the environment prices epistemic exposure in the two states. The transition probability from low scrutiny to high scrutiny is
+denote the scrutiny multipliers and
 \[
-q:=\Pr(j_{t+1}=H\mid j_t=L).
+q:=\Pr(j_{t+1}=H\mid j_t=L)
 \]
-The sender observes \(j_t\) and \(q\) before choosing a signal.
+be the transition probability from low to high. The sender observes $q$ before choosing a signal.
 
-The Markov state has no political content in the model. It is a judgment-intensity process. It may represent any environment in which the social price of self-presentation changes discretely: a market for credentials, an audience technology, a review regime, a platform norm, or a peer-evaluation environment. The primitive object is not politics but the stochastic repricing of second-order belief penalties.
+\subsection{One-period exposure shadow}
 
-\subsection{Exposure persistence}
-
-The ambitious signal creates a durable exposure state. Let
+Choosing $s_A$ creates a one-period exposure state that can be repriced tomorrow. Let
 \[
-x_t\in\{0,1\}
+X_t\in\{0,1\}
 \]
-denote whether the sender is publicly exposed to future evaluation of an ambitious self-model claim. The exposure transition is
+indicate whether last period's action is exposed in the next period. If $s_t=s_A$, then $X_{t+1}=1$; if $s_t=s_P$, then $X_{t+1}=0$. In this baseline the exposure horizon is one period: choosing the safe signal today removes the next-period exposure created by a yesterday ambitious action.
+
+If $X_{t+1}=1$ and $j_{t+1}=H$, the sender incurs a future epistemic penalty proportional to a true-type exposure index. This is the anticipatory shadow that drives behavior in the low state.
+
+\subsection{Current payoff and the anticipatory rent}
+
+Let $B_\theta$ denote the current net separation surplus from $s_A$ versus $s_P$ in state $L$ when the receiver interprets the ambitious signal in the high-type way. The low-state payoff gain from sending $s_A$ is
 \[
-x_{t+1}=\begin{cases}
-1, & \text{if } s_t=s_A,\\
-0, & \text{if } s_t=s_P.
-\end{cases}
+D_\theta^L(q)=B_\theta-\beta q\mu_H\Phi_\theta,
 \]
-Thus \(s_A\) is not merely a current-period message. It creates an observable object that can be reinterpreted later. This persistence is essential. Without it, the Markov transition probability \(q\) would affect only future choices, not the current incentive constraint for the ambitious signal.
+where $\Phi_\theta>0$ is the true-type exposure cost derived from primitive self-model accuracy (Section~\ref{sec:surprise}), and $\beta\in(0,1)$ is the discount factor.
 
-If \(x_{t+1}=1\) and the next state is \(H\), the sender faces an additional epistemic exposure cost. This cost reflects the future social repricing of the sender's earlier ambitious self-model claim.
-
-\subsection{Self-model accuracy and adverse repricing}
-
-Let
+The type-$\theta$ IC threshold is
 \[
-m\in\{0,1\}
+q_\theta^*:=\frac{B_\theta}{\beta\mu_H\Phi_\theta},
 \]
-denote whether the sender's self-model is accurate, with \(m=1\) meaning accurate self-assessment. The type space carries a primitive self-accuracy level
-\[
-p_\theta:=\Pr(m=1\mid \theta),
-\]
-with
-\[
-1-\delta>p_H>p_L>\bar p>\delta>0.
-\]
-The number \(p_\theta\) is not signal precision and not an equilibrium posterior generated by a previous separating history. It is a primitive level: higher types are assumed to carry more accurate self-models. The lower benchmark \(\bar p\) is the assessment induced by adverse repricing under high scrutiny.
-
-High scrutiny is not modeled as a truth audit. A higher-fidelity audit would tend to confirm accurate high types and would therefore push against the top-down pooling result. The object here is adverse repricing: when the high-scrutiny state arrives, exposed self-presentations are assigned a positive probability of being reinterpreted downward, independently of true merit. The loss from that reinterpretation is increasing in the amount of self-model reputation-at-risk carried by the true type.
-
-Section~\ref{sec:surprise} derives the high-scrutiny exposure index
-\[
-\Phi_\theta>0
-\]
-from these primitive self-accuracy levels. For now, \(\Phi_\theta\) is the true-type-indexed adverse-repricing exposure cost associated with an exposed ambitious signal. It is pinned to the sender's true type, not to the receiver's off-path attribution.
-
-\subsection{Current payoff and anticipatory exposure}
-
-The safe signal \(s_P\) is normalized to deliver payoff zero. If the ambitious signal \(s_A\) is interpreted as high-type evidence in the current low-scrutiny state, type \(\theta\) receives current gross reputational benefit \(R_\theta\) and pays current signal cost \(k_\theta\). The current net benefit of the ambitious signal, excluding future exposure, is
-\[
-B_\theta:=R_\theta-k_\theta-\mu_L\phi_\theta,
-\]
-where \(\phi_\theta\) is the current low-scrutiny epistemic cost.
-
-Let \(\beta\in(0,1)\) be the discount factor. In the low-scrutiny state, the payoff gain from choosing \(s_A\) rather than \(s_P\) is
-\[
-D_\theta^L(q)=B_\theta-\beta q\mu_H\Phi_\theta.
-\]
-The first term is the current net separating benefit. The second term is the discounted expected cost of future high-scrutiny adverse repricing.
-
-The type-\(\theta\) threshold is therefore
-\[
-q_\theta^*=\frac{B_\theta}{\beta\mu_H\Phi_\theta},
-\]
-whenever \(B_\theta>0\). Type \(\theta\) is willing to send the ambitious signal in the low-scrutiny state if and only if
+whenever $B_\theta>0$. Type $\theta$ is willing to send $s_A$ in the low-scrutiny state iff
 \[
 q<q_\theta^*.
 \]
 
 \subsection{Static benchmark}
 
-The model nests the standard costly-signaling benchmark when future exposure is absent. Set \(q=0\). Then
-\[
-D_\theta^L(0)=B_\theta.
-\]
-The standard separating case is captured by the following assumption.
+When $q=0$, current risk from future repricing is absent. The model then collapses to a one-shot separating benchmark.
 
 \begin{assumption}[Static separation]
 \label{ass:static-separation}
-In the absence of future exposure,
 \[
-B_H>0
-\qquad\text{and}\qquad
-B_L<0.
+B_H>0,\qquad B_L<0.
 \]
 \end{assumption}
 
-Under Assumption~\ref{ass:static-separation}, the high type strictly prefers the ambitious signal and the low type strictly prefers the safe signal when \(q=0\). Thus the baseline outcome is the standard separating profile:
-\[
-\sigma_H=s_A,
-\qquad
-\sigma_L=s_P.
-\]
-This is the Spence logic. The ambitious signal is credible because the high type is willing to send it and the low type is not.
+Under Assumption~\ref{ass:static-separation}, with no anticipated repricing $s_A$ is uniquely attractive only to the high type.
 
-\subsection{The dynamic reversal object}
+\subsection{Anticipatory reversal object}
 
-Future scrutiny changes the high type's incentive constraint. Even if \(B_H>0\), the high type abandons the ambitious signal once
-\[
-\beta q\mu_H\Phi_H>B_H.
-\]
-Equivalently, the high type exits when
-\[
-q>q_H^*.
-\]
+The model's distinctive case is high-type exposure vulnerability. Even if $B_H>0$, the same transition probability $q$ can make high types abandon $s_A$ because high types lose more from possible repricing in state $H$.
 
-The model's distinctive case is top-down reversal: the high type's threshold lies below the relevant lower-type threshold. In the binary benchmark with \(B_L<0\), the low type already chooses the safe signal. The high type is the marginal type whose participation in the ambitious signal breaks. In richer type spaces, the same force is expressed by the ratio condition
+As the baseline, define
 \[
-\frac{\Phi_H}{B_H}>\frac{\Phi_L}{B_L},
+q_{\mathrm{IC}}:=\frac{B_H}{\beta\mu_H\Phi_H},
 \]
-whenever both \(B_H\) and \(B_L\) are positive. This condition says that the high type's future exposure cost is large relative to her current separating rent.
+which is the IC threshold that would bind if $s_A$ were still interpreted as a high-type signal.
 
-The next sections derive \(\Phi_H>\Phi_L\) from primitive self-accuracy levels and Bayesian-surprise repricing, and show how the same force reverses the D1 willingness comparison off path. The central result is that, for sufficiently high \(q\), the separating profile is not merely unstable. The high type's incentive constraint fails, and the ambitious signal loses its high-type interpretation under D1-consistent beliefs.
+Define also the D1-type willingness threshold
+\[
+q_{\mathrm{D1}}>0
+\]
+from the off-path comparison in Section~\ref{sec:dynamic}.
+
+The combined threshold is
+\[
+q^*:=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}.
+\]
+For $q>q^*$, the top-down reversal can be pinned down in static one-period terms: high types lose the static incentive to stay on $s_A$, and D1 no longer keeps $s_A$ high-type in off-path beliefs.
