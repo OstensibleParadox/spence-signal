@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.12)  25 JUN 2026 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.12)  25 JUN 2026 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -523,62 +523,51 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 al/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}]) (./sections/section1_
 model.tex [2])
 (./sections/section2_bayesian_surprise.tex [3] [4] [5] [6] [7])
-(./sections/section3_d1_top_down_pooling.tex [8] [9] [10] [11])
-(./sections/section6_belief_loop_fixed_point.tex [12] [13] [14] [15] [16]
-[17]
-
-Package natbib Warning: Citation `diamond1983bank' on page 18 undefined on inpu
-t line 346.
-
-) (./sections/section5_dynamic_model.tex
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-2.
-
-(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [18] [19])
-(./sections/section4_polarization.tex [20] [21]
+(./sections/section3_d1_top_down_pooling.tex [8] [9] [10] [11] [12] [13]
+[14] [15]) (./sections/section6_polarization.tex [16] [17]
 (../figures/polarization/figure-block.tex)
-<../figures/polarization/model-variance-01-v1p21.png, id=331, 325.01425pt x 209
+<../figures/polarization/model-variance-01-v1p21.png, id=280, 325.01425pt x 209
 .583pt>
 File: ../figures/polarization/model-variance-01-v1p21.png Graphic file (type pn
 g)
 <use ../figures/polarization/model-variance-01-v1p21.png>
 Package pdftex.def Info: ../figures/polarization/model-variance-01-v1p21.png  u
-sed on input line 91.
+sed on input line 90.
 (pdftex.def)             Requested size: 150.32504pt x 96.937pt.
-<../figures/polarization/model-variance-02-v4p84.png, id=333, 325.01425pt x 209
+<../figures/polarization/model-variance-02-v4p84.png, id=282, 325.01425pt x 209
 .583pt>
 File: ../figures/polarization/model-variance-02-v4p84.png Graphic file (type pn
 g)
 <use ../figures/polarization/model-variance-02-v4p84.png>
 Package pdftex.def Info: ../figures/polarization/model-variance-02-v4p84.png  u
-sed on input line 91.
+sed on input line 90.
 (pdftex.def)             Requested size: 150.32504pt x 96.937pt.
-<../figures/polarization/model-variance-03-v10p24.png, id=334, 325.215pt x 209.
+<../figures/polarization/model-variance-03-v10p24.png, id=283, 325.215pt x 209.
 583pt>
 File: ../figures/polarization/model-variance-03-v10p24.png Graphic file (type p
 ng)
 <use ../figures/polarization/model-variance-03-v10p24.png>
 Package pdftex.def Info: ../figures/polarization/model-variance-03-v10p24.png  
-used on input line 91.
+used on input line 90.
 (pdftex.def)             Requested size: 150.32504pt x 96.87624pt.
-)
-(./sections/section5_continuous_phase_transition.tex [22 <../figures/polarizati
-on/model-variance-01-v1p21.png> <../figures/polarization/model-variance-02-v4p8
-4.png> <../figures/polarization/model-variance-03-v10p24.png>] [23]
-<../figures/airy_density_inflection.pdf, id=351, 715.47299pt x 426.39299pt>
-File: ../figures/airy_density_inflection.pdf Graphic file (type pdf)
-<use ../figures/airy_density_inflection.pdf>
-Package pdftex.def Info: ../figures/airy_density_inflection.pdf  used on input 
-line 64.
-(pdftex.def)             Requested size: 399.29463pt x 237.95865pt.
-) [24]
-[25 <../figures/airy_density_inflection.pdf>] (build/main.bbl)
+ [18 <../figures/polarization/model-variance-01-v1p21.png> <../figures/polariza
+tion/model-variance-02-v4p84.png> <../figures/polarization/model-variance-03-v1
+0p24.png>])
+(./sections/section5_dynamic_model.tex
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
+0.
 
-Package natbib Warning: There were undefined citations.
-
-[26
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [19] [20])
+(./sections/section7_continuous_phase_transition.tex [21] [22] [23]
+<../figures/airy_density_corrected.pdf, id=332, 643.20299pt x 354.26353pt>
+File: ../figures/airy_density_corrected.pdf Graphic file (type pdf)
+<use ../figures/airy_density_corrected.pdf>
+Package pdftex.def Info: ../figures/airy_density_corrected.pdf  used on input l
+ine 219.
+(pdftex.def)             Requested size: 399.29463pt x 219.92761pt.
+) [24 <../figures/airy_density_corrected.pdf>] [25] (build/main.bbl) [26
 
 ] (build/main.aux)
  ***********
@@ -586,16 +575,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6F6F92F5F8B172B74599A52F3DB73D27;8207.
+(rerunfilecheck)             Checksum: 3E09106847DB45B35BAC10E30FBB3AC5;7635.
  ) 
 Here is how much of TeX's memory you used:
- 14166 strings out of 467525
- 221962 string characters out of 5418982
- 670246 words of memory out of 5000000
- 42469 multiletter control sequences out of 15000+600000
- 671656 words of font info for 288 fonts, out of 8000000 for 9000
+ 14158 strings out of 467525
+ 221591 string characters out of 5418982
+ 670227 words of memory out of 5000000
+ 42462 multiletter control sequences out of 15000+600000
+ 673219 words of font info for 293 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,1306b,621s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,1277b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -612,15 +601,14 @@ ve/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
 6/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026/texmf
--dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2026/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026/texmf-dist/
-fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type
-1/urw/times/utmri8a.pfb>
-Output written on build/main.pdf (26 pages, 630974 bytes).
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2026
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026/texmf-dis
+t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/ty
+pe1/urw/times/utmri8a.pfb>
+Output written on build/main.pdf (26 pages, 623811 bytes).
 PDF statistics:
- 499 PDF objects out of 1000 (max. 8388607)
- 421 compressed objects within 5 object streams
- 105 named destinations out of 1000 (max. 500000)
- 60741 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 471 PDF objects out of 1000 (max. 8388607)
+ 395 compressed objects within 4 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 62757 words of extra memory for PDF output out of 74296 (max. 10000000)
 

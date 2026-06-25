@@ -9,15 +9,16 @@ The mechanism is dynamic and belief-driven. The ambitious action has two effects
 
 The primitives are minimal: two types, two sender signals, and an exogenous binary judgment state. The sender observes the low-scrutiny risk $q=\Pr(j_{t+1}=H\mid j_t=L)$ before acting. If she sends the ambitious signal, tomorrow’s state can impose an extra epistemic cost. If she sends the pooling-safe action, that one-period shadow disappears.
 
-The model has three moving parts.
+The model has four moving parts.
 \begin{enumerate}
-\item A static, one-period D1 core that shows a top-down reversal: high types exit separation first when $q$ is large.
-\item A fixed-point closure argument that combines sender ICs and D1 beliefs in a binary-signal pure-strategy psychological assessment.
+\item A D1-closed fixed-point core that shows a top-down reversal: high types exit separation first when $q$ is large, and D1 then removes the high-type meaning of off-path ambition.
+\item An observable-implications section that translates the binary collapse into support polarization in a richer type space.
 \item A dynamic forward-invariance result that adds trust-capital/semantic dynamics and shows endogenous accumulation does not automatically repair the collapse.
+\item A continuous-time population counterpart that restates top-end nonexistence as loss of a positive stationary occupancy profile.
 \end{enumerate}
 
-The first stage identifies how adverse repricing plus a D1-style off-path map can select pooling from above. The second stage closes the belief loop in binary form: a self-referential interpretation where high occupancy of the ambitious signal implies high-type meaning, but then current IC may already fail, and off-path reinterpretation then collapses that meaning. The third stage asks whether time and dynamics can reverse this outcome.
+The first stage identifies how adverse repricing plus a D1-style off-path map can select pooling from above. It closes the belief loop in binary form: a self-referential interpretation where high occupancy of the ambitious signal implies high-type meaning, but then current IC may already fail, and off-path reinterpretation then collapses that meaning. The second stage records the observable cross-sectional shadow. The third stage asks whether time and dynamics can reverse this outcome. The final stage gives the distribution-level counterpart.
 
-The result is defensive: no new stopping phenomenon appears. Static and belief-loop collapse does not self-correct through learning or accumulation alone.
+The result is defensive: no new stopping phenomenon appears. D1-closed collapse does not self-correct through learning or accumulation alone.
 
-Section~\ref{sec:model} introduces primitives and the one-period IC comparison. Section~\ref{sec:surprise} derives the exposure ranking from primitive self-accuracy levels. Section~\ref{sec:dynamic} gives the static D1 core and the fixed-point threshold $q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}$. Section~\ref{sec:belief-loop} closes the belief loop in binary strategies. Section~\ref{sec:dynamic-model} gives the dynamic forward-invariance result. Section~\ref{sec:polarization} presents a continuous-type extension, where the surviving ambitious signal can become polarized.
+Section~\ref{sec:model} introduces primitives and the one-period IC comparison. Section~\ref{sec:surprise} derives the exposure ranking from primitive self-accuracy levels. Section~\ref{sec:belief-loop} proves the D1-closed fixed-point theorem and the threshold $q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}$. Section~\ref{sec:polarization} presents the observable polarization implication. Section~\ref{sec:dynamic-model} gives the dynamic forward-invariance result. Section~\ref{sec:continuous-phase-transition} gives the continuous-time population counterpart.

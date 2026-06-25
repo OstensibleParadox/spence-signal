@@ -114,13 +114,85 @@ Hence top-down pooling plus top-end retreat and population depletion are not sep
 
 \subsection{Stationary Density and the Spectral Cut}
 
+For the spectral statement, impose the following admissible boundary conditions on the
+top-end domain:
+\[
+\rho_\theta(0,t)=0,
+\qquad
+\lim_{x\to\infty}\rho_\theta(x,t)=0,
+\qquad
+\rho_\theta(\cdot,t)\in L^1_+(0,\infty)\cap L^2(0,\infty).
+\]
+The lower boundary \(x=0\) is the entrance boundary of the modeled top-end region:
+ambitious density that crosses below it has left top-end ambitious occupancy. The
+tail condition rules out mass at infinite status and selects bounded decaying
+profiles. The critical Airy snapshot below uses this lower-anchor normalization,
+with finite right derivative at \(x=0\).
+
 Set \(\partial\rho_\theta/\partial t=0\) in equation~\eqref{eq:continuous-density-general}. For each belief regime \(r\), a stationary ambitious-density profile satisfies
 \begin{equation}
 -\frac{\sigma^2}{2}\rho_\theta''(x)
 -V_\theta^r(q(x))\rho_\theta(x)=0.
 \label{eq:stationary-density}
 \end{equation}
-Let \(\lambda(q)\) denote the principal eigenvalue governing the closed-loop top-end density equation under the admissible boundary conditions, with the sign convention that \(\lambda>0\) admits a positive stationary profile, \(\lambda=0\) is the critical cut, and \(\lambda<0\) rules out any nonzero positive stationary profile.
+Equivalently, the closed-loop density generator for type \(\theta\) in regime \(r\) is
+\[
+\bigl(\mathcal A_\theta^r[q]f\bigr)(x)
+=
+\frac{\sigma^2}{2}f''(x)+V_\theta^r(q(x))f(x).
+\]
+It is evaluated on the operator domain
+\[
+D(\mathcal A_\theta^r[q])
+=
+\left\{
+f\in H^2(0,\infty)\cap H^1_0(0,\infty):
+V_\theta^r(q(\cdot))f\in L^2(0,\infty)
+\right\}.
+\]
+The condition \(f\in H^1_0(0,\infty)\) imposes the lower boundary \(f(0)=0\);
+membership in \(H^2\cap L^2\) together with the tail condition selects the
+decaying half-line profiles. Since \(q(x)\in[0,1]\) and the primitives are
+continuous, the potential term is bounded on the relevant range, so this is the
+standard Dirichlet half-line realization of the one-dimensional operator.
+
+For each type and regime, define the principal spectral value by the variational
+formula
+\[
+\lambda_\theta^r(q)
+=
+\sup_{f\in H^1_0(0,\infty),\,f\ne0}
+\frac{
+\displaystyle
+\int_0^\infty V_\theta^r(q(x))f(x)^2\,dx
+-
+\frac{\sigma^2}{2}\int_0^\infty |f'(x)|^2\,dx
+}{
+\displaystyle
+\int_0^\infty f(x)^2\,dx
+}.
+\]
+When the supremum is attained, the maximizer is the principal eigenfunction:
+it is unique up to scale, strictly positive on \((0,\infty)\), satisfies
+\[
+\mathcal A_\theta^r[q]\phi_\theta^r
+=
+\lambda_\theta^r(q)\phi_\theta^r,
+\qquad
+\phi_\theta^r(0)=0,
+\qquad
+\lim_{x\to\infty}\phi_\theta^r(x)=0.
+\]
+The closed-loop top-end spectral margin used below is
+\[
+\lambda(q)
+=
+\max_{\theta\in\{L,H\}}\lambda_\theta^{D1}(q).
+\]
+Thus \(\lambda(q)=0\) is exactly the zero-eigenvalue stationary equation,
+\(\lambda(q)>0\) is the subcritical side on which a positive principal profile
+can be normalized into an ambitious occupancy density, and \(\lambda(q)<0\)
+means that no type has a nonzero positive admissible stationary profile.
 
 The maintained spectral crossing condition is
 \[
@@ -144,7 +216,7 @@ To physically ground the density function, require the ambitious density to be n
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.85\textwidth]{airy_density_inflection.pdf}
+    \includegraphics[width=0.85\textwidth]{airy_density_corrected.pdf}
     \caption{The critical snapshot at $q=q^*$, equivalently $\lambda=0$. The stationary cross-sectional density forms a single hump anchored in the protected region. At the critical cut $x_c$, the profile passes through the knife-edge between positive stationary occupancy and spectral nonexistence. The supercritical top-end vacuum is asserted only for $\lambda<0$.}
     \label{fig:airy_density}
 \end{figure}
