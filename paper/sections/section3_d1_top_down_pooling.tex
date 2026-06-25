@@ -1,0 +1,194 @@
+% section3_d1_top_down_pooling.tex
+
+\section{Anticipatory Exposure and the D1 Flip}
+\label{sec:dynamic}
+
+The previous section established two ingredients. First, conditional on a fixed judgment-intensity state, the belief-dependent payoff is continuous in the relevant higher-order belief hierarchy. Hence the psychological-game object is well-defined within each regime slice. Second, the epistemic exposure term is pinned to the sender's true type through primitive self-accuracy levels and adverse repricing. It is not a signal-precision parameter and not an equilibrium posterior.
+
+This section shows how these ingredients change equilibrium selection. In standard costly signaling, the ambitious signal is credible because high types are most willing to send it. Here, sufficiently likely future scrutiny reverses that willingness ranking. The high type becomes less willing than the low type to carry the ambitious signal, because the high type has more self-model reputation-at-risk under adverse repricing. This reversal has two consequences. First, the separating profile fails when the high type's anticipatory incentive constraint binds. Second, in the pooling candidate, a D1-style forward-induction refinement no longer interprets an off-path ambitious signal as evidence of the high type.
+
+\subsection{The anticipatory incentive constraint}
+
+Let the current judgment-intensity state be low, denoted \(L\). Let
+\[
+q=\Pr(j_{t+1}=H\mid j_t=L)
+\]
+be the transition probability into the high-scrutiny state. The agent chooses between the ambitious signal \(s_A\) and the pooling-safe signal \(s_P\). Sending \(s_A\) creates an exposure state that can be repriced if the next-period state is \(H\).
+
+For type \(\theta\in\{\theta_L,\theta_H\}\), let \(B_\theta\) denote the current net separation surplus from sending \(s_A\) rather than \(s_P\), before future high-scrutiny exposure is priced. This term includes the current reputational benefit of being interpreted as high type and subtracts current intrinsic and low-scrutiny epistemic costs. Let \(\Phi_\theta>0\) denote the true-type-indexed adverse-repricing exposure cost derived in Section~\ref{sec:surprise}. The low-state payoff gain from sending \(s_A\) is
+\[
+D_\theta(q)=B_\theta-\beta q\mu_H\Phi_\theta,
+\]
+where \(\beta\in(0,1)\) is the discount factor and \(\mu_H\) is the high-scrutiny intensity.
+
+The high type's separating incentive constraint is
+\[
+D_H(q)\ge 0.
+\]
+Thus define
+\[
+q_{\mathrm{IC}}=\frac{B_H}{\beta\mu_H\Phi_H},
+\]
+assuming \(B_H>0\). For \(q>q_{\mathrm{IC}}\), the high type strictly prefers the pooling-safe signal \(s_P\) to remaining on the ambitious signal \(s_A\), even if \(s_A\) is still interpreted as high type.
+
+\begin{lemma}[Anticipatory failure of separation]
+\label{lem:anticipatory-failure}
+Suppose the current state is \(L\). If
+\[
+q>q_{\mathrm{IC}},
+\]
+then the separating profile
+\[
+\theta_H\mapsto s_A,
+\qquad
+\theta_L\mapsto s_P
+\]
+is not a psychological equilibrium.
+\end{lemma}
+
+\begin{proof}
+Under the separating profile, \(s_A\) is interpreted as the high-type signal. Hence the high type receives the current separation surplus \(B_H\) from \(s_A\), but also internalizes the future exposure cost \(\beta q\mu_H\Phi_H\). Its payoff gain from choosing \(s_A\) rather than \(s_P\) is therefore
+\[
+D_H(q)=B_H-\beta q\mu_H\Phi_H.
+\]
+If \(q>q_{\mathrm{IC}}\), then \(D_H(q)<0\). Thus the high type strictly prefers \(s_P\) to \(s_A\). The proposed separating profile violates the high type's incentive constraint and therefore cannot be an equilibrium.
+\end{proof}
+
+The point is not that the low type successfully mimics the high type. The separating profile collapses before that question arises. The high type exits because the expected future cost of adverse repricing exceeds the current benefit of being recognized.
+
+\subsection{The D1 flip}
+\label{subsec:d1-flip}
+
+It remains to check whether pooling on \(s_P\) can be sustained. The possible obstruction is off-path resurrection: if all types pool on \(s_P\), an off-path deviation to \(s_A\) might again be interpreted as evidence of high type, restoring the value of the ambitious signal.
+
+This is where the refinement matters. Consider the pooling candidate in which both types choose \(s_P\). The receiver observes an off-path signal \(s_A\). Let \(a\) denote a receiver response, and let \(R(a)\) be the reputational return from that response. For simplicity, assume \(R(a)\) is type-independent and ordered by receiver favorability.
+
+Let the cost of deviating to the ambitious signal for type \(\theta\) be
+\[
+K_\theta(q)=\bar k_\theta+\beta q\mu_H\Phi_\theta,
+\]
+where \(\bar k_\theta\) is the current cost of sending \(s_A\) in the pooling environment and \(\beta q\mu_H\Phi_\theta\) is the anticipatory high-scrutiny exposure cost.
+
+The exposure term \(\Phi_\theta\) is the deviator's true-type cost. D1 determines how the receiver interprets the off-path signal and therefore affects \(R(a)\). It does not relabel the deviator's exposure technology. This separation is essential: otherwise the off-path belief used by the refinement would also redefine the cost object being compared.
+
+Given receiver response \(a\), type \(\theta\)'s payoff gain from deviating to \(s_A\) is
+\[
+G_\theta(a;q)=R(a)-K_\theta(q).
+\]
+Define the profitable-deviation response set
+\[
+\mathcal D_\theta(q)=\{a:G_\theta(a;q)>0\}.
+\]
+
+In the standard Spence ranking, the high type has a lower signaling cost, so
+\[
+\mathcal D_L(q)\subset \mathcal D_H(q).
+\]
+D1 then assigns the off-path ambitious signal to the high type. The present model reverses this inclusion when future scrutiny is sufficiently likely. By Lemma~\ref{lem:bayesian-surprise-complementarity}, high types have larger future exposure:
+\[
+\Phi_H>\Phi_L.
+\]
+Hence the high type's cost increases faster in \(q\). The ranking flips when
+\[
+K_H(q)>K_L(q),
+\]
+or equivalently,
+\[
+\bar k_H+\beta q\mu_H\Phi_H>
+\bar k_L+\beta q\mu_H\Phi_L.
+\]
+Define
+\[
+q_{\mathrm{D1}}=
+\frac{\bar k_L-\bar k_H}{\beta\mu_H(\Phi_H-\Phi_L)},
+\]
+whenever \(\bar k_L>\bar k_H\). Then for \(q>q_{\mathrm{D1}}\),
+\[
+K_H(q)>K_L(q).
+\]
+
+\begin{lemma}[D1 flip]
+\label{lem:d1-flip}
+Suppose \(\Phi_H>\Phi_L\) and \(q>q_{\mathrm{D1}}\). Then
+\[
+\mathcal D_H(q)\subsetneq \mathcal D_L(q).
+\]
+Therefore, under the D1 criterion, an off-path ambitious signal \(s_A\) cannot be assigned to the high type. It must be assigned to the low type.
+\end{lemma}
+
+\begin{proof}
+For any receiver response \(a\), type \(\theta\)'s gain from deviating to \(s_A\) is
+\[
+G_\theta(a;q)=R(a)-K_\theta(q).
+\]
+If \(q>q_{\mathrm{D1}}\), then \(K_H(q)>K_L(q)\). Hence for every receiver response \(a\),
+\[
+G_H(a;q)<G_L(a;q).
+\]
+Therefore, whenever the deviation is profitable for the high type, it is also profitable for the low type:
+\[
+G_H(a;q)>0
+\quad\Rightarrow\quad
+G_L(a;q)>0.
+\]
+Thus
+\[
+\mathcal D_H(q)\subseteq\mathcal D_L(q).
+\]
+The inclusion is strict whenever there exists a receiver response \(a\) such that
+\[
+K_L(q)<R(a)<K_H(q).
+\]
+Under D1, if one type can profitably deviate under a strictly wider set of receiver responses, the deviation is attributed to that type rather than to the type whose profitable-deviation set is smaller. Hence the off-path signal \(s_A\) is attributed to \(\theta_L\), not to \(\theta_H\).
+\end{proof}
+
+The ambitious signal therefore changes its meaning. In the standard model, an off-path ambitious signal says: this must be a strong type, because only strong types can afford it. Here, when future scrutiny is sufficiently likely, the same signal says: this is unlikely to be the high type, because high types have the most to lose from carrying exposed ambition into future scrutiny.
+
+\subsection{Top-down pooling}
+
+We can now combine the two thresholds. The first threshold kills the separating profile by violating the high type's incentive constraint. The second threshold kills the off-path resurrection of the ambitious signal under D1.
+
+Define
+\[
+q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}.
+\]
+
+\begin{theorem}[Top-down pooling]
+\label{thm:top-down-pooling}
+Suppose:
+\begin{enumerate}
+\item \(B_H>0\), so the high type would choose the ambitious signal absent anticipatory high-scrutiny exposure;
+\item \(\Phi_H>\Phi_L\), as derived from primitive self-accuracy levels and Bayesian-surprise repricing in Section~\ref{sec:surprise};
+\item \(q>q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}\);
+\item the receiver's off-path beliefs satisfy the D1 criterion;
+\item the analysis is restricted to the binary-signal pure-strategy class \(\{s_A,s_P\}\).
+\end{enumerate}
+Then the unique D1-consistent pure-strategy psychological equilibrium in this class is pooling on the safe signal:
+\[
+\theta_H\mapsto s_P,
+\qquad
+\theta_L\mapsto s_P.
+\]
+\end{theorem}
+
+\begin{proof}
+First, since \(q>q_{\mathrm{IC}}\), Lemma~\ref{lem:anticipatory-failure} implies that the separating profile cannot be an equilibrium. Even if \(s_A\) is interpreted as the high-type signal, the high type strictly prefers \(s_P\), because its expected future exposure cost exceeds its current separation surplus.
+
+Second, consider the pooling candidate in which both types choose \(s_P\). Since \(q>q_{\mathrm{D1}}\), Lemma~\ref{lem:d1-flip} implies that the off-path ambitious signal \(s_A\) is attributed by D1 to the low type rather than to the high type. Therefore \(s_A\) carries no high-type reputational premium under D1-consistent beliefs.
+
+Given this off-path belief, the high type has no profitable deviation to \(s_A\). The deviation would create future exposure while failing to restore the high-type interpretation. The low type also has no profitable deviation: under the D1-consistent posterior, its deviation is interpreted as low type and therefore does not generate the reputational return needed to cover the cost of \(s_A\).
+
+Thus both types optimally choose \(s_P\). Since separation has already been ruled out by the high type's incentive constraint, and the only off-path resurrection of \(s_A\) is ruled out by D1, the pooling profile is the unique D1-consistent pure-strategy psychological equilibrium within the binary-signal class.
+\end{proof}
+
+The theorem identifies a reversal of the usual signaling logic. In standard costly signaling, separation fails from below when low types become able to mimic high types. Here, separation fails from above. The high type exits first because it has both the current separation rent and the largest future adverse-repricing liability.
+
+Equivalently, the ambitious signal loses its credibility not because it becomes cheap for low types, but because it becomes too exposed for high types. Once future scrutiny is sufficiently likely, an agent who still sends the ambitious signal is no longer interpreted as confident. Under D1, it is interpreted as failing to internalize the future cost of exposure.
+
+\subsection{Interpretation}
+
+The result can be summarized by contrasting two mechanisms. In the standard Spence model, bad types cannot climb up. The high-cost signal is credible because only high types are willing to bear it. In the present model, good types climb down. The ambitious signal becomes dangerous precisely for the types that previously used it to separate.
+
+This produces top-down pooling. The pooling outcome is not generated by low-type imitation. It is generated by high-type withdrawal. The signal \(s_A\) does not merely lose precision; its off-path meaning reverses. After the D1 flip, \(s_A\) is no longer evidence of high ability. It is evidence of low anticipatory discipline.
+
+This is the belief-driven pooling reversal. Future scrutiny changes the sender's current incentives, and D1 changes the receiver's interpretation of deviations. Together they close the fixed point: high types withdraw because future scrutiny makes ambitious exposure costly, and once high types are expected to withdraw, ambitious deviations cease to be high-type credible.
