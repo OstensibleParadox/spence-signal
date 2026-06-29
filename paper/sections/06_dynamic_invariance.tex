@@ -50,9 +50,9 @@ Embedding the dynamic penalty $\Sigma_t$ into the belief-loop operator $T_q(z)$ 
 
 For any endogenous state $(C_t,E_t)$ and posterior $\rho_t$, define the state-adjusted top-down ratio
 \[
-\widetilde q^{\mathrm{IC}}_\theta(t)=\frac{B_\theta(\rho_t)+\Sigma_t}{\beta\mu_H\Phi_\theta}.
+\widetilde q^{\mathrm{IC}}_\theta(t)=\frac{B_\theta(\rho_t)-\Sigma_t}{\beta\mu_H\Phi_\theta}.
 \]
-Endogenous trust-capital terms appear symmetrically in numerators and therefore do not change the fundamental type-ordering created by $(\Phi_H,\Phi_L)$ and static primitives. They shift the threshold pair, but not the sign of the top-down reversal.
+Endogenous trust-capital terms lower the IC threshold and therefore make collapse easier to trigger or maintain. They do not change the fundamental type-ordering created by $(\Phi_H,\Phi_L)$ and static primitives, so they shift the threshold pair without reversing the top-down comparison.
 
 A true restoration requires an externally priced type-specific wedge, for example a direct penalty or premium that depends on sender type/claim context and is not a pure continuation by-product of $C_t$ and $E_t$.
 
@@ -63,8 +63,19 @@ Let
 \mathcal Q:=\{q\in[0,1]: q\ge q^*\},
 \qquad q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}.
 \]
-Assume that under pooling on $s_P$, the process satisfies:
+The transition probability into high scrutiny is now a public state. Under pooling on $s_P$, let it evolve according to
+\[
+q_{t+1}
+=
+\min\{1,\ q^*+(1-\lambda_q)(q_t-q^*)+\zeta_{t+1}^q\},
+\qquad
+\lambda_q\in[0,1],\quad \zeta_{t+1}^q\ge 0.
+\]
+Thus a pooling state may decay toward the collapse boundary, but it cannot cross below it once $q_t\in\mathcal Q$.
+
+Assume that under pooling on $s_P$, the joint process satisfies:
 \begin{enumerate}
+\item $q_{t+1}$ follows the pooling law above;
 \item $\Sigma_{t+1}-\Sigma_t\ge \underline d-\xi_t$ for some $\underline d>0$ and bounded $\xi_t\in[0,\bar\xi]$;
 \item $\Sigma_0\ge 0$ and $\bar\xi<\underline d$;
 \item $\beta q\mu_H\Phi_H-B_H(0)-\Sigma_0>0$ for all $q\in\mathcal Q$.
@@ -72,7 +83,7 @@ Assume that under pooling on $s_P$, the process satisfies:
 
 \begin{theorem}[Pooling interval forward invariance]
 \label{thm:forward-invariance}
-Under these assumptions and strict D1 preferences at $q\in\mathcal Q$, if period $t$ is in the pooling assessment of Section~\ref{sec:belief-loop}, then period $t+1$ is also in that assessment with probability one. Equivalently, $\mathcal Q$ is almost surely forward-invariant.
+Under these assumptions and strict D1 preferences at $q\in\mathcal Q$, if $q_t\in\mathcal Q$ and period $t$ is in the pooling assessment of Section~\ref{sec:belief-loop}, then $q_{t+1}\in\mathcal Q$ and period $t+1$ is also in that assessment with probability one. Equivalently, $\mathcal Q$ is almost surely forward-invariant under the pooling law of motion.
 \end{theorem}
 
 \begin{proof}
@@ -80,8 +91,14 @@ In the pooling assessment, $\rho_t=0$ for any off-path ambitious deviation. The 
 \[
 \Delta_H^{\text{dyn}}(q_t,0)=B_H(0)-\beta q_t\mu_H\Phi_H-\Sigma_t.
 \]
-By assumption 3 and $\Sigma_t\ge \Sigma_0$, $\Delta_H^{\text{dyn}}(q_t,0)$ is negative for all $q_t\in\mathcal Q$. Assumption 1 says endogenous drift in $\Sigma_t$ dominates bounded asynchronous noise, so this negativity cannot be overturned by one-period shocks.
-Hence high type never has a profitable ambiguous-ambitious deviation from $s_P$ once in the pooling band, and D1 therefore continues to map $s_A$ to low attribution. The same argument applies period-by-period by induction.
+By assumption 4 and $\Sigma_t\ge \Sigma_0$, $\Delta_H^{\text{dyn}}(q_t,0)$ is negative for all $q_t\in\mathcal Q$. Assumptions 2--3 say endogenous drift in $\Sigma_t$ dominates bounded asynchronous noise, so this negativity cannot be overturned by one-period shocks.
+The pooling law of motion gives
+\[
+q_{t+1}
+\ge
+q^*
+\]
+whenever $q_t\in\mathcal Q$, so $q_{t+1}\in\mathcal Q$ with probability one. Hence high type never has a profitable ambiguous-ambitious deviation from $s_P$ once in the pooling band, and D1 therefore continues to map $s_A$ to low attribution. The same argument applies period-by-period by induction.
 \end{proof}
 
 The conclusion is defensive. Dynamic trust-capital and habituation can be modeled explicitly and can affect local margins, but they do not create a new stopping phenomenon. They do not by themselves repair top-down collapse.

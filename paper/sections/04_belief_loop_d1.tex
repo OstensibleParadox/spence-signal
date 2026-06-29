@@ -243,10 +243,12 @@ In the stock version,
 =
 \mathbb E_q\left[
 \sum_{\tau\ge 1}
-\beta^\tau (1-\eta)^{\tau-1}\mu_{j_{t+\tau}}
+\beta^\tau (1-\eta)^{\tau-1}
+\mu_H\mathbf{1}\{j_{t+\tau}=H\}
 \,\middle|\,j_t=L
 \right].
 \]
+Low-scrutiny and current epistemic costs are already absorbed into \(B_\theta(\rho)\); \(\Gamma(q,\eta)\) prices only the marginal future adverse-repricing exposure created by entering high scrutiny.
 The maintained monotonicity condition is
 \[
 \Gamma(q,\eta)\text{ is continuous and strictly increasing in }q.
