@@ -2,7 +2,7 @@
 \section{Dynamic Forward Invariance}
 \label{sec:dynamic-invariance}
 
-Section~\ref{sec:belief-loop} establishes that in the binary class, the one-period object selects pooling for $q>q^*$. Section~\ref{sec:polarization} records the observable shadow of that collapse. This final section adds dynamic state variables and asks whether endogenous accumulation can reverse the outcome.
+Section~\ref{sec:belief-loop} establishes that in the binary-signal pure-strategy class, the one-period object selects pooling for $q>q^*$. Section~\ref{sec:polarization} records the observable shadow of that collapse. This final section adds dynamic state variables and asks whether, under a persistence law for $q_t$, endogenous accumulation forces separation to return.
 
 \subsection{Trust-capital law of motion}
 
@@ -65,7 +65,7 @@ Let
 \mathcal Q:=\{q\in[0,1]: q\ge q^*\},
 \qquad q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}.
 \]
-The transition probability into high scrutiny is now a public state. Under pooling on $s_P$, let it evolve according to
+The transition probability into high scrutiny is now a public state. Under pooling on $s_P$, impose the persistence law
 \[
 q_{t+1}
 =
@@ -103,4 +103,4 @@ q^*
 whenever $q_t\in\mathcal Q$, so $q_{t+1}\in\mathcal Q$ with probability one. Hence high type never has a profitable ambiguous-ambitious deviation from $s_P$ once in the pooling band, and D1 therefore continues to map $s_A$ to low attribution. The same argument applies period-by-period by induction.
 \end{proof}
 
-The conclusion is defensive. Dynamic trust-capital and habituation can be modeled explicitly and can affect local margins, but they do not create a new stopping phenomenon. They do not by themselves repair top-down collapse.
+The conclusion is defensive. Dynamic trust-capital and habituation can be modeled explicitly and can affect local margins, but they do not create a new stopping phenomenon. Under the persistence law that keeps $q_t$ above the collapse boundary, bounded endogenous drift does not restore separation automatically. Restoration requires a crossing below the boundary or an externally priced type-specific wedge.
