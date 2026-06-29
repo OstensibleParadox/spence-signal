@@ -3,7 +3,7 @@
 \section{D1-Closed Belief Loop}
 \label{sec:belief-loop}
 
-The previous section established two ingredients. First, conditional on a fixed judgment-intensity state, the belief-dependent payoff is continuous in the relevant higher-order belief hierarchy. Hence the psychological-game object is well-defined within each regime slice. Second, the epistemic exposure term is pinned to the sender's true type through primitive self-accuracy levels and adverse repricing. It is not a signal-precision parameter and not an equilibrium posterior.
+The previous section established two ingredients. First, conditional on a fixed judgment-intensity state, the belief-dependent payoff is continuous in the relevant higher-order belief hierarchy. Second, the exposure term is pinned to the sender's true type through a primitive ranking, \(\Phi_H>\Phi_L\). It is not a signal-precision parameter and not an equilibrium posterior.
 
 This section separates the main argument into two independent reversals. The first is an IC reversal: once \(q>q_{\mathrm{IC}}\), \(\theta_H\) exits \(s_A\) even if the receiver would still read \(s_A\) as high-type evidence. The second is a D1 reversal: once \(q>q_{\mathrm{D1}}\), the high type has a strictly smaller profitable-deviation response set than the low type, so an off-path \(s_A\) is no longer high-type evidence but low-type evidence. The final theorem only combines these two reversals. For \(q>\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}\), safe pooling is the unique D1-closed pure assessment.
 
@@ -17,7 +17,7 @@ q=\Pr(j_{t+1}=H\mid j_t=L)
 \]
 be the transition probability into the high-scrutiny state. The sender chooses between the ambitious signal \(s_A\) and the pooling-safe signal \(s_P\). Sending \(s_A\) creates an exposure state that can be repriced if the next-period state is \(H\).
 
-For type \(\theta\in\{\theta_L,\theta_H\}\), let \(B_\theta\) denote the current net separation surplus from sending \(s_A\) rather than \(s_P\), before future high-scrutiny exposure is priced. This term includes the current reputational benefit of being interpreted as high type and subtracts current intrinsic and low-scrutiny epistemic costs. Let \(\Phi_\theta>0\) denote the true-type-indexed adverse-repricing exposure cost derived in Section~\ref{sec:psychological-exposure}. In the one-period exposure specification, the low-state payoff gain from sending \(s_A\) is
+For type \(\theta\in\{\theta_L,\theta_H\}\), let \(B_\theta\) denote the current net separation surplus from sending \(s_A\) rather than \(s_P\), before future high-scrutiny exposure is priced. This term includes the current reputational benefit of being interpreted as high type and subtracts current intrinsic and low-scrutiny epistemic costs. Let \(\Phi_\theta>0\) denote the true-type-indexed adverse-repricing exposure cost, with the reversed ranking \(\Phi_H>\Phi_L\) supplied by Section~\ref{sec:psychological-exposure}. In the one-period exposure specification, the low-state payoff gain from sending \(s_A\) is
 \[
 D_\theta(q)=B_\theta-\beta q\mu_H\Phi_\theta,
 \]
@@ -57,7 +57,7 @@ In particular, the separating profile
 \qquad
 \theta_L\mapsto s_P
 \]
-is not a psychological equilibrium.
+is not an equilibrium.
 \end{proposition}
 
 \begin{proof}
@@ -170,7 +170,7 @@ The ambitious signal therefore changes its meaning. In the standard model, an of
 \subsection{Belief Hierarchies and Closed Assessments}
 \label{subsec:belief-loop-hierarchy}
 
-The fixed point is taken over a psychological assessment, not over a strategy profile alone. At a low-scrutiny history \(h_t\), let
+The fixed point is taken over a closed assessment, not over a strategy profile alone. At a low-scrutiny history \(h_t\), let
 \[
 \sigma_\theta(h_t)\in\{s_A,s_P\}
 \]
@@ -184,7 +184,7 @@ The sender's payoff depends on what she expects the receiver to believe after \(
 \[
 \widehat \rho_{\theta,A}(h_t)
 \]
-for the type-\(\theta\) sender's second-order belief about the receiver's posterior following \(s_A\). A psychological assessment is a triple
+for the type-\(\theta\) sender's second-order belief about the receiver's posterior following \(s_A\). A closed assessment is a triple
 \[
 \mathcal A=(\sigma,\rho_A,\widehat \rho_A),
 \]
@@ -195,7 +195,7 @@ where \(\widehat \rho_A=(\widehat\rho_{H,A},\widehat\rho_{L,A})\). Belief consis
 \]
 Thus the sender's second-order belief about the receiver's first-order posterior must agree with the posterior induced by the assessment itself.
 
-Crucially, the fixed point is evaluated exactly at this second-order hierarchy layer. To formally embed this within the framework of psychological games \citep{battigalli2009dynamic}, the sender's expected utility must be continuous with respect to the relevant belief hierarchy. Here, the net benefit \(B_\theta(\widehat{\rho}_{\theta,A})\) depends continuously on the expected first-order posterior. While the D1 refinement injects a discontinuous jump into the receiver's belief map \(\rho_A(\sigma)\) when the signal becomes off path, the fixed point is resolved on the composition of these expectations, so the belief loop closes at \(\widehat\rho_{\theta,A}=\rho_A\).
+Crucially, the fixed point is evaluated exactly at this second-order hierarchy layer. Continuity of expected utility with respect to the relevant belief hierarchy ensures the belief-dependent payoff is regular within each regime slice. Here, the net benefit \(B_\theta(\widehat{\rho}_{\theta,A})\) depends continuously on the expected first-order posterior. While the D1 refinement injects a discontinuous jump into the receiver's belief map \(\rho_A(\sigma)\) when the signal becomes off path, the fixed point is resolved on the composition of these expectations, so the belief loop closes at \(\widehat\rho_{\theta,A}=\rho_A\).
 
 This is the level at which the fixed point is closed. The exposure term \(\Phi_\theta\) remains true-type indexed. It is not changed by the receiver's posterior. The receiver's posterior changes the current reputational benefit of the signal; it does not relabel the deviator's adverse-repricing exposure.
 
@@ -372,7 +372,7 @@ Suppose:
 \begin{enumerate}
 \item \(\pi_0=\Pr(\theta_H)\in(0,1)\), with \(B_H(1)>0\), \(B_H(\pi_0)\le B_H(1)\), and \(B_H(0)\le 0\);
 \item \(B_L(0)<0\);
-\item \(\Phi_H>\Phi_L\), as derived from primitive self-accuracy levels and Bayesian-surprise repricing in Section~\ref{sec:psychological-exposure};
+\item \(\Phi_H>\Phi_L\), with one primitive foundation given in Section~\ref{sec:psychological-exposure};
 \item \(\Gamma(q,\eta)\) is continuous and strictly increasing in \(q\), with \(\eta\in(0,1]\);
 \item \(q>q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}\);
 \item off-path beliefs satisfy D1, with the strict-response richness condition of Proposition~\ref{prop:d1-reversal};
@@ -384,7 +384,7 @@ q>\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}
 \quad\Rightarrow\quad
 \mathcal C_0 \text{ is the unique D1-closed pure assessment.}
 \]
-Equivalently, no D1-consistent psychological assessment in this class has stable top-end occupancy of \(s_A\), and the unique D1-consistent pure closed-loop assessment is \(\mathcal C_0\):
+Equivalently, no D1-consistent closed assessment in this class has stable top-end occupancy of \(s_A\), and the unique D1-consistent pure closed-loop assessment is \(\mathcal C_0\):
 \[
 \theta_H\mapsto s_P,
 \qquad
@@ -450,7 +450,7 @@ and the low-type deviation margin is
 \[
 \Delta_L^{D1}(q)=B_L(0)-\Gamma(q,\eta)\Phi_L<0.
 \]
-Thus neither type has a profitable deviation to \(s_A\). The safe-pooling configuration is internally consistent. Since all other pure configurations have been ruled out, \(\mathcal C_0\) is the unique D1-consistent psychological assessment in the binary pure-strategy class.
+Thus neither type has a profitable deviation to \(s_A\). The safe-pooling configuration is internally consistent. Since all other pure configurations have been ruled out, \(\mathcal C_0\) is the unique D1-consistent closed assessment in the binary pure-strategy class.
 \end{proof}
 
 The theorem should be read as a state claim:
