@@ -1,7 +1,7 @@
 \section{Observable Polarization}
 \label{sec:polarization}
 
-Section~\ref{sec:belief-loop} closed the belief loop that makes safe pooling the unique survivor in the binary core. This section asks what that collapse looks like from the outside. The binary model delivers a sharp equilibrium statement: once the transition probability into high scrutiny exceeds the critical threshold, the high type exits the ambitious signal and pooling on the safe signal is selected under D1-consistent beliefs. This section records the observable implication in a richer type space. Near the threshold, the quality of the ambitious signal need not decline smoothly. The more distinctive prediction is support polarization: ordinary winners withdraw, while low-calibration agents and extreme high types may remain.
+Section~\ref{sec:belief-loop} closed the belief loop that makes safe pooling the unique survivor in the binary core. This section asks what that collapse looks like from the outside. The binary model delivers a sharp equilibrium statement: once the transition probability into high scrutiny exceeds the critical threshold, the high type exits the ambitious signal and pooling on the safe signal is selected under D1-consistent beliefs. This section records the observable implication in a richer type space. Near the threshold, the quality of the ambitious signal need not decline smoothly. The more distinctive prediction is support polarization: participation is governed by exposure per unit of current rent, so ordinary winners can withdraw while low-exposure agents and extreme high-rent types remain.
 
 \subsection{Continuous types}
 
@@ -25,18 +25,26 @@ and sets
 \operatorname{Bern}(\bar p)
 \right).
 \]
+Maintain throughout this continuous extension that \(B(\theta)>0\) on \(\Theta\), and consider \(q>0\). Define the exposure-to-rent ratio and the scrutiny-adjusted tolerance level by
+\[
+r(\theta)=\frac{\Phi(\theta)}{B(\theta)},
+\qquad
+\tau(q)=\frac{1}{\beta q\mu_H}.
+\]
 The low-state payoff gain from the ambitious signal is
 \[
 D(\theta,q)=B(\theta)-\beta q\mu_H\Phi(\theta).
 \]
 Thus type \(\theta\) chooses \(s_A\) exactly when
 \[
-q<q^*(\theta),
-\qquad
-q^*(\theta)=\frac{B(\theta)}{\beta\mu_H\Phi(\theta)}.
+D(\theta,q)>0
+\iff
+B(\theta)-\beta q\mu_H\Phi(\theta)>0
+\iff
+r(\theta)<\tau(q).
 \]
 
-The binary theorem corresponds to the case in which the top type's threshold is crossed first. In the continuous model, the entire shape of \(q^*(\theta)\) determines which types remain on the ambitious signal.
+The binary theorem corresponds to the case in which the top type is the first relevant type whose ratio crosses the tolerance level. In the continuous model, the shape of \(r(\theta)\), not type rank alone, determines which types remain on the ambitious signal.
 
 \subsection{Hollowing out}
 
@@ -46,59 +54,63 @@ A simple mean-reversion story would predict that, as scrutiny risk rises, the am
 \]
 not according to type itself.
 
-The resulting profile is density-geometric: the mode of the conditional distribution can lie strictly below the turning threshold, while the maximally safe position is depopulated. The most crowded point need not be the most stable one.
+The resulting profile is level-set geometric: the mode of the conditional distribution can lie strictly below the exposed region, while the maximally safe position is depopulated. The most crowded point need not be the most stable one.
 
-Suppose \(q^*(\theta)\) is nonmonotone: it is low on an intermediate-high region of the type space but rises again in the extreme upper tail. Economically, these are environments in which ordinary winners carry substantial reputation-at-risk but do not have enough surplus to dominate future adverse repricing, while extreme types have sufficiently large current surplus or sufficiently robust self-models to remain exposed.
+The relevant case is a hump-shaped \(r\). Low-end types remain because \(\Phi(\theta)\) is small relative to \(B(\theta)\). Middle and high-reputation types exit because \(\Phi(\theta)/B(\theta)\) is locally high. Extreme high types can remain because \(B(\theta)\) grows enough to drive \(r(\theta)\) back down. Economically, these are environments in which ordinary winners carry substantial reputation-at-risk but do not have enough current surplus to dominate future adverse repricing, while the extreme upper tail has enough current rent to bear the exposure.
 
-For a given \(q\), the set of types choosing the ambitious signal is
+For a given \(q\), the strict ambitious-participation set is
 \[
-A(q)=\{\theta\in\Theta:q<q^*(\theta)\}.
+A^\circ(q)=\{\theta\in\Theta:r(\theta)<\tau(q)\}.
 \]
-If \(q^*(\theta)\) has an interior trough, then for transition probabilities in the corresponding range,
+When making support statements, write \(A(q)=\overline{A^\circ(q)}\); the indifferent boundary types have no effect under continuous type distributions. If the tolerance level cuts through the hump of \(r\), then
 \[
 A(q)=[\underline\theta,\theta_1(q)]\cup[\theta_2(q),\overline\theta]
 \]
-for some \(\theta_1(q)<\theta_2(q)\). The ambitious signal is then generated by two separated groups: low or poorly calibrated types whose exposure-to-rent ratio is low because they have little to lose, and extreme high types whose rents remain large enough to bear exposure.
+for some \(\theta_1(q)<\theta_2(q)\). The ambitious signal is then generated by two separated groups: low-exposure types whose exposure-to-rent ratio is low because they have little to lose, and extreme high types whose rents remain large enough to bear exposure.
 
 \begin{proposition}[Polarized degradation]
 \label{thm:polarized-degradation}
-Suppose \(q^*(\theta)\) is continuous and there exist \(\theta_1<\theta_2\) such that
+Suppose \(r(\theta)\) is continuous and single-peaked at an interior, intermediate-high type \(\theta_m\): it is strictly increasing on \([\underline\theta,\theta_m]\) and strictly decreasing on \([\theta_m,\overline\theta]\). For some \(q>0\), suppose
 \[
-q^*(\theta)>q \quad\text{for}\quad \theta\in[\underline\theta,\theta_1]\cup[\theta_2,\overline\theta]
+r(\underline\theta)<\tau(q)<r(\theta_m),
+\qquad
+r(\overline\theta)<\tau(q)<r(\theta_m).
 \]
-and
+Then there exist unique \(\theta_1(q)\in(\underline\theta,\theta_m)\) and \(\theta_2(q)\in(\theta_m,\overline\theta)\) such that \(r(\theta_i(q))=\tau(q)\), and the support closure of ambitious participation is
 \[
-q^*(\theta)<q \quad\text{for}\quad \theta\in(\theta_1,\theta_2).
+A(q)=[\underline\theta,\theta_1(q)]\cup[\theta_2(q),\overline\theta].
 \]
-Then the type distribution conditional on the ambitious signal has support on two separated intervals. In particular, the ambitious signal is not a monotone high-type signal in this region.
+In particular, the ambitious signal is not a monotone high-type signal in this region.
 \end{proposition}
 
 \begin{proof}
-The sender chooses \(s_A\) if and only if \(q<q^*(\theta)\). The stated inequalities imply that this condition holds exactly on \([\underline\theta,\theta_1]\cup[\theta_2,\overline\theta]\) and fails on \((\theta_1,\theta_2)\). Hence the support of \(\theta\) conditional on observing \(s_A\) is the union of two separated intervals. This support is not an upper set in \(\Theta\). Therefore \(s_A\) is not a monotone high-type signal.
+Since \(r\) is continuous, strictly increasing on \([\underline\theta,\theta_m]\), and \(r(\underline\theta)<\tau(q)<r(\theta_m)\), the intermediate value theorem gives a unique \(\theta_1(q)\in(\underline\theta,\theta_m)\) with \(r(\theta_1(q))=\tau(q)\). The same argument on the strictly decreasing upper branch gives a unique \(\theta_2(q)\in(\theta_m,\overline\theta)\) with \(r(\theta_2(q))=\tau(q)\). The participation condition \(r(\theta)<\tau(q)\) holds on the lower and upper tails, fails on the open middle interval, and leaves the two cutoff types indifferent. Thus the closed support of \(\theta\) conditional on observing \(s_A\) is \([\underline\theta,\theta_1(q)]\cup[\theta_2(q),\overline\theta]\). This support is not an upper set in \(\Theta\). Therefore \(s_A\) is not a monotone high-type signal.
 \end{proof}
 
-The proposition is a support result, not a variance theorem. It says that the ambitious signal can cease to be an upper set in type space. The conditional mean of type among ambitious senders may fall, but the model does not imply an unconditional sign for
+The proposition is a ratio-level-set support result, not a variance theorem. It says that the ambitious signal can cease to be an upper set in type space. The conditional mean of type among ambitious senders may fall, but the model does not imply an unconditional sign for
 \[
 \operatorname{Var}(\theta\mid s_A).
 \]
 
 A variance increase is an empirical implication only under regular density and mass-balance conditions. For example, suppose the underlying type density is continuous, both surviving tail intervals retain positive conditional mass, the removed middle interval has its conditional mean between the two surviving tail means, and the separation between the two surviving tail means dominates the within-tail dispersion introduced by truncation. Under such conditions, hollowing out the middle raises conditional dispersion relative to the pre-threshold ambitious set. Without those conditions, the sign of the variance comparison is an empirical question.
 
-The robust prediction is therefore polarization of support: the surviving ambitious signal can be generated by extreme competence or by poor anticipatory discipline. This is why mean reversion is too weak a description. The ambitious signal becomes nonmonotone before any unconditional variance claim is available.
+The robust prediction is therefore polarization of support: the surviving ambitious signal can be generated by extreme competence or by poor anticipatory discipline. This is why mean reversion is too weak a description. The ambitious signal ceases to be an upper set before any unconditional variance claim is available.
+
+Figure~\ref{fig:polarization-variance} should be read as an illustration of this ratio-level-set hollowing under additional mass-balance restrictions. It shows cases in which the same middle removal that creates two support components also raises conditional dispersion.
 
 \input{../figures/polarization/figure-block.tex}
 \InsertPolarizationVarianceFigure
 
 \subsection{Relation to the D1 flip}
 
-The D1 mechanism is the one proved in Section~\ref{sec:belief-loop}, including its contrast with standard forward-induction selection after Theorem~\ref{thm:top-down-pooling}. The present section uses that result only as an observable implication: once the high type has the smaller profitable-deviation response set, the ambitious signal can become nonmonotone rather than simply ``high type.''
+The D1 mechanism is the one proved in Section~\ref{sec:belief-loop}, including its contrast with standard forward-induction selection after Theorem~\ref{thm:top-down-pooling}. The present section uses that result only as an observable implication: once the high type has the smaller profitable-deviation response set, ambitious participation is sorted by \(\Phi(\theta)/B(\theta)\) rather than by type alone. The observable signature is not threshold nonmonotonicity as a primitive. It is Anti-Spence sorting by exposure per unit rent: good middle and high-reputation types climb down while low-exposure and overwhelming-rent types remain.
 
 \subsection{Empirical language}
 
-The model predicts a specific kind of degradation. It is not merely that ambitious signals become noisier. It is that the middle of the credible ambitious class exits first. Agents with too little reputation-at-risk may continue because adverse repricing cannot take much from them. Agents with overwhelming surplus may continue because the ambitious signal remains worthwhile. Agents in between withdraw because they have enough to lose and not enough surplus to dominate the future exposure cost.
+The model predicts a specific kind of degradation. It is not merely that ambitious signals become noisier. It is that the middle of the credible ambitious class exits first when its exposure-to-rent ratio is locally high. Agents with too little reputation-at-risk may continue because adverse repricing cannot take much from them. Agents with overwhelming surplus may continue because the ambitious signal remains worthwhile. Agents in between withdraw because they have enough to lose and not enough surplus to dominate the future exposure cost.
 
 Hence the signal quality does not just mean-revert; it can deplete from the center and leave a polarized residual set at the margin.
 
-In the standard signaling model, the high signal is protected because bad types cannot climb up. In this model, the high signal is hollowed out because good types climb down. The remaining signal can look extreme: true outliers and badly calibrated imitators share the same visible action. That polarization is the observable signature of top-down pooling.
+In the standard signaling model, the high signal is protected because bad types cannot climb up. In this model, the high signal is hollowed out because good types climb down. The remaining signal can look extreme: true outliers and badly calibrated imitators share the same visible action. That Anti-Spence polarization is the observable signature of top-down pooling.
 
 This polarized, hollowed signature is the static cross-sectional shadow of top-down pooling: a snapshot of who still sends the ambitious signal once withdrawal has run its course.
