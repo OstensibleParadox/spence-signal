@@ -7,42 +7,86 @@ The previous section established two ingredients. First, conditional on a fixed 
 
 This section separates the main argument into two independent reversals. The first is an IC reversal: once \(q>q_{\mathrm{IC}}\), \(\theta_H\) exits \(s_A\) even if the receiver would still read \(s_A\) as high-type evidence. The second is a D1 reversal: once \(q>q_{\mathrm{D1}}\), the high type has a strictly smaller profitable-deviation response set than the low type, so an off-path \(s_A\) is no longer high-type evidence but low-type evidence. The final theorem only combines these two reversals. For \(q>\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}\), safe pooling is the unique D1-closed pure assessment.
 
+\paragraph{Payoff convention.}
+Fix a low-scrutiny history and write
+\[
+q=\Pr(j_{t+1}=H\mid j_t=L)
+\]
+for the transition probability into high scrutiny. For type \(\theta\in\{\theta_L,\theta_H\}\), let
+\[
+B_\theta(\rho)
+\]
+denote the current net benefit from choosing \(s_A\) rather than \(s_P\) when the ambitious signal is interpreted with posterior \(\rho\). This term includes the current reputational return from the receiver's interpretation, net of current signal cost and low-scrutiny epistemic cost. It excludes future high-scrutiny exposure. Let \(\Phi_\theta>0\) denote the true-type-indexed adverse-repricing exposure cost, with the reversed ranking \(\Phi_H>\Phi_L\) supplied by Section~\ref{sec:psychological-exposure}.
+
+Let \(e_t\ge 0\) denote exposed ambition at the beginning of period \(t\). Sending \(s_A\) adds one unit of new exposed ambition; choosing \(s_P\) adds no new unit. Existing exposure depreciates at rate \(\eta\in(0,1]\):
+\[
+e_{t+1}=(1-\eta)e_t+\mathbf{1}\{s_t=s_A\}.
+\]
+Let
+\[
+\Gamma(q,\eta)>0
+\]
+denote the discounted marginal continuation price of adding one unit of exposed ambition in the current low-scrutiny state. The one-period reduced form is the special case
+\[
+\Gamma(q,\eta)=\beta q\mu_H,
+\]
+where \(\beta\in(0,1)\) is the discount factor and \(\mu_H\) is the high-scrutiny intensity. In the stock version,
+\[
+\Gamma(q,\eta)
+=
+\mathbb E_q\left[
+\sum_{\tau\ge 1}
+\beta^\tau (1-\eta)^{\tau-1}
+\mu_H\mathbf{1}\{j_{t+\tau}=H\}
+\,\middle|\,j_t=L
+\right].
+\]
+Low-scrutiny and current epistemic costs are already absorbed into \(B_\theta(\rho)\); \(\Gamma(q,\eta)\) prices only the marginal future adverse-repricing exposure created by entering high scrutiny. The maintained monotonicity condition is
+\[
+\Gamma(q,\eta)\text{ is continuous and strictly increasing in }q.
+\]
+
+The payoff margin used throughout this section is
+\[
+\Delta_\theta(\rho,q)
+=
+B_\theta(\rho)-\Gamma(q,\eta)\Phi_\theta.
+\]
+The fixed high-attribution surplus sometimes written \(B_H\) is \(B_H(1)\).
+
 \subsection{IC Reversal}
 \label{subsec:ic-reversal}
 \label{subsec:anticipatory-incentive-failure}
 
-Let the current judgment-intensity state be low, denoted \(L\), and let
-\[
-q=\Pr(j_{t+1}=H\mid j_t=L)
-\]
-be the transition probability into the high-scrutiny state. The sender chooses between the ambitious signal \(s_A\) and the pooling-safe signal \(s_P\). Sending \(s_A\) creates an exposure state that can be repriced if the next-period state is \(H\).
-
-For type \(\theta\in\{\theta_L,\theta_H\}\), let \(B_\theta\) denote the current net separation surplus from sending \(s_A\) rather than \(s_P\), before future high-scrutiny exposure is priced. This term includes the current reputational benefit of being interpreted as high type and subtracts current intrinsic and low-scrutiny epistemic costs. Let \(\Phi_\theta>0\) denote the true-type-indexed adverse-repricing exposure cost, with the reversed ranking \(\Phi_H>\Phi_L\) supplied by Section~\ref{sec:psychological-exposure}. In the one-period exposure specification, the low-state payoff gain from sending \(s_A\) is
-\[
-D_\theta(q)=B_\theta-\beta q\mu_H\Phi_\theta,
-\]
-where \(\beta\in(0,1)\) is the discount factor and \(\mu_H\) is the high-scrutiny intensity.
+At the low-scrutiny history, the sender chooses between the ambitious signal \(s_A\) and the pooling-safe signal \(s_P\). Sending \(s_A\) creates an exposure state that can be repriced if the next-period state is \(H\).
 
 The high type's separating incentive constraint is
 \[
-D_H(q)\ge 0.
+\Delta_H(1,q)\ge 0.
 \]
 Thus define
 \[
-q_{\mathrm{IC}}=\frac{B_H}{\beta\mu_H\Phi_H},
+q_{\mathrm{IC}}
+=
+\inf\{q:\,B_H(1)-\Gamma(q,\eta)\Phi_H<0\}.
 \]
-assuming \(B_H>0\). For \(q>q_{\mathrm{IC}}\), the high type strictly prefers the pooling-safe signal \(s_P\) to remaining on the ambitious signal \(s_A\), even if \(s_A\) is still interpreted as high type.
+In the one-period exposure specification, this collapses to
+\[
+q_{\mathrm{IC}}=\frac{B_H(1)}{\beta\mu_H\Phi_H},
+\]
+assuming \(B_H(1)>0\). For \(q>q_{\mathrm{IC}}\), the high type strictly prefers the pooling-safe signal \(s_P\) to remaining on the ambitious signal \(s_A\), even if \(s_A\) is still interpreted as high type.
 
 \begin{proposition}[IC reversal]
 \label{prop:ic-reversal}
 \label{lem:anticipatory-incentive-failure}
-Suppose the current state is \(L\) and \(B_H>0\). If
+\label{lem:general-price-ic-reversal}
+Suppose the current state is \(L\), \(B_H(1)>0\), \(\Phi_H>0\), and \(\Gamma(q,\eta)\) is continuous and strictly increasing in \(q\). If
 \[
 q>q_{\mathrm{IC}},
 \]
 then
 \[
-D_H(q)=B_H-\beta q\mu_H\Phi_H<0.
+\Delta_H(1,q)=B_H(1)-\Gamma(q,\eta)\Phi_H<0.
 \]
 Hence
 \[
@@ -61,11 +105,11 @@ is not an equilibrium.
 \end{proposition}
 
 \begin{proof}
-Under the separating profile, \(s_A\) is interpreted as the high-type signal. Hence the high type receives the current separation surplus \(B_H\) from \(s_A\), but also internalizes the future exposure cost \(\beta q\mu_H\Phi_H\). Its payoff gain from choosing \(s_A\) rather than \(s_P\) is therefore
+Under the separating profile, \(s_A\) is interpreted as the high-type signal. Hence the high type receives the current net benefit \(B_H(1)\) from \(s_A\), but also internalizes the future exposure cost \(\Gamma(q,\eta)\Phi_H\). Its payoff gain from choosing \(s_A\) rather than \(s_P\) is therefore
 \[
-D_H(q)=B_H-\beta q\mu_H\Phi_H.
+\Delta_H(1,q)=B_H(1)-\Gamma(q,\eta)\Phi_H.
 \]
-If \(q>q_{\mathrm{IC}}\), then \(D_H(q)<0\). Thus the high type strictly prefers \(s_P\) to \(s_A\). The proposed separating profile violates the high type's incentive constraint and therefore cannot be an equilibrium.
+Since \(\Phi_H>0\) and \(\Gamma(q,\eta)\) is strictly increasing in \(q\), this expression is strictly decreasing in \(q\). By the definition of \(q_{\mathrm{IC}}\), every \(q>q_{\mathrm{IC}}\) lies in the region where \(B_H(1)-\Gamma(q,\eta)\Phi_H<0\). Thus the high type strictly prefers \(s_P\) to \(s_A\). The proposed separating profile violates the high type's incentive constraint and therefore cannot be an equilibrium.
 \end{proof}
 
 The point is not that the low type successfully mimics the high type. The separating profile collapses before that question arises. The IC reversal says that high-type meaning is no longer enough to keep the high type on the ambitious signal: the expected future cost of adverse repricing exceeds the current benefit of being recognized.
@@ -76,24 +120,14 @@ The point is not that the low type successfully mimics the high type. The separa
 
 It remains to check whether pooling on \(s_P\) can be sustained. The possible obstruction is off-path resurrection: if all types pool on \(s_P\), an off-path deviation to \(s_A\) might again be interpreted as evidence of high type, restoring the value of the ambitious signal.
 
-This is where the refinement matters. Consider the pooling candidate in which both types choose \(s_P\). The receiver observes an off-path signal \(s_A\). Let \(a\) denote a receiver response, and let \(R(a)\) be the reputational return from that response. For simplicity, assume \(R(a)\) is type-independent and ordered by receiver favorability.
+This is where the refinement matters. Consider the pooling candidate in which both types choose \(s_P\). The receiver observes an off-path signal \(s_A\). Let \(a\) denote a receiver response, and let \(\rho(a)\) be the posterior or interpretation induced by that response. D1 determines how the receiver interprets the off-path signal and therefore changes the current payoff term \(B_\theta(\rho(a))\). It does not relabel the deviator's true-type exposure technology \(\Phi_\theta\).
 
-Let the cost of deviating to the ambitious signal for type \(\theta\) be
-\[
-K_\theta(q)=\bar k_\theta+\beta q\mu_H\Phi_\theta,
-\]
-where \(\bar k_\theta\) is the current cost of sending \(s_A\) in the pooling environment and \(\beta q\mu_H\Phi_\theta\) is the anticipatory high-scrutiny exposure cost. The exposure term \(\Phi_\theta\) is the deviator's true-type cost. D1 determines how the receiver interprets the off-path signal and therefore affects \(R(a)\). It does not relabel the deviator's exposure technology.
-
-Given receiver response \(a\), type \(\theta\)'s payoff gain from deviating to \(s_A\) is
-\[
-G_\theta(a;q)=R(a)-K_\theta(q).
-\]
 Define the profitable-deviation response set
 \[
-\mathcal D_\theta(q)=\{a:G_\theta(a;q)>0\}.
+\mathcal D_\theta(q)=\{a:\Delta_\theta(\rho(a),q)>0\}.
 \]
 
-In the standard Spence ranking, the high type has a lower signaling cost, so
+In the standard Spence ranking, the high type has a lower signaling cost, so the affine static case gives
 \[
 \mathcal D_L(q)\subset \mathcal D_H(q).
 \]
@@ -101,31 +135,34 @@ D1 then assigns the off-path ambitious signal to the high type. The present mode
 \[
 \Phi_H>\Phi_L.
 \]
-Hence the high type's cost increases faster in \(q\). The ranking flips when
+Let
 \[
-K_H(q)>K_L(q),
+M:=\sup_{a}\{B_H(\rho(a))-B_L(\rho(a))\},
 \]
-or equivalently,
+and assume \(M<\infty\). Define the generalized D1 threshold
 \[
-\bar k_H+\beta q\mu_H\Phi_H>
-\bar k_L+\beta q\mu_H\Phi_L.
+q_{\mathrm{D1}}
+=
+\inf\{q:\Gamma(q,\eta)(\Phi_H-\Phi_L)>M\}.
 \]
-Define
+For \(q>q_{\mathrm{D1}}\), every receiver response satisfies
 \[
-q_{\mathrm{D1}}=
-\frac{\bar k_L-\bar k_H}{\beta\mu_H(\Phi_H-\Phi_L)},
+\Delta_H(\rho(a),q)<\Delta_L(\rho(a),q),
 \]
-whenever \(\bar k_L>\bar k_H\). Then for \(q>q_{\mathrm{D1}}\),
+because
 \[
-K_H(q)>K_L(q).
+\Delta_H(\rho(a),q)-\Delta_L(\rho(a),q)
+=
+B_H(\rho(a))-B_L(\rho(a))
+-\Gamma(q,\eta)(\Phi_H-\Phi_L).
 \]
 
 \begin{proposition}[D1 reversal]
 \label{prop:d1-reversal}
 \label{lem:d1-off-path-reversal}
-Suppose \(\Phi_H>\Phi_L\), \(q>q_{\mathrm{D1}}\), and the receiver-response space is rich enough that there exists a response \(a\) with
+Suppose \(\Phi_H>\Phi_L\), \(M<\infty\), \(q>q_{\mathrm{D1}}\), and the receiver-response space is rich enough that there exists a response \(a\) with
 \[
-K_L(q)<R(a)<K_H(q).
+\Delta_L(\rho(a),q)>0>\Delta_H(\rho(a),q).
 \]
 Then
 \[
@@ -140,30 +177,41 @@ Therefore, under the D1 criterion, an off-path ambitious signal \(s_A\) cannot b
 \end{proposition}
 
 \begin{proof}
-For any receiver response \(a\), type \(\theta\)'s gain from deviating to \(s_A\) is
+If \(q>q_{\mathrm{D1}}\), then for every receiver response \(a\),
 \[
-G_\theta(a;q)=R(a)-K_\theta(q).
-\]
-If \(q>q_{\mathrm{D1}}\), then \(K_H(q)>K_L(q)\). Hence for every receiver response \(a\),
-\[
-G_H(a;q)<G_L(a;q).
+\Delta_H(\rho(a),q)<\Delta_L(\rho(a),q).
 \]
 Therefore, whenever the deviation is profitable for the high type, it is also profitable for the low type:
 \[
-G_H(a;q)>0
+\Delta_H(\rho(a),q)>0
 \quad\Rightarrow\quad
-G_L(a;q)>0.
+\Delta_L(\rho(a),q)>0.
 \]
 Thus
 \[
 \mathcal D_H(q)\subseteq\mathcal D_L(q).
 \]
-The strict-response richness condition gives some \(a\) satisfying \(K_L(q)<R(a)<K_H(q)\). For this response, \(G_L(a;q)>0\) while \(G_H(a;q)<0\), so \(a\in\mathcal D_L(q)\setminus\mathcal D_H(q)\). Hence
+The strict-response richness condition gives some \(a\) satisfying \(\Delta_L(\rho(a),q)>0>\Delta_H(\rho(a),q)\), so \(a\in\mathcal D_L(q)\setminus\mathcal D_H(q)\). Hence
 \[
 \mathcal D_H(q)\subsetneq\mathcal D_L(q).
 \]
 Under D1, if one type can profitably deviate under a strictly wider set of receiver responses, the deviation is attributed to that type rather than to the type whose profitable-deviation set is smaller. Hence the off-path signal \(s_A\) is attributed to \(\theta_L\), not to \(\theta_H\), and the off-path posterior is \(\rho_A^{D1}=0\).
 \end{proof}
+
+The affine Spence payoff is a special case, not the maintained payoff notation. If
+\[
+B_\theta(\rho(a))=R(a)-\bar k_\theta,
+\]
+then
+\[
+M=\bar k_L-\bar k_H.
+\]
+In the one-period reduced form \(\Gamma(q,\eta)=\beta q\mu_H\), and when \(\bar k_L>\bar k_H\), the generalized threshold becomes the old closed form
+\[
+q_{\mathrm{D1}}
+=
+\frac{\bar k_L-\bar k_H}{\beta\mu_H(\Phi_H-\Phi_L)}.
+\]
 
 The ambitious signal therefore changes its meaning. In the standard model, an off-path ambitious signal says: this must be a strong type, because only strong types can afford it. Here, when future scrutiny is sufficiently likely, the same signal says: this is unlikely to be the high type, because high types have the most to lose from carrying exposed ambition into future scrutiny. This is the second reversal, independent of the IC reversal above.
 
@@ -199,19 +247,12 @@ Crucially, the fixed point is evaluated exactly at this second-order hierarchy l
 
 This is the level at which the fixed point is closed. The exposure term \(\Phi_\theta\) remains true-type indexed. It is not changed by the receiver's posterior. The receiver's posterior changes the current reputational benefit of the signal; it does not relabel the deviator's adverse-repricing exposure.
 
-Let
-\[
-B_\theta(\rho)
-\]
-denote the type-\(\theta\) current net benefit from choosing \(s_A\) rather than \(s_P\) when the ambitious signal is interpreted with posterior \(\rho\). This term includes the current reputational return from the receiver's interpretation, net of current signal cost and low-scrutiny epistemic cost. It excludes future high-scrutiny exposure. The fixed \(B_H\) used above is the full high-type-attribution value:
-\[
-B_H=B_H(1).
-\]
+Using the payoff convention above, the proof below only needs the current-benefit values at three posteriors: high-type attribution, prior attribution, and low-type attribution.
 Let
 \[
 \pi_0:=\Pr(\theta_H)\in(0,1)
 \]
-denote the prior probability of the high type. The proof below only uses three posterior values: high-type attribution, prior attribution, and low-type attribution. Assume
+denote the prior probability of the high type. Assume
 \[
 B_H(1)>0,
 \qquad
@@ -225,93 +266,14 @@ B_L(0)<0.
 \]
 Thus if \(s_A\) is interpreted as low-type evidence, the low type does not receive enough current benefit to justify choosing it.
 
-The one-period exposure term \(\beta q\mu_H\) can be written in the more general stock form used later. Let \(e_t\ge 0\) denote exposed ambition at the beginning of period \(t\). Sending \(s_A\) adds one unit of new exposed ambition; choosing \(s_P\) adds no new unit. Existing exposure depreciates at rate \(\eta\in(0,1]\):
-\[
-e_{t+1}=(1-\eta)e_t+\mathbf{1}\{s_t=s_A\}.
-\]
-Let
-\[
-\Gamma(q,\eta)>0
-\]
-denote the discounted marginal continuation price of adding one unit of exposed ambition in the current low-scrutiny state. The one-period reduced form is the special case
-\[
-\Gamma(q,\eta)=\beta q\mu_H.
-\]
-In the stock version,
-\[
-\Gamma(q,\eta)
-=
-\mathbb E_q\left[
-\sum_{\tau\ge 1}
-\beta^\tau (1-\eta)^{\tau-1}
-\mu_H\mathbf{1}\{j_{t+\tau}=H\}
-\,\middle|\,j_t=L
-\right].
-\]
-Low-scrutiny and current epistemic costs are already absorbed into \(B_\theta(\rho)\); \(\Gamma(q,\eta)\) prices only the marginal future adverse-repricing exposure created by entering high scrutiny.
-The maintained monotonicity condition is
-\[
-\Gamma(q,\eta)\text{ is continuous and strictly increasing in }q.
-\]
-
-Given posterior \(\rho\), the high type's payoff gain from choosing \(s_A\) rather than \(s_P\) is
-\[
-\Delta_H(\rho,q)
-=
-B_H(\rho)-\Gamma(q,\eta)\Phi_H.
-\]
-Define the high-type withdrawal threshold by
-\[
-q_{\mathrm{IC}}
-=
-\inf\{q:\,B_H(1)-\Gamma(q,\eta)\Phi_H<0\}.
-\]
-In the one-period reduced form, this collapses to
-\[
-q_{\mathrm{IC}}
-=
-\frac{B_H(1)}{\beta\mu_H\Phi_H}.
-\]
-
-\begin{lemma}[General-price IC reversal]
-\label{lem:general-price-ic-reversal}
-Suppose \(\Phi_H>0\) and \(\Gamma(q,\eta)\) is continuous and strictly increasing in \(q\). Then the high type's stay advantage under high-type interpretation,
-\[
-\Delta_H(1,q)=B_H(1)-\Gamma(q,\eta)\Phi_H,
-\]
-is strictly decreasing in \(q\). In particular, if \(q>q_{\mathrm{IC}}\), then
-\[
-\Delta_H(1,q)<0.
-\]
-Thus \(q>q_{\mathrm{IC}}\) means that \(\theta_H\) exits \(s_A\) even under the high-type interpretation \(\rho_A=1\). It does not determine incentives under arbitrary off-path interpretations.
-\end{lemma}
-
-\begin{proof}
-Under high-type interpretation,
-\[
-\Delta_H(1,q)=B_H(1)-\Gamma(q,\eta)\Phi_H.
-\]
-Since \(\Phi_H>0\) and \(\Gamma(q,\eta)\) is strictly increasing in \(q\), this expression is strictly decreasing in \(q\). By the definition of \(q_{\mathrm{IC}}\), every \(q>q_{\mathrm{IC}}\) lies in the region where \(B_H(1)-\Gamma(q,\eta)\Phi_H<0\). Hence \(\Delta_H(1,q)<0\). The conclusion is restricted to the high-type interpretation \(\rho_A=1\).
-\end{proof}
-
 \subsection{The Belief-Loop Operator}
 \label{subsec:belief-loop-operator}
 
-The off-path D1 comparison in Section~\ref{subsec:d1-off-path-reversal} has the same form under the general exposure price:
-\[
-K_\theta(q)=\bar k_\theta+\Gamma(q,\eta)\Phi_\theta.
-\]
-Define
-\[
-q_{\mathrm{D1}}
-=
-\inf\{q:\,K_H(q)>K_L(q)\}.
-\]
 For \(q>q_{\mathrm{D1}}\), the D1-selected off-path posterior after \(s_A\) is
 \[
 \rho_A^{D1}=0
 \]
-under the strict-response richness condition of Proposition~\ref{prop:d1-reversal}. The argument is the same as in Proposition~\ref{prop:d1-reversal}, replacing \(\beta q\mu_H\) by \(\Gamma(q,\eta)\): once \(K_H(q)>K_L(q)\), \(G_H(a;q)<G_L(a;q)\) for every receiver response, and richness makes the inclusion strict. This D1 conclusion is an off-path counterfactual rule. It is obtained by comparing the response sets \(\mathcal D_H(q)\) and \(\mathcal D_L(q)\); it does not presuppose that either type actually deviates.
+under the strict-response richness condition of Proposition~\ref{prop:d1-reversal}. This D1 conclusion is an off-path counterfactual rule. It is obtained by comparing the response sets \(\mathcal D_H(q)\) and \(\mathcal D_L(q)\) defined from \(\Delta_\theta(\rho(a),q)\); it does not presuppose that either type actually deviates.
 
 Let
 \[
@@ -338,7 +300,7 @@ Given this belief map, the high type's participation response is
 T_q(z)
 =
 \mathbf{1}\left\{
-B_H(\rho_A(z))-\Gamma(q,\eta)\Phi_H\ge 0
+\Delta_H(\rho_A(z),q)\ge 0
 \right\}.
 \]
 A high-type belief-loop fixed point is a value \(z\in\{0,1\}\) such that
@@ -409,7 +371,7 @@ The high type's payoff gain from choosing \(s_A\) rather than \(s_P\) is
 \[
 \Delta_H(1,q)=B_H(1)-\Gamma(q,\eta)\Phi_H.
 \]
-Since \(q>q_{\mathrm{IC}}\), Lemma~\ref{lem:general-price-ic-reversal} makes this expression strictly negative. Hence \(T_q(1)=0\), so \(z=1\) is not a fixed point.
+Since \(q>q_{\mathrm{IC}}\), Proposition~\ref{prop:ic-reversal} makes this expression strictly negative. Hence \(T_q(1)=0\), so \(z=1\) is not a fixed point.
 
 If both types choose \(s_A\), then \(s_A\) is pooling rather than separating. Bayes' rule gives \(\rho_A=\pi_0\). By assumption,
 \[
@@ -431,7 +393,7 @@ B_L(0)-\Gamma(q,\eta)\Phi_L<0,
 \]
 because \(B_L(0)<0\) and \(\Gamma(q,\eta)\Phi_L>0\). Hence the low type does not wish to occupy \(s_A\) under low-type attribution.
 
-Third, evaluate \(\mathcal C_0\). Under \(\mathcal C_0\), \(s_A\) is off path. Since \(q>q_{\mathrm{D1}}\), Proposition~\ref{prop:d1-reversal} and its general-price restatement imply
+Third, evaluate \(\mathcal C_0\). Under \(\mathcal C_0\), \(s_A\) is off path. Since \(q>q_{\mathrm{D1}}\), Proposition~\ref{prop:d1-reversal} implies
 \[
 \mathcal D_H(q)\subsetneq \mathcal D_L(q),
 \]
@@ -446,11 +408,11 @@ Belief consistency then sets
 \]
 The high-type deviation margin is
 \[
-\Delta_H^{D1}(q)=B_H(0)-\Gamma(q,\eta)\Phi_H<0,
+\Delta_H(0,q)=B_H(0)-\Gamma(q,\eta)\Phi_H<0,
 \]
 and the low-type deviation margin is
 \[
-\Delta_L^{D1}(q)=B_L(0)-\Gamma(q,\eta)\Phi_L<0.
+\Delta_L(0,q)=B_L(0)-\Gamma(q,\eta)\Phi_L<0.
 \]
 Thus neither type has a profitable deviation to \(s_A\). The safe-pooling configuration is internally consistent. Since all other pure configurations have been ruled out, \(\mathcal C_0\) is the unique D1-consistent closed assessment in the binary pure-strategy class.
 \end{proof}
@@ -472,11 +434,11 @@ s_A\text{ off path}
 \right]
 \wedge
 \left[
-\Delta_H^{D1}(q)<0
+\Delta_H(0,q)<0
 \right]
 \wedge
 \left[
-\Delta_L^{D1}(q)<0
+\Delta_L(0,q)<0
 \right].
 \]
 The D1 component is not caused by an observed low-type deviation. It is the refinement's counterfactual response to an off-path signal, determined by the D1 reversal \(\mathcal D_H(q)\subsetneq\mathcal D_L(q)\). The participation inequalities then show that the counterfactual off-path interpretation is consistent with nobody actually sending \(s_A\).

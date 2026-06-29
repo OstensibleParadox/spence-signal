@@ -26,7 +26,7 @@ Define a temporary semantic penalty term
 \]
 Then, in low-scrutiny state $L$, the low-state advantage of sending ambitious is
 \[
-\Delta_\theta^{\text{dyn}}(q_t,\rho_t)=B_\theta(\rho_t)-\beta q_t\mu_H\Phi_\theta-\Sigma_t,
+\Delta_\theta^{\mathrm{dyn}}(\rho_t,q_t)=B_\theta(\rho_t)-\beta q_t\mu_H\Phi_\theta-\Sigma_t,
 \]
 where $\rho_t$ is the period-$t$ version of the Section~\ref{sec:belief-loop} posterior $\rho_A$ and appears in $B_\theta$. Sending $s_P$ avoids the future repricing term and does not create today's semantic penalty.
 
@@ -34,16 +34,18 @@ where $\rho_t$ is the period-$t$ version of the Section~\ref{sec:belief-loop} po
 
 Cheap anthropomorphic messages are unpriced: the sender can choose $m_t=1$ with no direct signal-dependent cost and no type restriction. Because both types can choose $m_t$ identically, the induced change in $(C_t,E_t)$ is type-neutral. Therefore these messages are shadowable.
 
-To see dynamic single crossing, let receiver response $a$ induce continuation return $R(a)$ from choosing $s_A$. The high- and low-type off-path gains are
+To see dynamic single crossing, let receiver response $a$ induce posterior or interpretation $\rho(a)$ after choosing $s_A$. The high- and low-type off-path gains are
 \[
-G_H(a;t)=R(a)-\bar k_H-\beta q_t\mu_H\Phi_H-\Sigma_t,
+\Delta_H^{\mathrm{dyn}}(\rho(a),q_t)
+=B_H(\rho(a))-\beta q_t\mu_H\Phi_H-\Sigma_t,
 \qquad
-G_L(a;t)=R(a)-\bar k_L-\beta q_t\mu_H\Phi_L-\Sigma_t.
+\Delta_L^{\mathrm{dyn}}(\rho(a),q_t)
+=B_L(\rho(a))-\beta q_t\mu_H\Phi_L-\Sigma_t.
 \]
-The term $\Sigma_t$ cancels in the comparison, so adding or relaxing trust-capital does not alter the type comparison. If $q_t>q_{\mathrm{D1}}$, then $G_H(a;t)<G_L(a;t)$ for every receiver response, so $s_A$ is still D1-attributed to the low type.
+The term $\Sigma_t$ cancels in the type comparison. Therefore adding or relaxing trust-capital does not alter the response-set ordering inherited from Section~\ref{sec:belief-loop}. If $q_t>q_{\mathrm{D1}}$, then $\Delta_H^{\mathrm{dyn}}(\rho(a),q_t)<\Delta_L^{\mathrm{dyn}}(\rho(a),q_t)$ for every receiver response, so $s_A$ is still D1-attributed to the low type.
 
 \begin{remark}[Invariance of the Belief Loop Fixed Point]
-Embedding the dynamic penalty $\Sigma_t$ into the belief-loop operator $T_q(z)$ from Section~\ref{sec:belief-loop} does not alter the number of fixed points in the collapse region. Let the modified operator be $T_{q,\Sigma_t}(z) = \mathbf{1}\{B_H(\rho_A(z)) - \beta q_t \mu_H \Phi_H - \Sigma_t \ge 0\}$. Because $\Sigma_t \ge 0$, $T_{q,\Sigma_t}(0) = 0$ remains robustly true, as $B_H(0) \le 0$ and the penalty only pushes the deviation payoff further negative. For the separating candidate ($z=1$), we have $T_{q,\Sigma_t}(1) = 1 \iff \Sigma_t \le B_H(1) - \beta q_t \mu_H \Phi_H$. In the collapse region ($q_t > q_{\mathrm{IC}}$), the right-hand side is already strictly negative; thus, any $\Sigma_t \ge 0$ only deepens the impossibility of separation, ensuring $z^*=0$ remains the unique fixed point. If the system is subcritical ($q_t < q_{\mathrm{IC}}$), an extreme dynamic shock $\Sigma_t$ could trigger a premature collapse by destroying the $z=1$ fixed point, but dynamic penalties can never create a new fixed point nor resurrect separation.
+Embedding the dynamic penalty $\Sigma_t$ into the belief-loop operator $T_q(z)$ from Section~\ref{sec:belief-loop} does not alter the number of fixed points in the collapse region. Let the modified operator be $T_{q,\Sigma_t}(z) = \mathbf{1}\{\Delta_H^{\mathrm{dyn}}(\rho_A(z),q_t) \ge 0\}$. Because $\Sigma_t \ge 0$, $T_{q,\Sigma_t}(0) = 0$ remains robustly true, as $B_H(0) \le 0$ and the penalty only pushes the deviation payoff further negative. For the separating candidate ($z=1$), we have $T_{q,\Sigma_t}(1) = 1 \iff \Sigma_t \le B_H(1) - \beta q_t \mu_H \Phi_H$. In the collapse region ($q_t > q_{\mathrm{IC}}$), the right-hand side is already strictly negative; thus, any $\Sigma_t \ge 0$ only deepens the impossibility of separation, ensuring $z^*=0$ remains the unique fixed point. If the system is subcritical ($q_t < q_{\mathrm{IC}}$), an extreme dynamic shock $\Sigma_t$ could trigger a premature collapse by destroying the $z=1$ fixed point, but dynamic penalties can never create a new fixed point nor resurrect separation.
 \end{remark}
 
 \subsection{Dynamic Spence ratio and wedges}
@@ -89,9 +91,9 @@ Under these assumptions and strict D1 preferences at $q\in\mathcal Q$, if $q_t\i
 \begin{proof}
 In the pooling assessment, $\rho_t=0$ for any off-path ambitious deviation. The high-type deviation margin is
 \[
-\Delta_H^{\text{dyn}}(q_t,0)=B_H(0)-\beta q_t\mu_H\Phi_H-\Sigma_t.
+\Delta_H^{\mathrm{dyn}}(0,q_t)=B_H(0)-\beta q_t\mu_H\Phi_H-\Sigma_t.
 \]
-By assumption 4 and $\Sigma_t\ge \Sigma_0$, $\Delta_H^{\text{dyn}}(q_t,0)$ is negative for all $q_t\in\mathcal Q$. Assumptions 2--3 say endogenous drift in $\Sigma_t$ dominates bounded asynchronous noise, so this negativity cannot be overturned by one-period shocks.
+By assumption 4 and $\Sigma_t\ge \Sigma_0$, $\Delta_H^{\mathrm{dyn}}(0,q_t)$ is negative for all $q_t\in\mathcal Q$. Assumptions 2--3 say endogenous drift in $\Sigma_t$ dominates bounded asynchronous noise, so this negativity cannot be overturned by one-period shocks.
 The pooling law of motion gives
 \[
 q_{t+1}
