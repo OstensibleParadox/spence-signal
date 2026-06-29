@@ -207,15 +207,19 @@ denote the type-\(\theta\) current net benefit from choosing \(s_A\) rather than
 \[
 B_H=B_H(1).
 \]
-Assume
+Let
 \[
-B_H(\rho)\text{ is weakly increasing in }\rho,
-\qquad
+\pi_0:=\Pr(\theta_H)\in(0,1)
+\]
+denote the prior probability of the high type. The proof below only uses three posterior values: high-type attribution, prior attribution, and low-type attribution. Assume
+\[
 B_H(1)>0,
+\qquad
+B_H(\pi_0)\le B_H(1),
 \qquad
 B_H(0)\le 0.
 \]
-The first inequality says that a higher high-type posterior makes the ambitious signal more valuable. The last inequality says that an ambitious signal interpreted as low-type evidence carries no high-type premium. For the low type, assume
+The middle inequality only rules out the possibility that all-ambitious pooling creates a larger high-type current benefit than separation. It is a local prior condition, not a monotonicity assumption over all posteriors. The last inequality says that an ambitious signal interpreted as low-type evidence carries no high-type premium. For the low type, assume
 \[
 B_L(0)<0.
 \]
@@ -267,30 +271,25 @@ q_{\mathrm{IC}}
 \frac{B_H(1)}{\beta\mu_H\Phi_H}.
 \]
 
-\begin{lemma}[Monotone stopping]
-\label{lem:high-type-monotone-withdrawal}
-Suppose \(B_H(\rho)\) is weakly increasing in \(\rho\), \(\Phi_H>0\), and \(\Gamma(q,\eta)\) is continuous and strictly increasing in \(q\). Then the high type's stay advantage \(\Delta_H(\rho,q)\) is strictly decreasing in \(q\). In particular, if \(q>q_{\mathrm{IC}}\), then
+\begin{lemma}[General-price IC reversal]
+\label{lem:general-price-ic-reversal}
+Suppose \(\Phi_H>0\) and \(\Gamma(q,\eta)\) is continuous and strictly increasing in \(q\). Then the high type's stay advantage under high-type interpretation,
 \[
-\Delta_H(\rho,q)<0
-\qquad\text{for every }\rho\in[0,1].
+\Delta_H(1,q)=B_H(1)-\Gamma(q,\eta)\Phi_H,
 \]
-Thus the high type's withdrawal region is an upper interval in \(q\).
+is strictly decreasing in \(q\). In particular, if \(q>q_{\mathrm{IC}}\), then
+\[
+\Delta_H(1,q)<0.
+\]
+Thus \(q>q_{\mathrm{IC}}\) means that \(\theta_H\) exits \(s_A\) even under the high-type interpretation \(\rho_A=1\). It does not determine incentives under arbitrary off-path interpretations.
 \end{lemma}
 
 \begin{proof}
-For fixed \(\rho\),
+Under high-type interpretation,
 \[
-\Delta_H(\rho,q)=B_H(\rho)-\Gamma(q,\eta)\Phi_H.
+\Delta_H(1,q)=B_H(1)-\Gamma(q,\eta)\Phi_H.
 \]
-Since \(\Phi_H>0\) and \(\Gamma(q,\eta)\) is strictly increasing in \(q\), \(\Delta_H(\rho,q)\) is strictly decreasing in \(q\). Since \(B_H(\rho)\le B_H(1)\) for every \(\rho\in[0,1]\), the inequality
-\[
-B_H(1)-\Gamma(q,\eta)\Phi_H<0
-\]
-implies
-\[
-B_H(\rho)-\Gamma(q,\eta)\Phi_H<0
-\]
-for every \(\rho\in[0,1]\). Hence, once \(q>q_{\mathrm{IC}}\), no receiver posterior can make the high type willing to stay on \(s_A\).
+Since \(\Phi_H>0\) and \(\Gamma(q,\eta)\) is strictly increasing in \(q\), this expression is strictly decreasing in \(q\). By the definition of \(q_{\mathrm{IC}}\), every \(q>q_{\mathrm{IC}}\) lies in the region where \(B_H(1)-\Gamma(q,\eta)\Phi_H<0\). Hence \(\Delta_H(1,q)<0\). The conclusion is restricted to the high-type interpretation \(\rho_A=1\).
 \end{proof}
 
 \subsection{The Belief-Loop Operator}
@@ -371,7 +370,7 @@ It closes the loop because both types choose \(s_P\), D1 evaluates the off-path 
 \label{thm:top-down-pooling}
 Suppose:
 \begin{enumerate}
-\item \(B_H(\rho)\) is weakly increasing in \(\rho\), with \(B_H(1)>0\) and \(B_H(0)\le 0\);
+\item \(\pi_0=\Pr(\theta_H)\in(0,1)\), with \(B_H(1)>0\), \(B_H(\pi_0)\le B_H(1)\), and \(B_H(0)\le 0\);
 \item \(B_L(0)<0\);
 \item \(\Phi_H>\Phi_L\), as derived from primitive self-accuracy levels and Bayesian-surprise repricing in Section~\ref{sec:psychological-exposure};
 \item \(\Gamma(q,\eta)\) is continuous and strictly increasing in \(q\), with \(\eta\in(0,1]\);
@@ -408,9 +407,9 @@ The high type's payoff gain from choosing \(s_A\) rather than \(s_P\) is
 \[
 \Delta_H(1,q)=B_H(1)-\Gamma(q,\eta)\Phi_H.
 \]
-Since \(q>q_{\mathrm{IC}}\), Proposition~\ref{prop:ic-reversal} makes this expression strictly negative. Hence \(T_q(1)=0\), so \(z=1\) is not a fixed point.
+Since \(q>q_{\mathrm{IC}}\), Lemma~\ref{lem:general-price-ic-reversal} makes this expression strictly negative. Hence \(T_q(1)=0\), so \(z=1\) is not a fixed point.
 
-If both types choose \(s_A\), then \(s_A\) is pooling rather than separating. Let \(\pi_0\in(0,1)\) be the prior probability of \(\theta_H\). Bayes' rule gives \(\rho_A=\pi_0\). Since \(B_H(\rho)\) is weakly increasing and \(\pi_0<1\),
+If both types choose \(s_A\), then \(s_A\) is pooling rather than separating. Bayes' rule gives \(\rho_A=\pi_0\). By assumption,
 \[
 B_H(\pi_0)\le B_H(1).
 \]
@@ -438,6 +437,7 @@ so the off-path ambitious signal is assigned to the low type and
 \[
 \rho_A^{D1}=0.
 \]
+This is the load-bearing use of D1 in the theorem: the off-path ambitious deviation is evaluated under low-type attribution rather than under an unrestricted resurrection belief.
 Belief consistency then sets
 \[
 \widehat\rho_{H,A}=\widehat\rho_{L,A}=\rho_A^{D1}=0.
