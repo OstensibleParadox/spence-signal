@@ -13,12 +13,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-plt.rcParams.update({
-    "text.usetex": True,
-    "font.family": "serif",
-    "text.latex.preamble": r"\usepackage{amsmath} \usepackage{amssymb}",
-})
-
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -58,26 +52,26 @@ def render_one(path: Path, mu: float, sigma: float, x_max: float) -> None:
 
     # formula annotation
     ax.text(
-        0.5,
-        0.95,
-        rf"$\mu={m1:.1f} \quad \mathrm{{Var}}(\theta \mid s_A)={var:.2f} \quad \mathbb{{E}}[\theta^2 \mid s_A]={b:.2f}$",
+        0.03,
+        0.97,
+        rf"$\mu={m1:.1f}$,\; \mathrm{{Var}}(X)={var:.2f},\; B(X)=\mathbb{{E}}[X^2]={b:.2f}$",
         transform=ax.transAxes,
         va="top",
-        ha="center",
-        fontsize=10,
-        bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.85, edgecolor="#cccccc"),
+        ha="left",
+        fontsize=11,
+        bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.65, edgecolor="#cccccc"),
     )
 
     # Keep key formula visible and aligned with your section text
     ax.text(
-        0.5,
-        0.06,
-        r"$\mathrm{Var}(\theta \mid s_A)=\mathbb{E}[\theta^2 \mid s_A]-(\mathbb{E}[\theta \mid s_A])^2$",
+        0.03,
+        0.05,
+        r"$\operatorname{Var}(X)=\mathbb{E}[X^2]-[\mathbb{E}(X)]^2$",
         transform=ax.transAxes,
         va="bottom",
-        ha="center",
+        ha="left",
         fontsize=10,
-        bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.85, edgecolor="#cccccc"),
+        bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.65, edgecolor="#cccccc"),
     )
 
     ax.tick_params(labelsize=10)

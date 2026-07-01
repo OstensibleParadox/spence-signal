@@ -1,0 +1,82 @@
+\section{Dynamic Forward Invariance}
+\label{sec:dynamic-model}
+
+Section~\ref{sec:belief-loop} establishes that in the binary class, the one-period object selects pooling for $q>q^*$. This section adds the missing microfounded dynamic state and asks whether endogenous accumulation can reverse that outcome.
+
+\subsection{Trust-capital law of motion}
+
+Let $(C_t,E_t)$ be a two-dimensional endogenous state observed before $j_t$ is realized.
+\begin{itemize}
+\item $C_t$ is semantic trust capital created by repeated pooling-safe behavior.
+\item $E_t$ is engagement reinforcement (habituation) accumulated from sustained non-ambitious actions.
+\end{itemize}
+The state evolution is
+\[
+\begin{aligned}
+C_{t+1}&=(1-\rho_C)C_t + \eta_C\mathbf 1\{s_t=s_P\} - \psi_C\mathbf 1\{s_t=s_A\} -\xi_t^C,\\
+E_{t+1}&=(1-\rho_E)E_t + \eta_E\mathbf 1\{s_t=s_P\}+\eta_A\mathbf 1\{m_t=1\} -\xi_t^E,
+\end{aligned}
+\]
+where $m_t\in\{0,1\}$ is a cheap trust-restoring message available to both types and $\xi_t^C,\xi_t^E$ are bounded asynchronous shocks. This keeps the mechanism endogenous while preserving one-period exposure at the signaling margin.
+
+Define a temporary semantic penalty term
+\[
+\Sigma_t=\omega_C C_t+\omega_E E_t\ge 0.
+\]
+Then, in low-scrutiny state $L$, the low-state advantage of sending ambitious is
+\[
+\Delta_\theta^{\text{dyn}}(q_t,\lambda_t)=B_\theta(\lambda_t)-\beta q_t\mu_H\Phi_\theta-\Sigma_t,
+\]
+where the current posterior $\lambda_t$ appears in $B_\theta$ as in Section~\ref{sec:belief-loop}. Sending $s_P$ avoids the future repricing term and does not create today's semantic penalty.
+
+\subsection{Unpriced trust-restoring messages}
+
+Cheap anthropomorphic messages are unpriced: the sender can choose $m_t=1$ with no direct signal-dependent cost and no type restriction. Because both types can choose $m_t$ identically, the induced change in $(C_t,E_t)$ is type-neutral. Therefore these messages are shadowable.
+
+To see dynamic single crossing, let receiver response $a$ induce continuation return $R(a)$ from choosing $s_A$. The high- and low-type off-path gains are
+\[
+G_H(a;t)=R(a)-\bar k_H-\beta q_t\mu_H\Phi_H-\Sigma_t,
+\qquad
+G_L(a;t)=R(a)-\bar k_L-\beta q_t\mu_H\Phi_L-\Sigma_t.
+\]
+The term $\Sigma_t$ cancels in the comparison, so adding or relaxing trust-capital does not alter the type comparison. If $q_t>q_{\mathrm{D1}}$, then $G_H(a;t)<G_L(a;t)$ for every receiver response, so $s_A$ is still D1-attributed to the low type.
+
+\subsection{Dynamic Spence ratio and wedges}
+
+For any endogenous state $(C_t,E_t)$ define the state-adjusted top-down ratio
+\[
+\widetilde q^{\mathrm{IC}}_\theta(t)=\frac{B_\theta(\lambda)+\Sigma_t}{\beta\mu_H\Phi_\theta}.
+\]
+Endogenous trust-capital terms appear symmetrically in numerators and therefore do not change the fundamental type-ordering created by $(\Phi_H,\Phi_L)$ and static primitives. They shift the threshold pair, but not the sign of the top-down reversal.
+
+A true restoration requires an externally priced type-specific wedge, for example a direct penalty or premium that depends on sender type/claim context and is not a pure continuation by-product of $C_t$ and $E_t$.
+
+\subsection{Forward invariance}
+
+Let
+\[
+\mathcal Q:=\{q\in[0,1]: q\ge q^*\},
+\qquad q^*=\max\{q_{\mathrm{IC}},q_{\mathrm{D1}}\}.
+\]
+Assume that under pooling on $s_P$, the process satisfies:
+\begin{enumerate}
+\item $\Sigma_{t+1}-\Sigma_t\ge \underline d-\xi_t$ for some $\underline d>0$ and bounded $\xi_t\in[0,\bar\xi]$;
+\item $\Sigma_0\ge 0$ and $\bar\xi<\underline d$;
+\item $\beta q\mu_H\Phi_H-B_H(0)-\Sigma_0>0$ for all $q\in\mathcal Q$.
+\end{enumerate}
+
+\begin{theorem}[Pooling interval forward invariance]
+\label{thm:forward-invariance}
+Under these assumptions and strict D1 preferences at $q\in\mathcal Q$, if period $t$ is in the pooling assessment of Section~\ref{sec:belief-loop}, then period $t+1$ is also in that assessment with probability one. Equivalently, $\mathcal Q$ is almost surely forward-invariant.
+\end{theorem}
+
+\begin{proof}
+In the pooling assessment, $\lambda_t=0$ for any off-path ambitious deviation. The high-type deviation margin is
+\[
+\Delta_H^{\text{dyn}}(q_t,0)=B_H(0)-\beta q_t\mu_H\Phi_H-\Sigma_t.
+\]
+By assumption 3 and $\Sigma_t\ge \Sigma_0$, $\Delta_H^{\text{dyn}}(q_t,0)$ is negative for all $q_t\in\mathcal Q$. Assumption 1 says endogenous drift in $\Sigma_t$ dominates bounded asynchronous noise, so this negativity cannot be overturned by one-period shocks.
+Hence high type never has a profitable ambiguous-ambitious deviation from $s_P$ once in the pooling band, and D1 therefore continues to map $s_A$ to low attribution. The same argument applies period-by-period by induction.
+\end{proof}
+
+The conclusion is defensive. Dynamic trust-capital and habituation can be modeled explicitly and can affect local margins, but they do not create a new stopping phenomenon. They do not by themselves repair top-down collapse.
